@@ -52,6 +52,12 @@ void memory_init(void)
 	U8 *p_end = (U8 *)&Image$$RW_IRAM1$$ZI$$Limit;
 	int i;
   
+	/* these are all for the heap */
+	U8* bottom_bound;
+	U8* top_bound;
+	int size_memory_block ;
+	int iter;
+	
 	/* 4 bytes padding */
 	p_end += 4;
 
@@ -76,13 +82,18 @@ void memory_init(void)
 	}
   
 	/* allocate memory for heap, not implemented yet*/
-	U8 bottom_bound = p_end;
-	U8 top_bound = ;//TODO
-	int size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks; //TODO issues with dividing
-	for(int i = 0; i < gp_num_memory_blocks; ++i) {
-		push(q, addr);
+	// init heap
+	
+	bottom_bound = p_end;
+	top_bound = p_end;//TODO
+	size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks; //TODO issues with dividing
+
+	initQueue(gp_memory_queue);
+	
+	for(iter = 0; iter < gp_num_memory_blocks; ++iter) {
+		U8* addr = bottom_bound + iter*size_memory_block;
+		push(gp_memory_queue, addr);
 	}
-  
 }
 
 /**
