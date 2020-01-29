@@ -4,19 +4,14 @@
 typedef struct node 
 
 {
-	U32 addr;
-	node* next;
-	
-	node(U32) ();
-}
+	NODE* next;
+} NODE;
 
 typedef struct queue 
 {
-	node* first;
-	node* last;
-	void push(node*) ();
-	node* pop() ();
-}
+	NODE* first;
+	NODE* last;
+} QUEUE;
 
 
 #endif

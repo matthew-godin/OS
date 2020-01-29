@@ -4,26 +4,31 @@
 #include "printf.h"
 #endif /* ! DEBUG_0 */
 
-void push(queue* q, U32 addr) {
-	node* node;
-	node->addr = addr;
-	node->next = q->tail;
-	q->tail = node;
+void push(QUEUE* q) {
+	NODE* node;
+	node.next = NULL;
+	q->tail.next = node;
+	q.tail = node;
 	
-	if(q->head == NULL) {
-		q->head = node;
+	if(q.head == NULL) {
+		q.head = node;
 	}
 }
 
-U32 pop(queue* q) {	
+U8 pop(QUEUE* q) {	
 	if(isEmpty(q)) {
 		return 0; // TODO: might need to change
 	}
-	U32 addr = q->head->addr;
+	U8 addr = q.head;
 	q->head = q->head->next;
 	return addr;
 }
 
-bool isEmpty(queue* q) {
-	return q->head == NULL;
+bool isEmpty(QUEUE* q) {
+	return q.head == NULL;
+}
+
+void initQueue(QUEUE* q){
+	q.head = NULL;
+	q.tail = NULL;
 }

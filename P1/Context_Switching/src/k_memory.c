@@ -16,7 +16,7 @@
 U32 *gp_stack; /* The last allocated stack low address. 8 bytes aligned */
                /* The first stack starts at the RAM high address */
 	       /* stack grows down. Fully decremental stack */
-queue* gp_memory_queue;
+QUEUE* gp_memory_queue;
 int gp_num_memory_blocks = 32;
 
 /**
@@ -76,9 +76,12 @@ void memory_init(void)
 	}
   
 	/* allocate memory for heap, not implemented yet*/
-	U8 bottomBound = p_end;
-	U8 topBound = //TODO
-	
+	U8 bottom_bound = p_end;
+	U8 top_bound = ;//TODO
+	int size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks; //TODO issues with dividing
+	for(int i = 0; i < gp_num_memory_blocks; ++i) {
+		push(q, addr);
+	}
   
 }
 
