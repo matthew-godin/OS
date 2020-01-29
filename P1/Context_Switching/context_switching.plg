@@ -170,3 +170,532 @@ linking...
 context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
 context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
 Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(19): error:  #20: identifier "QUEUE" is undefined
+src\k_memory.c(91): warning:  #223-D: function "initQueue" declared implicitly
+src\k_memory.c(95): warning:  #223-D: function "push" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(17): error:  #136: struct "queue" has no field "tail"
+src\k_memory_queue.h(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(21): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(22): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(27): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(31): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.h(31): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(32): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(32): error:  #136: struct "queue" has no field "head"
+src\k_memory_queue.h(36): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.h(37): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(41): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(42): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(45): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(21): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(22): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(27): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(31): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.h(31): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(32): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(36): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.h(37): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(41): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(42): error:  #154: expression must have struct or union type
+src\k_memory_queue.h(45): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(14): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(14): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(14): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(15): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(96): error:  #167: argument of type "int" is incompatible with parameter of type "QUEUE *"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(15): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(96): error:  #167: argument of type "int" is incompatible with parameter of type "QUEUE *"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(15): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(21): error:  #65: expected a ";"
+src\k_memory.c(90): error:  #20: identifier "gp_num_memory_blocks" is undefined
+src\k_memory.c(92): error:  #167: argument of type "struct queue *" is incompatible with parameter of type "int"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(15): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(92): error:  #167: argument of type "struct queue *" is incompatible with parameter of type "int"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(15): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(15): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(92): error:  #268: declaration may not appear after executable statement in block
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(50): warning:  #1294-D: Old-style function initQueue
+src\k_memory.c(51): error:  #99: a declaration here must declare a parameter
+src\k_memory.c(52): error:  #65: expected a ";"
+src\k_memory.c(74): warning:  #12-D: parsing restarts here after previous syntax error
+src\k_memory.c(75): error:  #169: expected a declaration
+src\k_memory.c(80): error:  #169: expected a declaration
+src\k_memory.c(81): error:  #130: expected a "{"
+src\k_memory.c(88): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(88): error:  #20: identifier "p_end" is undefined
+src\k_memory.c(89): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(90): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(90): error:  #28: expression must have a constant value
+src\k_memory.c(90): error:  #28: expression must have a constant value
+src\k_memory.c(90): error:  #28: expression must have a constant value
+src\k_memory.c(92): warning:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(92): error:  #92: identifier-list parameters may only be used in a function definition
+src\k_memory.c(92): error:  #147: declaration is incompatible with "void initQueue()" (declared at line 50)
+src\k_memory.c(94): error:  #169: expected a declaration
+src\k_memory.c(136): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(50): warning:  #1294-D: Old-style function initQueue
+src\k_memory.c(51): error:  #99: a declaration here must declare a parameter
+src\k_memory.c(52): error:  #65: expected a ";"
+src\k_memory.c(74): warning:  #12-D: parsing restarts here after previous syntax error
+src\k_memory.c(75): error:  #169: expected a declaration
+src\k_memory.c(80): error:  #169: expected a declaration
+src\k_memory.c(81): error:  #130: expected a "{"
+src\k_memory.c(88): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(88): error:  #20: identifier "p_end" is undefined
+src\k_memory.c(89): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(90): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(90): error:  #28: expression must have a constant value
+src\k_memory.c(90): error:  #28: expression must have a constant value
+src\k_memory.c(90): error:  #28: expression must have a constant value
+src\k_memory.c(92): warning:  #77-D: this declaration has no storage class or type specifier
+src\k_memory.c(92): error:  #92: identifier-list parameters may only be used in a function definition
+src\k_memory.c(92): error:  #147: declaration is incompatible with "void initQueue()" (declared at line 50)
+src\k_memory.c(94): error:  #169: expected a declaration
+src\k_memory.c(136): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(51): error:  #130: expected a "{"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Rebuild target 'Context Switching SIM'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling printf.c...
+compiling main_svc.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+compiling k_process.c...
+compiling usr_proc.c...
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Rebuild target 'Context Switching SIM'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling printf.c...
+compiling main_svc.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling k_memory.c...
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+compiling k_process.c...
+compiling usr_proc.c...
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol initQueue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol push (referred from k_memory.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory_queue.c...
+src\k_memory_queue.h(6): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(10): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(11): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(16): warning:  #1-D: last line of file ends without a newline
+src\k_memory_queue.c(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(8): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(18): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "returnAddr" is undefined
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(29): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory_queue.h(14): warning:  #1-D: last line of file ends without a newline
+src\k_memory.c(91): error:  #20: identifier "gp_memory_queuee" is undefined
+compiling k_memory_queue.c...
+src\k_memory_queue.h(6): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(10): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(11): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(14): warning:  #1-D: last line of file ends without a newline
+src\k_memory_queue.c(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(8): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(18): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "returnAddr" is undefined
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(29): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(33): error:  #147-D: declaration is incompatible with "void initQueue(struct queue *)" (declared at line 12 of "src\k_memory_queue.h")
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(91): error:  #20: identifier "gp_memory_queuee" is undefined
+compiling k_memory_queue.c...
+src\k_memory_queue.h(6): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(10): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(11): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(8): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(18): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "returnAddr" is undefined
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(29): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(33): error:  #147-D: declaration is incompatible with "void initQueue(struct queue *)" (declared at line 12 of "src\k_memory_queue.h")
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling k_memory_queue.c...
+src\k_memory_queue.h(6): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(10): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.h(11): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(7): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(8): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(18): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "U8" is undefined
+src\k_memory_queue.c(23): error:  #20: identifier "returnAddr" is undefined
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(29): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(33): error:  #147-D: declaration is incompatible with "void initQueue(struct queue *)" (declared at line 12 of "src\k_memory_queue.h")
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #20: identifier "NULL" is undefined
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #147-D: declaration is incompatible with "void initQueue(struct queue *)" (declared at line 14 of "src\k_memory_queue.h")
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #20: identifier "true" is undefined
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #147-D: declaration is incompatible with "void initQueue(struct queue *)" (declared at line 14 of "src\k_memory_queue.h")
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory_queue.c...
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #147-D: declaration is incompatible with "void initQueue(struct queue *)" (declared at line 14 of "src\k_memory_queue.h")
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(35): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+Target not created
+Rebuild target 'Context Switching SIM'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling printf.c...
+compiling main_svc.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+compiling usr_proc.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #20: identifier "bool" is undefined
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #268: declaration may not appear after executable statement in block
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(24): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(29): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(34): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(20): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(32): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(91): error:  #167: argument of type "struct queue *" is incompatible with parameter of type "QUEUE *"
+src\k_memory.c(95): error:  #167: argument of type "struct queue *" is incompatible with parameter of type "QUEUE *"
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(20): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(32): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(91): error:  #167: argument of type "struct queue *" is incompatible with parameter of type "QUEUE *"
+src\k_memory.c(95): error:  #167: argument of type "struct queue *" is incompatible with parameter of type "QUEUE *"
+compiling k_memory_queue.c...
+src\k_memory_queue.c(8): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(11): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(13): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(14): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(19): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(20): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(23): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(28): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(32): error:  #154: expression must have struct or union type
+src\k_memory_queue.c(33): error:  #154: expression must have struct or union type
+Target not created
