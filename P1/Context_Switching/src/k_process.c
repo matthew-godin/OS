@@ -150,6 +150,13 @@ int k_release_processor(void)
 
 int set_process_priority(int process_id, int priority) {
 	int i;
+	//TODO: a process cannot change the priority of the i-process
+	if (process_id == 0 && priority != 4) {
+		return 0;
+	}
+	if(process_id != 0 && priority ==4) {
+		return 0;
+	}
 	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
@@ -166,5 +173,5 @@ int get_process_priority(int process_id) {
 			return (gp_pcbs[i])->m_priority;
 		}
 	}
-	return 0; //TODO: find better failure value
+	return -1;
 }

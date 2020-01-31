@@ -3,15 +3,15 @@
 
 #include "k_rtx.h"
 
-typedef struct QUEUE 
+typedef struct MEMORY_QUEUE 
 {
 	U8* head;
 	U8* tail;
-} QUEUE;
+} MEMORY_QUEUE;
 
-QUEUE push(QUEUE gp_memory_queue, U8* addr);
-QUEUE pop(QUEUE q);
-U8* top(QUEUE q);
-QUEUE initQueue(QUEUE q);
+MEMORY_QUEUE push(MEMORY_QUEUE gp_memory_queue, U8* addr);
+MEMORY_QUEUE pop(MEMORY_QUEUE q);
+U8* top(MEMORY_QUEUE q);
+MEMORY_QUEUE initQueue(MEMORY_QUEUE q);
 
 #endif

@@ -4,7 +4,7 @@
 #include "printf.h"
 #endif /* ! DEBUG_0 */
 
-QUEUE push(QUEUE q, U8* addr) {
+MEMORY_QUEUE push(MEMORY_QUEUE q, U8* addr) {
 	if(q.tail != NULL) {
 		*(q.tail) = (*addr);
 	}
@@ -17,7 +17,7 @@ QUEUE push(QUEUE q, U8* addr) {
 	return q;
 }
 
-QUEUE pop(QUEUE q) { //if we pop that last block what happens?
+MEMORY_QUEUE pop(MEMORY_QUEUE q) { //if we pop that last block what happens?
 	if(q.head == NULL) {
 		return q;
 	}
@@ -25,15 +25,15 @@ QUEUE pop(QUEUE q) { //if we pop that last block what happens?
 	return q;
 }
 
-U8* top(QUEUE q) { 
+U8* top(MEMORY_QUEUE q) { 
 	return q.head;
 }
 
-int isEmpty(QUEUE q) {
+int isEmpty(MEMORY_QUEUE q) {
 	return q.head == NULL;
 }
 
-QUEUE initQueue(QUEUE q){
+MEMORY_QUEUE initQueue(MEMORY_QUEUE q){
 	q.head = NULL;
 	q.tail = NULL;
 	return q;
