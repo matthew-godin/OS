@@ -46,7 +46,7 @@ PROCESS_PRIORITY_QUEUE push_ppq(PROCESS_PRIORITY_QUEUE ppq,  PCB* pcb) {
 	int priority;
 	PROCESS_QUEUE q;
 	
-	if(pcb->m_state != 1) return ppq; //if pcb isn't ready, don't push
+	if(pcb->m_state != RDY && pcb->m_state != NEW) return ppq; //if pcb isn't ready AND it is not new, don't push
 	
 	priority = pcb->m_priority;
 	q = ppq.pqs[priority]; //get queue associated with pcb priority
