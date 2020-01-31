@@ -16,7 +16,7 @@
 U32 *gp_stack; /* The last allocated stack low address. 8 bytes aligned */
                /* The first stack starts at the RAM high address */
 	       /* stack grows down. Fully decremental stack */
-struct queue* gp_memory_queue;
+QUEUE gp_memory_queue;
 int gp_num_memory_blocks = 32;
 
 /**
@@ -88,11 +88,11 @@ void memory_init(void)
 	top_bound = p_end;//TODO
 	size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks; //TODO issues with dividing
 
-	initQueue(gp_memory_queue);
+	gp_memory_queue = initQueue(gp_memory_queue);
 	
 	for(iter = 0; iter < gp_num_memory_blocks; ++iter) {
 		U8* addr = bottom_bound + iter*size_memory_block;
-		push(gp_memory_queue, addr);
+		gp_memory_queue = push(gp_memory_queue, addr);
 	}
 }
 
@@ -121,15 +121,23 @@ U32 *alloc_stack(U32 size_b)
 
 
 void *k_request_memory_block(void) {
+		U8* returnAddr;
 #ifdef DEBUG_0 
 	printf("k_request_memory_block: entering...\n");
 #endif /* ! DEBUG_0 */
-	return (void *) NULL;
+	returnAddr = top(gp_memory_queue);
+	gp_memory_queue = pop(gp_memory_queue);
+	if(returnAddr == NULL) {
+		//TODO: block until memory becomes available
+	}
+	return returnAddr;
 }
 
 int k_release_memory_block(void *p_mem_blk) {
+	
 #ifdef DEBUG_0 
 	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
-	return RTX_OK;
+	gp_memory_queue = push(gp_memory_queue, (U8*)p_mem_blk);
+	return 1; // TODO: not sure what to return 
 }

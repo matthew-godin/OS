@@ -4,31 +4,37 @@
 #include "printf.h"
 #endif /* ! DEBUG_0 */
 
-void push(QUEUE *q, U8* addr) {
+QUEUE push(QUEUE q, U8* addr) {
 	if(q.tail != NULL) {
-		q->tail = addr;
+		*(q.tail) = (*addr);
 	}
 	q.tail = addr;
-	
+	*addr = NULL;
+
 	if(q.head == NULL) {
 		q.head = addr;
 	}
+	return q;
 }
 
-U8* pop(QUEUE* q) {
-	U8* returnAddr = q.head;
+QUEUE pop(QUEUE q) { //if we pop that last block what happens?
 	if(q.head == NULL) {
-		return NULL;
+		return q;
 	}
-	q.head = q->head;
-	return returnAddr;
+	q.head = (U8*)*(q.head); // :/
+	return q;
 }
 
-int isEmpty(QUEUE* q) {
+U8* top(QUEUE q) { 
+	return q.head;
+}
+
+int isEmpty(QUEUE q) {
 	return q.head == NULL;
 }
 
-void initQueue(QUEUE* q){
+QUEUE initQueue(QUEUE q){
 	q.head = NULL;
 	q.tail = NULL;
+	return q;
 }

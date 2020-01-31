@@ -147,3 +147,24 @@ int k_release_processor(void)
 	process_switch(p_pcb_old);
 	return RTX_OK;
 }
+
+int set_process_priority(int process_id, int priority) {
+	int i;
+	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
+		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
+			(gp_pcbs[i])->m_priority = priority;
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int get_process_priority(int process_id) {
+	int i;
+	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
+		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
+			return (gp_pcbs[i])->m_priority;
+		}
+	}
+	return 0; //TODO: find better failure value
+}

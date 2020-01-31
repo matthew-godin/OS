@@ -9,8 +9,9 @@ typedef struct QUEUE
 	U8* tail;
 } QUEUE;
 
-void push(QUEUE* gp_memory_queue, U8* addr);
-U8* pop(QUEUE* q);
-void initQueue(QUEUE* q);
+QUEUE push(QUEUE gp_memory_queue, U8* addr);
+QUEUE pop(QUEUE q);
+U8* top(QUEUE q);
+QUEUE initQueue(QUEUE q);
 
 #endif

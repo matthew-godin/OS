@@ -39,7 +39,8 @@ typedef struct pcb
 	//struct pcb *mp_next;  /* next pcb, not used in this example */  
 	U32 *mp_sp;		/* stack pointer of the process */
 	U32 m_pid;		/* process id */
-	PROC_STATE_E m_state;   /* state of the process */      
+	U32 m_priority; /* process priority */
+	PROC_STATE_E m_state;   /* state of the process */  
 } PCB;
 
 /* initialization table item */
@@ -50,5 +51,8 @@ typedef struct proc_init
 	int m_stack_size;       /* size of stack in words */
 	void (*mpf_start_pc) ();/* entry point of the process */    
 } PROC_INIT;
+
+int set_process_priority(int process_id, int priority);
+int get_process_priority(int process_id);
 
 #endif // ! K_RTX_H_
