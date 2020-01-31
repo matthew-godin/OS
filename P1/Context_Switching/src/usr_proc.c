@@ -27,8 +27,20 @@ void set_test_procs() {
   
 	g_test_procs[0].mpf_start_pc = &proc1;
 	g_test_procs[1].mpf_start_pc = &proc2;
+	g_test_procs[2].mpf_start_pc = &proc3;
+	g_test_procs[3].mpf_start_pc = &proc4;
+	g_test_procs[4].mpf_start_pc = &proc5;
+	g_test_procs[5].mpf_start_pc = &nullProc;
 }
 
+/**
+ * @brief: The null process, continuously calls release_processor()
+ */
+void nullProc(void) {
+	while(1) {
+		release_processor();
+	}
+}
 
 /**
  * @brief: a process that prints five uppercase letters
@@ -65,6 +77,69 @@ void proc2(void)
 			ret_val = release_processor();
 #ifdef DEBUG_0
 			printf("proc2: ret_val=%d\n", ret_val);
+#endif /* DEBUG_0 */
+		}
+		uart0_put_char('0' + i%10);
+		i++;
+	}
+}
+
+/**
+ * @brief: a process that prints five numbers
+ *         and then yields the cpu.
+ */
+void proc3(void)
+{
+	int i = 0;
+	int ret_val = 20;
+	while ( 1) {
+		if ( i != 0 && i%5 == 0 ) {
+			uart0_put_string("\n\r");
+			ret_val = release_processor();
+#ifdef DEBUG_0
+			printf("proc3: ret_val=%d\n", ret_val);
+#endif /* DEBUG_0 */
+		}
+		uart0_put_char('0' + i%10);
+		i++;
+	}
+}
+
+/**
+ * @brief: a process that prints five numbers
+ *         and then yields the cpu.
+ */
+void proc4(void)
+{
+	int i = 0;
+	int ret_val = 20;
+	while ( 1) {
+		if ( i != 0 && i%5 == 0 ) {
+			uart0_put_string("\n\r");
+			ret_val = release_processor();
+#ifdef DEBUG_0
+			printf("proc4: ret_val=%d\n", ret_val);
+#endif /* DEBUG_0 */
+		}
+		uart0_put_char('0' + i%10);
+		i++;
+	}
+}
+
+/**
+ * @brief: a process that prints five numbers
+ *         and then yields the cpu.
+ */
+void proc5(void)
+{
+	int i = 0;
+	int ret_val = 20;
+	while ( 1) {
+		if ( i != 0 && i%5 == 0 ) {
+			uart0_put_string("\n\r");
+			ret_val = release_processor();
+#ifdef DEBUG_0
+			printf("proc5: ret_val=%d\n", ret_val);
 #endif /* DEBUG_0 */
 		}
 		uart0_put_char('0' + i%10);

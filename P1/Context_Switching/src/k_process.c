@@ -45,6 +45,7 @@ void process_init()
 	set_test_procs();
 	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
 		g_proc_table[i].m_pid = g_test_procs[i].m_pid;
+		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
 		g_proc_table[i].m_stack_size = g_test_procs[i].m_stack_size;
 		g_proc_table[i].mpf_start_pc = g_test_procs[i].mpf_start_pc;
 	}
@@ -82,6 +83,7 @@ PCB *scheduler(void)
 	PCB* next_pcb;
 	
 	if(gp_current_process != NULL) {
+		gp_current_process->m_state = RDY; // sets state of old process to ready before pushing to ppq
 		gp_ppq = push_ppq(gp_ppq, gp_current_process);
 	}
 	next_pcb = top_ppq(gp_ppq);
@@ -145,7 +147,7 @@ int k_release_processor(void)
 		gp_current_process = p_pcb_old; // revert back to the old process
 		return RTX_ERR;
 	}
-        if ( p_pcb_old == NULL ) {
+    if ( p_pcb_old == NULL ) {
 		p_pcb_old = gp_current_process;
 	}
 	process_switch(p_pcb_old);
