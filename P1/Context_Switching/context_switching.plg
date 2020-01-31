@@ -205,3 +205,256 @@ compiling k_process_priority_queue.c...
 linking...
 Program Size: Code=3304 RO-data=236 RW-data=36 ZI-data=676  
 "context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=3304 RO-data=236 RW-data=36 ZI-data=676  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(8): error:  #20: identifier "NODE" is undefined
+src\k_process_priority_queue.h(21): error:  #130: expected a "{"
+src\k_process_priority_queue.h(22): error:  #40: expected an identifier
+src\k_process_priority_queue.h(22): error:  #65: expected a ";"
+src\k_process_priority_queue.h(23): warning:  #940-D: missing return statement at end of non-void function "initQueue"
+src\k_process_priority_queue.h(23): error:  #77-D: this declaration has no storage class or type specifier
+src\k_process_priority_queue.h(25): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.h(25): warning:  #1295-D: Deprecated declaration initPpq - give arg types
+src\k_process_priority_queue.h(26): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.h(26): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.h(27): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.h(27): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.h(28): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(30): error:  #247: function "initQueue" has already been defined
+src\k_process_priority_queue.c(36): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.c(38): warning:  #174-D: expression has no effect
+src\k_process_priority_queue.c(38): error:  #65: expected a ";"
+src\k_process_priority_queue.c(41): error:  #20: identifier "ppq" is undefined
+src\k_process_priority_queue.c(43): error:  #20: identifier "ppq" is undefined
+src\k_process_priority_queue.c(46): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.c(46): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.c(46): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(50): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(59): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.c(59): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.c(59): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(75): error:  #757: variable "PROCESS_PRIORITY_QUEUE" is not a type name
+src\k_process_priority_queue.c(75): error:  #247: function "top" has already been defined
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(8): error:  #20: identifier "NODE" is undefined
+src\k_process_priority_queue.h(22): error:  #40: expected an identifier
+src\k_process_priority_queue.h(22): error:  #65: expected a ";"
+src\k_process_priority_queue.h(25): warning:  #1295-D: Deprecated declaration initPpq - give arg types
+src\k_process_priority_queue.h(26): error:  #147: declaration is incompatible with "PROCESS_QUEUE push(PROCESS_QUEUE, PCB *)" (declared at line 16)
+src\k_process_priority_queue.h(27): error:  #147: declaration is incompatible with "PROCESS_QUEUE pop(PROCESS_QUEUE)" (declared at line 17)
+src\k_process_priority_queue.h(28): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_QUEUE)" (declared at line 18)
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(3): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE push(PROCESS_PRIORITY_QUEUE, PCB *)" (declared at line 26 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(17): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE pop(PROCESS_PRIORITY_QUEUE)" (declared at line 27 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(24): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_PRIORITY_QUEUE)" (declared at line 18 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(41): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(46): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(50): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(53): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(55): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(59): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(64): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(67): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(75): error:  #247: function "top" has already been defined
+src\k_process_priority_queue.c(80): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(22): error:  #40: expected an identifier
+src\k_process_priority_queue.h(22): error:  #65: expected a ";"
+src\k_process_priority_queue.h(25): warning:  #1295-D: Deprecated declaration initPpq - give arg types
+src\k_process_priority_queue.h(26): error:  #147: declaration is incompatible with "PROCESS_QUEUE push(PROCESS_QUEUE, PCB *)" (declared at line 16)
+src\k_process_priority_queue.h(27): error:  #147: declaration is incompatible with "PROCESS_QUEUE pop(PROCESS_QUEUE)" (declared at line 17)
+src\k_process_priority_queue.h(28): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_QUEUE)" (declared at line 18)
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(3): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE push(PROCESS_PRIORITY_QUEUE, PCB *)" (declared at line 26 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(17): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE pop(PROCESS_PRIORITY_QUEUE)" (declared at line 27 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(24): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_PRIORITY_QUEUE)" (declared at line 18 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(41): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(46): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(50): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(53): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(55): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(59): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(64): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(67): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(75): error:  #247: function "top" has already been defined
+src\k_process_priority_queue.c(80): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(22): error:  #40: expected an identifier
+src\k_process_priority_queue.h(22): error:  #65: expected a ";"
+src\k_process_priority_queue.h(25): warning:  #1295-D: Deprecated declaration initPpq - give arg types
+src\k_process_priority_queue.h(26): error:  #147: declaration is incompatible with "PROCESS_QUEUE push(PROCESS_QUEUE, PCB *)" (declared at line 16)
+src\k_process_priority_queue.h(27): error:  #147: declaration is incompatible with "PROCESS_QUEUE pop(PROCESS_QUEUE)" (declared at line 17)
+src\k_process_priority_queue.h(28): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_QUEUE)" (declared at line 18)
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(3): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE push(PROCESS_PRIORITY_QUEUE, PCB *)" (declared at line 26 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(17): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE pop(PROCESS_PRIORITY_QUEUE)" (declared at line 27 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(24): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_PRIORITY_QUEUE)" (declared at line 18 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(41): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(46): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(50): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(53): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(55): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(59): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(64): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(67): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(75): error:  #247: function "top" has already been defined
+src\k_process_priority_queue.c(80): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(25): warning:  #1295-D: Deprecated declaration initPpq - give arg types
+src\k_process_priority_queue.h(26): error:  #147: declaration is incompatible with "PROCESS_QUEUE push(PROCESS_QUEUE, PCB *)" (declared at line 16)
+src\k_process_priority_queue.h(27): error:  #147: declaration is incompatible with "PROCESS_QUEUE pop(PROCESS_QUEUE)" (declared at line 17)
+src\k_process_priority_queue.h(28): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_QUEUE)" (declared at line 18)
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(3): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE push(PROCESS_PRIORITY_QUEUE, PCB *)" (declared at line 26 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(17): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE pop(PROCESS_PRIORITY_QUEUE)" (declared at line 27 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(24): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_PRIORITY_QUEUE)" (declared at line 18 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(41): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(46): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(50): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(53): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(55): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(59): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(64): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(67): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(75): error:  #247: function "top" has already been defined
+src\k_process_priority_queue.c(80): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(25): warning:  #1295-D: Deprecated declaration initPpq - give arg types
+src\k_process_priority_queue.h(26): error:  #147: declaration is incompatible with "PROCESS_QUEUE push(PROCESS_QUEUE, PCB *)" (declared at line 16)
+src\k_process_priority_queue.h(27): error:  #147: declaration is incompatible with "PROCESS_QUEUE pop(PROCESS_QUEUE)" (declared at line 17)
+src\k_process_priority_queue.h(28): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_QUEUE)" (declared at line 18)
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(3): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE push(PROCESS_PRIORITY_QUEUE, PCB *)" (declared at line 26 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(17): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE pop(PROCESS_PRIORITY_QUEUE)" (declared at line 27 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(24): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_PRIORITY_QUEUE)" (declared at line 18 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(41): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(46): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(50): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(53): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(55): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(59): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(64): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(67): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(75): error:  #247: function "top" has already been defined
+src\k_process_priority_queue.c(80): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(26): error:  #147: declaration is incompatible with "PROCESS_QUEUE push(PROCESS_QUEUE, PCB *)" (declared at line 16)
+src\k_process_priority_queue.h(27): error:  #147: declaration is incompatible with "PROCESS_QUEUE pop(PROCESS_QUEUE)" (declared at line 17)
+src\k_process_priority_queue.h(28): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_QUEUE)" (declared at line 18)
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(3): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE push(PROCESS_PRIORITY_QUEUE, PCB *)" (declared at line 26 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(17): error:  #147: declaration is incompatible with "PROCESS_PRIORITY_QUEUE pop(PROCESS_PRIORITY_QUEUE)" (declared at line 27 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(24): error:  #147-D: declaration is incompatible with "PCB *top(PROCESS_PRIORITY_QUEUE)" (declared at line 18 of "src\k_process_priority_queue.h")
+src\k_process_priority_queue.c(40): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(45): error:  #247: function "push" has already been defined
+src\k_process_priority_queue.c(49): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(52): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(54): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(58): error:  #247: function "pop" has already been defined
+src\k_process_priority_queue.c(63): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(66): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(74): error:  #247: function "top" has already been defined
+src\k_process_priority_queue.c(79): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(31): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(40): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(49): error:  #254: type name is not allowed
+src\k_process_priority_queue.c(52): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(54): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(63): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(66): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(79): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(30): warning:  #1-D: last line of file ends without a newline
+src\k_process_priority_queue.c(40): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(52): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(54): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(63): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(66): error:  #142: expression must have pointer-to-object type
+src\k_process_priority_queue.c(79): error:  #142: expression must have pointer-to-object type
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(30): warning:  #1-D: last line of file ends without a newline
+linking...
+context_switching.axf: Error: L6200E: Symbol pop multiply defined (by k_process_priority_queue.o and k_memory_queue.o).
+context_switching.axf: Error: L6200E: Symbol push multiply defined (by k_process_priority_queue.o and k_memory_queue.o).
+context_switching.axf: Error: L6200E: Symbol top multiply defined (by k_process_priority_queue.o and k_memory_queue.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(30): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=3304 RO-data=236 RW-data=36 ZI-data=676  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(91): warning:  #223-D: function "initQueue" declared implicitly
+src\k_memory.c(91): error:  #513: a value of type "int" cannot be assigned to an entity of type "MEMORY_QUEUE"
+src\k_memory.c(95): warning:  #223-D: function "push" declared implicitly
+src\k_memory.c(95): error:  #513: a value of type "int" cannot be assigned to an entity of type "MEMORY_QUEUE"
+src\k_memory.c(128): warning:  #223-D: function "top" declared implicitly
+src\k_memory.c(128): error:  #513: a value of type "int" cannot be assigned to an entity of type "U8 *"
+src\k_memory.c(129): warning:  #223-D: function "pop" declared implicitly
+src\k_memory.c(129): error:  #513: a value of type "int" cannot be assigned to an entity of type "MEMORY_QUEUE"
+src\k_memory.c(141): warning:  #223-D: function "push" declared implicitly
+src\k_memory.c(141): error:  #513: a value of type "int" cannot be assigned to an entity of type "MEMORY_QUEUE"
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(128): warning:  #223-D: function "top" declared implicitly
+src\k_memory.c(128): error:  #513: a value of type "int" cannot be assigned to an entity of type "U8 *"
+src\k_memory.c(129): warning:  #223-D: function "pop" declared implicitly
+src\k_memory.c(129): error:  #513: a value of type "int" cannot be assigned to an entity of type "MEMORY_QUEUE"
+src\k_memory.c(141): warning:  #223-D: function "push" declared implicitly
+src\k_memory.c(141): error:  #513: a value of type "int" cannot be assigned to an entity of type "MEMORY_QUEUE"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+linking...
+Program Size: Code=3304 RO-data=236 RW-data=36 ZI-data=676  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+linking...
+Program Size: Code=3304 RO-data=236 RW-data=36 ZI-data=676  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(85): error:  #268: declaration may not appear after executable statement in block
+src\k_process.c(86): warning:  #223-D: function "pop" declared implicitly
+src\k_process.c(86): error:  #513: a value of type "int" cannot be assigned to an entity of type "PROCESS_PRIORITY_QUEUE"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(88): warning:  #223-D: function "pop" declared implicitly
+src\k_process.c(88): error:  #513: a value of type "int" cannot be assigned to an entity of type "PROCESS_PRIORITY_QUEUE"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+linking...
+Program Size: Code=3928 RO-data=236 RW-data=36 ZI-data=716  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).

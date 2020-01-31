@@ -88,11 +88,11 @@ void memory_init(void)
 	top_bound = p_end;//TODO
 	size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks; //TODO issues with dividing
 
-	gp_memory_queue = initQueue(gp_memory_queue);
+	gp_memory_queue = init_mq(gp_memory_queue);
 	
 	for(iter = 0; iter < gp_num_memory_blocks; ++iter) {
 		U8* addr = bottom_bound + iter*size_memory_block;
-		gp_memory_queue = push(gp_memory_queue, addr);
+		gp_memory_queue = push_mq(gp_memory_queue, addr);
 	}
 }
 
@@ -125,8 +125,8 @@ void *k_request_memory_block(void) {
 #ifdef DEBUG_0 
 	printf("k_request_memory_block: entering...\n");
 #endif /* ! DEBUG_0 */
-	returnAddr = top(gp_memory_queue);
-	gp_memory_queue = pop(gp_memory_queue);
+	returnAddr = top_mq(gp_memory_queue);
+	gp_memory_queue = pop_mq(gp_memory_queue);
 	if(returnAddr == NULL) {
 		//TODO: block until memory becomes available
 	}
@@ -138,6 +138,6 @@ int k_release_memory_block(void *p_mem_blk) {
 #ifdef DEBUG_0 
 	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
-	gp_memory_queue = push(gp_memory_queue, (U8*)p_mem_blk);
+	gp_memory_queue = push_mq(gp_memory_queue, (U8*)p_mem_blk);
 	return 1; // TODO: not sure what to return 
 }

@@ -16,6 +16,7 @@
 #include <LPC17xx.h>
 #include <system_LPC17xx.h>
 #include "uart_polling.h"
+#include "k_process_priority_queue.h"
 #include "k_process.h"
 
 #ifdef DEBUG_0
@@ -25,6 +26,7 @@
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
+PROCESS_PRIORITY_QUEUE gp_ppq;
 
 /* process initialization table */
 PROC_INIT g_proc_table[NUM_TEST_PROCS];
@@ -61,6 +63,11 @@ void process_init()
 		}
 		(gp_pcbs[i])->mp_sp = sp;
 	}
+
+	gp_ppq = init_ppq(gp_ppq); 
+	for(i=0; i < NUM_TEST_PROCS; ++i) {
+		gp_ppq = push_ppq(gp_ppq, gp_pcbs[i]); // add all pcbs to process priority queue
+	}
 }
 
 /*@brief: scheduler, pick the pid of the next to run process
@@ -72,18 +79,15 @@ void process_init()
 
 PCB *scheduler(void)
 {
-	if (gp_current_process == NULL) {
-		gp_current_process = gp_pcbs[0]; 
-		return gp_pcbs[0];
+	PCB* next_pcb;
+	
+	if(gp_current_process != NULL) {
+		gp_ppq = push_ppq(gp_ppq, gp_current_process);
 	}
-
-	if ( gp_current_process == gp_pcbs[0] ) {
-		return gp_pcbs[1];
-	} else if ( gp_current_process == gp_pcbs[1] ) {
-		return gp_pcbs[0];
-	} else {
-		return NULL;
-	}
+	next_pcb = top_ppq(gp_ppq);
+	gp_ppq = pop_ppq(gp_ppq);
+	
+	return next_pcb;
 }
 
 /*@brief: switch out old pcb (p_pcb_old), run the new pcb (gp_current_process)
@@ -135,9 +139,9 @@ int k_release_processor(void)
 	PCB *p_pcb_old = NULL;
 	
 	p_pcb_old = gp_current_process;
-	gp_current_process = scheduler();
+	gp_current_process = scheduler(); // sets gp_current_process to newly selected process based on priority
 	
-	if ( gp_current_process == NULL  ) {
+	if ( gp_current_process == NULL  ) { // may never hit this condition
 		gp_current_process = p_pcb_old; // revert back to the old process
 		return RTX_ERR;
 	}
