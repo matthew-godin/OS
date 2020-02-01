@@ -15,8 +15,8 @@
 
 #define NULL 0
 
-#define NUM_MEMORY_BLOCKS 8
-#define MEM_BLOCK_SIZE 0x40
+#define NUM_MEMORY_BLOCKS 8 // we can set this
+#define MEM_BLOCK_SIZE 0x40 // we can set this
 
 #define NUM_TEST_PROCS 6
 
