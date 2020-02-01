@@ -26,7 +26,7 @@
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
-PROCESS_PRIORITY_QUEUE gp_ppq;
+extern PCB* gp_pcb_queue[NUM_TEST_PROCS];
 
 /* process initialization table */
 PROC_INIT g_proc_table[NUM_TEST_PROCS];
@@ -66,9 +66,9 @@ void process_init()
 		(gp_pcbs[i])->mp_sp = sp;
 	}
 
-	gp_ppq = init_ppq(gp_ppq); 
+	init_pcb_queue();
 	for(i=0; i < NUM_TEST_PROCS; ++i) {
-		gp_ppq = push_ppq(gp_ppq, gp_pcbs[i]); // add all pcbs to process priority queue
+		push_pcb_queue(gp_pcbs[i]); // add all pcbs to process priority queue
 	}
 }
 
@@ -84,11 +84,10 @@ PCB *scheduler(void)
 	PCB* next_pcb;
 	
 	if(gp_current_process != NULL) {
-		gp_current_process->m_state = RDY; // sets state of old process to ready before pushing to ppq
-		gp_ppq = push_ppq(gp_ppq, gp_current_process);
+		gp_current_process->m_state = RDY; // sets state of old process to ready before pushing to pcb_queue
+		push_pcb_queue(gp_current_process);
 	}
-	next_pcb = top_ppq(gp_ppq);
-	gp_ppq = pop_ppq(gp_ppq);
+	next_pcb = pop_pcb_queue();
 	
 	return next_pcb;
 }
@@ -167,6 +166,7 @@ int set_process_priority(int process_id, int priority) {
 	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
+			updated_pcb_priority(gp_pcbs[i]->m_pid);
 			return 1;
 		}
 	}
