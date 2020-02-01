@@ -17,7 +17,6 @@ U32 *gp_stack; /* The last allocated stack low address. 8 bytes aligned */
                /* The first stack starts at the RAM high address */
 	       /* stack grows down. Fully decremental stack */
 MEMORY_QUEUE gp_memory_queue;
-int gp_num_memory_blocks = 32;
 
 /**
  * @brief: Initialize RAM as follows:
@@ -54,8 +53,6 @@ void memory_init(void)
   
 	/* these are all for the heap */
 	U32* bottom_bound;
-	U32* top_bound;
-	int size_memory_block ;
 	int iter;
 	
 	/* 4 bytes padding */
@@ -81,17 +78,11 @@ void memory_init(void)
 		--gp_stack; 
 	}
   
-	/* allocate memory for heap, not implemented yet*/
-	// init heap
-	
+	// init heap	
 	bottom_bound = (U32*)p_end;
-	top_bound = (U32*)((U32)gp_stack - 0x100*NUM_TEST_PROCS);
-	size_memory_block = ((U32)top_bound - (U32)bottom_bound)/gp_num_memory_blocks;
-
 	gp_memory_queue = init_mq(gp_memory_queue);
-	
-	for(iter = 0; iter < gp_num_memory_blocks; ++iter) {
-		U32* addr = (U32*)((U32)bottom_bound + iter*size_memory_block);
+	for(iter = 0; iter < NUM_MEMORY_BLOCKS; ++iter) {
+		U32* addr = (U32*)((U32)bottom_bound + iter*MEM_BLOCK_SIZE);
 		gp_memory_queue = push_mq(gp_memory_queue, addr);
 	}
 }
@@ -127,7 +118,7 @@ void *k_request_memory_block(void) {
 #endif /* ! DEBUG_0 */
 	returnAddr = top_mq(gp_memory_queue);
 	gp_memory_queue = pop_mq(gp_memory_queue);
-	if(returnAddr == NULL) {
+	if (returnAddr == NULL) {
 		//TODO: block until memory becomes available
 	}
 	return returnAddr;
