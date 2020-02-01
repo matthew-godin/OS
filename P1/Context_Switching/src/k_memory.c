@@ -49,7 +49,7 @@ MEMORY_QUEUE gp_memory_queue;
 
 void memory_init(void)
 {
-	U8 *p_end = (U8 *)&Image$$RW_IRAM1$$ZI$$Limit;
+	U8 *p_end = (U8 *)&Image$$RW_IRAM1$$ZI$$Limit; // bottom of available memory
 	int i;
   
 	/* these are all for the heap */
