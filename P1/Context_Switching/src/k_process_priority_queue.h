@@ -27,4 +27,10 @@ PROCESS_PRIORITY_QUEUE push_ppq(PROCESS_PRIORITY_QUEUE ppq,  PCB* pcb);
 PROCESS_PRIORITY_QUEUE pop_ppq(PROCESS_PRIORITY_QUEUE ppq);
 PCB* top_ppq(PROCESS_PRIORITY_QUEUE ppq);
 
+void init_pcb_queue(void);
+
+void push_pcb_queue(PCB* pcb);
+
+PCB* pop_pcb_queue(void);
+
 #endif
