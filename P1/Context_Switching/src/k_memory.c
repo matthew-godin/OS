@@ -16,6 +16,7 @@
 U32 *gp_stack; /* The last allocated stack low address. 8 bytes aligned */
                /* The first stack starts at the RAM high address */
 	       /* stack grows down. Fully decremental stack */
+		   // global pointer stack
 MEMORY_QUEUE gp_memory_queue;
 
 /**
