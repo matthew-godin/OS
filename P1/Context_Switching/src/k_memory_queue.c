@@ -6,7 +6,7 @@
 
 MEMORY_QUEUE push_mq(MEMORY_QUEUE q, U8* addr) {
 	if(q.tail != NULL) {
-		*(q.tail) = (*addr);
+		*(q.tail) = (U32)addr;
 	}
 	q.tail = addr;
 	*addr = NULL;

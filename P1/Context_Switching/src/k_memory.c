@@ -85,8 +85,8 @@ void memory_init(void)
 	// init heap
 	
 	bottom_bound = p_end;
-	top_bound = p_end;//TODO
-	size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks; //TODO issues with dividing
+	top_bound = (U8*)((U32)gp_stack - 0x100*NUM_TEST_PROCS);
+	size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks;
 
 	gp_memory_queue = init_mq(gp_memory_queue);
 	

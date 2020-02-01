@@ -54,9 +54,7 @@ void proc1(void)
 		if ( i != 0 && i%5 == 0 ) {
 			uart0_put_string("\n\r");
 			ret_val = release_processor();
-#ifdef DEBUG_0
 			printf("proc1: ret_val=%d\n", ret_val);
-#endif /* DEBUG_0 */
 		}
 		uart0_put_char('A' + i%26);
 		i++;
