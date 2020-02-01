@@ -52,7 +52,7 @@ void memory_init(void)
 	int i;
   
 	/* these are all for the heap */
-	U32* bottom_bound;
+	U32* bottom_bound; // bottom of the heap
 	int iter;
 	
 	/* 4 bytes padding */
