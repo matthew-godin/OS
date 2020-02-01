@@ -19,18 +19,21 @@ PROC_INIT g_test_procs[NUM_TEST_PROCS];
 
 void set_test_procs() {
 	int i;
-	for( i = 0; i < NUM_TEST_PROCS; i++ ) {
-		g_test_procs[i].m_pid=(U32)(i+1);
+	for( i = 1; i < NUM_TEST_PROCS; i++ ) { // User Procs
+		g_test_procs[i].m_pid=(U32)(i);
 		g_test_procs[i].m_priority=LOWEST;
 		g_test_procs[i].m_stack_size=0x100;
 	}
-  
-	g_test_procs[0].mpf_start_pc = &proc1;
-	g_test_procs[1].mpf_start_pc = &proc2;
-	g_test_procs[2].mpf_start_pc = &proc3;
-	g_test_procs[3].mpf_start_pc = &proc4;
-	g_test_procs[4].mpf_start_pc = &proc5;
-	g_test_procs[5].mpf_start_pc = &nullProc;
+	g_test_procs[1].mpf_start_pc = &proc1;
+	g_test_procs[2].mpf_start_pc = &proc2;
+	g_test_procs[3].mpf_start_pc = &proc3;
+	g_test_procs[4].mpf_start_pc = &proc4;
+	g_test_procs[5].mpf_start_pc = &proc5;
+
+	// Null Proc
+	g_test_procs[0].mpf_start_pc = &nullProc;
+	g_test_procs[0].m_priority = 4;
+	g_test_procs[0].m_stack_size=0x100;
 }
 
 /**

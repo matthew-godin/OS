@@ -4,28 +4,32 @@
 #include "printf.h"
 #endif /* ! DEBUG_0 */
 
-MEMORY_QUEUE push_mq(MEMORY_QUEUE q, U8* addr) {
+MEMORY_QUEUE push_mq(MEMORY_QUEUE q, U32* addr) {
 	if(q.tail != NULL) {
-		*(q.tail) = (U32)addr;
+		*(q.tail) = (U32)addr; //Update current tail to point to new tail
 	}
 	q.tail = addr;
 	*addr = NULL;
 
-	if(q.head == NULL) {
+	if(q.head == NULL) { //If pushed block is the first block of queue set head
 		q.head = addr;
 	}
 	return q;
 }
 
-MEMORY_QUEUE pop_mq(MEMORY_QUEUE q) { //if we pop that last block what happens?
+MEMORY_QUEUE pop_mq(MEMORY_QUEUE q) {
 	if(q.head == NULL) {
 		return q;
 	}
-	q.head = (U8*)*(q.head); // :/
+	q.head = (U32*)*(q.head); // Dereference the ptr at head to get the next mem block its pointing to
+
+	if (q.head == NULL) { // If head is null at this point we know the queue is empty so update tail to null
+		q.tail = NULL;
+	}
 	return q;
 }
 
-U8* top_mq(MEMORY_QUEUE q) { 
+U32* top_mq(MEMORY_QUEUE q) { 
 	return q.head;
 }
 

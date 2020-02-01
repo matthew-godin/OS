@@ -53,8 +53,8 @@ void memory_init(void)
 	int i;
   
 	/* these are all for the heap */
-	U8* bottom_bound;
-	U8* top_bound;
+	U32* bottom_bound;
+	U32* top_bound;
 	int size_memory_block ;
 	int iter;
 	
@@ -84,14 +84,14 @@ void memory_init(void)
 	/* allocate memory for heap, not implemented yet*/
 	// init heap
 	
-	bottom_bound = p_end;
-	top_bound = (U8*)((U32)gp_stack - 0x100*NUM_TEST_PROCS);
-	size_memory_block = (top_bound - bottom_bound)/gp_num_memory_blocks;
+	bottom_bound = (U32*)p_end;
+	top_bound = (U32*)((U32)gp_stack - 0x100*NUM_TEST_PROCS);
+	size_memory_block = ((U32)top_bound - (U32)bottom_bound)/gp_num_memory_blocks;
 
 	gp_memory_queue = init_mq(gp_memory_queue);
 	
 	for(iter = 0; iter < gp_num_memory_blocks; ++iter) {
-		U8* addr = bottom_bound + iter*size_memory_block;
+		U32* addr = (U32*)((U32)bottom_bound + iter*size_memory_block);
 		gp_memory_queue = push_mq(gp_memory_queue, addr);
 	}
 }
@@ -121,7 +121,7 @@ U32 *alloc_stack(U32 size_b)
 
 
 void *k_request_memory_block(void) {
-		U8* returnAddr;
+	U32* returnAddr;
 #ifdef DEBUG_0 
 	printf("k_request_memory_block: entering...\n");
 #endif /* ! DEBUG_0 */
@@ -138,6 +138,6 @@ int k_release_memory_block(void *p_mem_blk) {
 #ifdef DEBUG_0 
 	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
-	gp_memory_queue = push_mq(gp_memory_queue, (U8*)p_mem_blk);
+	gp_memory_queue = push_mq(gp_memory_queue, (U32*)p_mem_blk);
 	return 1; // TODO: not sure what to return 
 }

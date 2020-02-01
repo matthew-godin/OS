@@ -3,9 +3,9 @@
 <title>Static Call Graph - [N:\se350\OS\P1\Context_Switching\context_switching.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image N:\se350\OS\P1\Context_Switching\context_switching.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sat Feb 01 10:13:40 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sat Feb 01 11:46:03 2020
 <BR><P>
-<H3>Maximum Stack Usage =        168 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        176 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 k_rtx_init &rArr; process_init &rArr; push_ppq &rArr; push_pq
 <P>
@@ -488,7 +488,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[33]"></a>k_rtx_init</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, k_rtx_init.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = k_rtx_init &rArr; process_init &rArr; push_ppq &rArr; push_pq
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = k_rtx_init &rArr; process_init &rArr; push_ppq &rArr; push_pq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_init
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memory_init
@@ -522,8 +522,8 @@ Global Symbols
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
 </UL>
 
-<P><STRONG><a name="[53]"></a>process_init</STRONG> (Thumb, 280 bytes, Stack size 88 bytes, k_process.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = process_init &rArr; push_ppq &rArr; push_pq
+<P><STRONG><a name="[53]"></a>process_init</STRONG> (Thumb, 346 bytes, Stack size 96 bytes, k_process.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = process_init &rArr; push_ppq &rArr; push_pq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_test_procs
@@ -567,14 +567,14 @@ Global Symbols
 
 <P><STRONG><a name="[94]"></a>get_process_priority</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, k_process.o(.text), UNUSED)
 
-<P><STRONG><a name="[55]"></a>push_mq</STRONG> (Thumb, 36 bytes, Stack size 28 bytes, k_memory_queue.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = push_mq
+<P><STRONG><a name="[55]"></a>push_mq</STRONG> (Thumb, 32 bytes, Stack size 20 bytes, k_memory_queue.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = push_mq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_memory_block
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memory_init
 </UL>
 
-<P><STRONG><a name="[58]"></a>pop_mq</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, k_memory_queue.o(.text), UNUSED)
+<P><STRONG><a name="[58]"></a>pop_mq</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, k_memory_queue.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_request_memory_block
 </UL>
 
@@ -698,7 +698,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usr_proc.o(.text)
 </UL>
-<P><STRONG><a name="[5a]"></a>set_test_procs</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, usr_proc.o(.text))
+<P><STRONG><a name="[5a]"></a>set_test_procs</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, usr_proc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_init
 </UL>
 
