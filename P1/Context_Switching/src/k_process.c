@@ -182,6 +182,12 @@ int set_process_priority(int process_id, int priority) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
+			
+			if(process_id != gp_current_process->m_pid && /* if processor whose priority is  changed isn't the current processor */
+				 priority < gp_current_process->m_priority && /*if processor whose priority is changed has a more important priority (lower number)*/
+			   ((gp_pcbs[i])->m_state == RDY || (gp_pcbs[i])->m_state == NEW)) { //if processor whose priority is changed is in ready or new state
+					k_release_processor(); //TODO: not sure if we should just be release_processor()
+			}
 			return 1;
 		}
 	}
