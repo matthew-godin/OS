@@ -164,3 +164,420 @@ compiling k_process.c...
 linking...
 Program Size: Code=4612 RO-data=236 RW-data=32 ZI-data=888  
 "context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(44): warning:  #111-D: statement is unreachable
+src\usr_proc.c(44): warning:  #223-D: function "set_process_priority" declared implicitly
+linking...
+Program Size: Code=4212 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+compiling k_rtx_init.c...
+src\k_process.h(25): error:  #130: expected a "{"
+src\k_rtx_init.c(14): warning:  #12-D: parsing restarts here after previous syntax error
+src\k_rtx_init.c(24): warning:  #940-D: missing return statement at end of non-void function "k_set_process_priority"
+compiling k_memory.c...
+src\k_process.h(25): error:  #130: expected a "{"
+src\k_memory_queue.h(7): warning:  #12-D: parsing restarts here after previous syntax error
+src\k_memory_queue.h(10): warning:  #940-D: missing return statement at end of non-void function "k_set_process_priority"
+src\k_memory_queue.h(8): warning:  #177-D: variable "head" was declared but never referenced
+src\k_memory_queue.h(9): warning:  #177-D: variable "tail" was declared but never referenced
+src\k_memory_queue.h(10): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory_queue.h(12): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(12): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(13): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(13): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(14): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(15): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(15): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory.c(22): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory.c(125): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_memory.c(144): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling k_process.c...
+src\k_process.h(25): error:  #130: expected a "{"
+src\printf.h(116): error:  #757: variable "va_list" is not a type name
+src\k_process.c(48): warning:  #223-D: function "set_test_procs" declared implicitly
+src\k_process.c(49): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(71): warning:  #223-D: function "alloc_stack" declared implicitly
+src\k_process.c(71): error:  #513: a value of type "int" cannot be assigned to an entity of type "U32 *"
+src\k_process.c(126): warning:  #223-D: function "__rte" declared implicitly
+src\k_process.c(200): error:  #247: function "k_set_process_priority" has already been defined
+compiling k_procs.c...
+compiling usr_proc.c...
+src\usr_proc.c(44): error:  #54-D: too few arguments in invocation of macro "set_process_priority"
+src\usr_proc.c(44): warning:  #111-D: statement is unreachable
+src\usr_proc.c(44): error:  #29: expected an expression
+src\usr_proc.c(44): error:  #29: expected an expression
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+src\k_process.h(25): error:  #130: expected a "{"
+src\k_rtx_init.c(14): warning:  #12-D: parsing restarts here after previous syntax error
+src\k_rtx_init.c(24): warning:  #940-D: missing return statement at end of non-void function "k_set_process_priority"
+compiling k_memory.c...
+src\k_process.h(25): error:  #130: expected a "{"
+src\k_memory_queue.h(7): warning:  #12-D: parsing restarts here after previous syntax error
+src\k_memory_queue.h(10): warning:  #940-D: missing return statement at end of non-void function "k_set_process_priority"
+src\k_memory_queue.h(8): warning:  #177-D: variable "head" was declared but never referenced
+src\k_memory_queue.h(9): warning:  #177-D: variable "tail" was declared but never referenced
+src\k_memory_queue.h(10): error:  #77-D: this declaration has no storage class or type specifier
+src\k_memory_queue.h(12): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(12): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(13): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(13): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(14): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(15): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory_queue.h(15): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory.c(22): error:  #757: variable "MEMORY_QUEUE" is not a type name
+src\k_memory.c(125): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_memory.c(144): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling k_process.c...
+src\k_process.h(25): error:  #130: expected a "{"
+src\printf.h(116): error:  #757: variable "va_list" is not a type name
+src\k_process.c(48): warning:  #223-D: function "set_test_procs" declared implicitly
+src\k_process.c(49): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(71): warning:  #223-D: function "alloc_stack" declared implicitly
+src\k_process.c(71): error:  #513: a value of type "int" cannot be assigned to an entity of type "U32 *"
+src\k_process.c(126): warning:  #223-D: function "__rte" declared implicitly
+src\k_process.c(200): error:  #247: function "k_set_process_priority" has already been defined
+compiling usr_proc.c...
+src\usr_proc.c(44): warning:  #111-D: statement is unreachable
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+src\k_memory.c(125): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_memory.c(144): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling k_process.c...
+linking...
+Program Size: Code=4212 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+linking...
+Program Size: Code=4212 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(103): error:  #268: declaration may not appear after executable statement in block
+src\usr_proc.c(103): warning:  #185-D: dynamic initialization in unreachable code
+src\usr_proc.c(104): error:  #268: declaration may not appear after executable statement in block
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(103): error:  #268: declaration may not appear after executable statement in block
+src\usr_proc.c(103): warning:  #185-D: dynamic initialization in unreachable code
+src\usr_proc.c(104): error:  #268: declaration may not appear after executable statement in block
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(105): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4228 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(39): warning:  #550-D: variable "sheme" was set but never used
+src\usr_proc.c(55): warning:  #550-D: variable "sheme" was set but never used
+src\usr_proc.c(71): warning:  #550-D: variable "sheme" was set but never used
+src\usr_proc.c(114): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(39): warning:  #550-D: variable "sheme1" was set but never used
+src\usr_proc.c(55): warning:  #550-D: variable "sheme2" was set but never used
+src\usr_proc.c(71): warning:  #550-D: variable "sheme3" was set but never used
+src\usr_proc.c(114): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4280 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(39): warning:  #550-D: variable "sheme1" was set but never used
+src\usr_proc.c(56): warning:  #550-D: variable "sheme2" was set but never used
+src\usr_proc.c(72): warning:  #550-D: variable "sheme3" was set but never used
+src\usr_proc.c(115): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4284 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(39): warning:  #550-D: variable "sheme1" was set but never used
+src\usr_proc.c(40): warning:  #177-D: variable "le" was declared but never referenced
+src\usr_proc.c(57): warning:  #550-D: variable "sheme2" was set but never used
+src\usr_proc.c(73): warning:  #550-D: variable "sheme3" was set but never used
+src\usr_proc.c(116): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4284 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 5 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(117): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4324 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4324 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Context Switching SIM'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling printf.c...
+compiling main_svc.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+compiling k_procs.c...
+compiling usr_proc.c...
+src\usr_proc.c(117): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4324 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(117): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4324 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(117): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4328 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(117): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4360 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(117): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4360 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(127): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4408 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4408 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4408 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4408 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(127): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4412 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+linking...
+Program Size: Code=4412 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4412 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_process.c...
+compiling k_process_priority_queue.c...
+linking...
+Program Size: Code=4432 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_process.c...
+compiling k_process_priority_queue.c...
+linking...
+Program Size: Code=4452 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4452 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(128): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4472 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(128): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(127): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(32): error:  #20: identifier "proc6" is undefined
+src\usr_proc.c(127): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(127): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+linking...
+Program Size: Code=4464 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+linking...
+Program Size: Code=4436 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=4436 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling usr_proc.c...
+src\usr_proc.c(43): warning:  #223-D: function "assert" declared implicitly
+src\usr_proc.c(43): error:  #20: identifier "false" is undefined
+src\usr_proc.c(128): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(127): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=4468 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).

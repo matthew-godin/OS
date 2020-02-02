@@ -16,12 +16,12 @@ void push_pcb_queue(PCB* pcb) {
 	int i;
 
 	if (pcb->m_state != NEW && pcb->m_state != RDY) {
-		printf("ERROR: tried to push a non ready pcb");
+		printf("ERROR: tried to push a non ready pcb\n");
 		return;
 	}
 
 	if (gp_pcb_queue[NUM_TOTAL_PROCS-1] != NULL) { // Should never hit here
-		printf("ERROR: tried to push more processes than exist");
+		printf("ERROR: tried to push more processes than exist\n");
 		return;
 	}
 	gp_pcb_queue[NUM_TOTAL_PROCS-1] = pcb;
@@ -49,16 +49,22 @@ PCB* pop_pcb_queue(void) {
 
 void updated_pcb_priority(int pid) {
 	int i;
+	int found = 0;
 	PCB* updatedPCB;
 
 	// Find the updated PCB
 	for (i = 0; i < NUM_TOTAL_PROCS; ++i) {
 		if (gp_pcb_queue[i]->m_pid == pid) {
 			updatedPCB = gp_pcb_queue[i];
+			found = 1;
 			break;
 		}
 	}
-
+	
+	if (!found) {
+		return;
+	}
+	
 	// "Remove" pcb from array
 	for (; i < NUM_TOTAL_PROCS-1; ++i) {
 		gp_pcb_queue[i] = gp_pcb_queue[i+1];
@@ -81,19 +87,19 @@ void push_pcb_waiting_queue(PCB* pcb) {
 	int i;
 
 	if (pcb->m_state != WAITING) {
-		printf("ERROR: tried to push a non waitin pcb to waiting queue");
+		printf("ERROR: tried to push a non waitin pcb to waiting queue\n");
 		return;
 	}
 
 	if (gp_pcb_waiting_queue[NUM_TOTAL_PROCS-1] != NULL) { // Should never hit here
-		printf("ERROR: tried to push more processes than exist");
+		printf("ERROR: tried to push more processes than exist\n");
 		return;
 	}
 	gp_pcb_waiting_queue[NUM_TOTAL_PROCS-1] = pcb; //push to end
 
 	for (i = NUM_TOTAL_PROCS-1; i >= 1; --i) { //bubble down the queue
 		if (gp_pcb_waiting_queue[i-1] == NULL || gp_pcb_waiting_queue[i-1]->m_priority > gp_pcb_waiting_queue[i]->m_priority) {
-			temp = gp_pcb_queue[i];
+			temp = gp_pcb_waiting_queue[i];
 			gp_pcb_waiting_queue[i] = gp_pcb_waiting_queue[i-1];
 			gp_pcb_waiting_queue[i-1] = temp;
 		} else {
@@ -113,6 +119,7 @@ PCB* pop_pcb_waiting_queue(void) {
 }
 
 void updated_pcb_waiting_priority(int pid) {
+	int found = 0;
 	int i;
 	PCB* updatedPCB;
 
@@ -120,8 +127,13 @@ void updated_pcb_waiting_priority(int pid) {
 	for (i = 0; i < NUM_TOTAL_PROCS; ++i) {
 		if (gp_pcb_waiting_queue[i]->m_pid == pid) {
 			updatedPCB = gp_pcb_queue[i];
+			found = 1;
 			break;
 		}
+	}
+
+	if (!found) {
+		return;
 	}
 
 	// "Remove" pcb from array

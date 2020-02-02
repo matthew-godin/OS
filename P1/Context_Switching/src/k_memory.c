@@ -121,7 +121,7 @@ void *k_request_memory_block(void) {
 	returnAddr = top_mq(gp_memory_queue);
 	gp_memory_queue = pop_mq(gp_memory_queue);
 	
-	while(returnAddr == NULL) {
+	while (returnAddr == NULL) { //This could be an if as long as we return and there is memory available to us
 		k_release_blocked_processor(); // call release processor to give up function
 		returnAddr = top_mq(gp_memory_queue);
 		gp_memory_queue = pop_mq(gp_memory_queue);

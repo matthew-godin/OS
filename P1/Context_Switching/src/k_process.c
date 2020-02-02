@@ -197,7 +197,7 @@ int k_release_blocked_processor(void) {
 }
 
 
-int set_process_priority(int process_id, int priority) {
+int k_set_process_priority(int process_id, int priority) {
 	int i;
 	//TODO: a process cannot change the priority of the i-process
 	if (process_id == 0 && priority != 4) {
@@ -210,6 +210,7 @@ int set_process_priority(int process_id, int priority) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
+			updated_pcb_waiting_priority(gp_pcbs[i]->m_pid);
 			
 			if(process_id != gp_current_process->m_pid && /* if processor whose priority is  changed isn't the current processor */
 				 priority < gp_current_process->m_priority && /*if processor whose priority is changed has a more important priority (lower number)*/
@@ -222,7 +223,7 @@ int set_process_priority(int process_id, int priority) {
 	return 0;
 }
 
-int get_process_priority(int process_id) {
+int k_get_process_priority(int process_id) {
 	int i;
 	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
