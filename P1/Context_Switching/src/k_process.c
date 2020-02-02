@@ -26,11 +26,12 @@
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
-extern PCB* gp_pcb_queue[NUM_TEST_PROCS];
+extern PCB* gp_pcb_queue[NUM_TOTAL_PROCS];
 
 /* process initialization table */
-PROC_INIT g_proc_table[NUM_TEST_PROCS];
+PROC_INIT g_proc_table[NUM_TOTAL_PROCS];
 extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
+extern PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
 
 /**
  * @biref: initialize all processes in the system
@@ -39,20 +40,29 @@ extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
 void process_init() 
 {
 	int i;
+	int j;
 	U32 *sp;
 	PCB* temp;
   
         /* fill out the initialization table */
 	set_test_procs();
+	set_kernel_procs();
 	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
 		g_proc_table[i].m_pid = g_test_procs[i].m_pid;
 		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
 		g_proc_table[i].m_stack_size = g_test_procs[i].m_stack_size;
 		g_proc_table[i].mpf_start_pc = g_test_procs[i].mpf_start_pc;
 	}
+	for ( i = 0; i < NUM_KERNEL_PROCS; i++ ) {
+		j = NUM_TEST_PROCS + i;
+		g_proc_table[j].m_pid = g_kernel_procs[i].m_pid;
+		g_proc_table[j].m_priority = g_kernel_procs[i].m_priority;
+		g_proc_table[j].m_stack_size = g_kernel_procs[i].m_stack_size;
+		g_proc_table[j].mpf_start_pc = g_kernel_procs[i].mpf_start_pc;
+	}
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
-	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		int j;
 		(gp_pcbs[i])->m_pid = (g_proc_table[i]).m_pid;
 		(gp_pcbs[i])->m_priority = (g_proc_table[i]).m_priority;
@@ -67,12 +77,12 @@ void process_init()
 		(gp_pcbs[i])->mp_sp = sp;
 	}
 	
-	for (i = 0; i < NUM_TEST_PROCS; ++i) {
+	for (i = 0; i < NUM_TOTAL_PROCS; ++i) {
 		temp = gp_pcbs[i];
 	}
 
 	init_pcb_queue();
-	for(i=0; i < NUM_TEST_PROCS; ++i) {
+	for(i=0; i < NUM_TOTAL_PROCS; ++i) {
 		push_pcb_queue(gp_pcbs[i]); // add all pcbs to process priority queue
 	}
 }
@@ -168,7 +178,7 @@ int set_process_priority(int process_id, int priority) {
 	if(process_id != 0 && priority ==4) {
 		return 0;
 	}
-	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
@@ -180,7 +190,7 @@ int set_process_priority(int process_id, int priority) {
 
 int get_process_priority(int process_id) {
 	int i;
-	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
 			return (gp_pcbs[i])->m_priority;
 		}
