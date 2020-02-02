@@ -8,16 +8,134 @@ Project File Date:  02/01/2020
 
 <h2>Output:</h2>
 Build target 'Context Switching SIM'
-compiling main_svc.c...
 compiling k_rtx_init.c...
 compiling k_memory.c...
-compiling usr_proc.c...
-linking...
-context_switching.axf: Error: L6218E: Undefined symbol g_kernel_procs (referred from k_process.o).
-context_switching.axf: Error: L6218E: Undefined symbol set_kernel_procs (referred from k_process.o).
+compiling k_process.c...
+src\k_process.c(50): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(46): warning:  #550-D: variable "temp" was set but never used
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(88): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(107): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(115): error:  #247: function "updated_pcb_priority" has already been defined
+src\k_process_priority_queue.c(121): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(129): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(131): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
 Target not created
 Build target 'Context Switching SIM'
-compiling k_procs.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(75): error:  #20: identifier "gp_waiting_pcb_queue" is undefined
+src\k_process_priority_queue.c(115): error:  #247: function "updated_pcb_priority" has already been defined
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
 linking...
-Program Size: Code=4156 RO-data=236 RW-data=32 ZI-data=864  
+Program Size: Code=4496 RO-data=236 RW-data=32 ZI-data=888  
 "context_switching.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(123): error:  #20: identifier "gp_current_process" is undefined
+src\k_memory.c(124): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(137): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(138): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+src\k_memory.c(139): error:  #136: struct "pcb" has no field "state"
+src\k_memory.c(140): warning:  #223-D: function "push_pcb_queue" declared implicitly
+compiling k_process.c...
+src\k_process.c(50): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(46): warning:  #550-D: variable "temp" was set but never used
+compiling k_process_priority_queue.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(123): error:  #20: identifier "gp_current_process" is undefined
+src\k_memory.c(124): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(137): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(138): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+src\k_memory.c(139): error:  #136: struct "pcb" has no field "state"
+src\k_memory.c(140): warning:  #223-D: function "push_pcb_queue" declared implicitly
+compiling k_process.c...
+src\k_process.c(51): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(47): warning:  #550-D: variable "temp" was set but never used
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(124): error:  #136: struct "pcb" has no field "state"
+src\k_memory.c(125): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(127): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(139): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(139): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+src\k_memory.c(140): error:  #136: struct "pcb" has no field "state"
+src\k_memory.c(141): warning:  #223-D: function "push_pcb_queue" declared implicitly
+compiling k_process.c...
+src\k_process.c(50): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(46): warning:  #550-D: variable "temp" was set but never used
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(124): error:  #136: struct "pcb" has no field "state"
+src\k_memory.c(125): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(127): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(139): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(139): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+src\k_memory.c(140): error:  #136: struct "pcb" has no field "state"
+src\k_memory.c(141): warning:  #223-D: function "push_pcb_queue" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(125): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(127): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(139): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(139): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+src\k_memory.c(141): warning:  #223-D: function "push_pcb_queue" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(125): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(127): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(139): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(139): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
+src\k_memory.c(141): warning:  #223-D: function "push_pcb_queue" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(125): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(127): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(139): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(139): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
+src\k_memory.c(141): warning:  #223-D: function "push_pcb_queue" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(125): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+src\k_memory.c(127): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_memory.c(138): warning:  #223-D: function "pcb_waiting_queue_is_empty" declared implicitly
+src\k_memory.c(139): warning:  #223-D: function "pop_pcb_waiting_queue" declared implicitly
+src\k_memory.c(139): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
+src\k_memory.c(141): warning:  #223-D: function "push_pcb_queue" declared implicitly
+compiling k_process.c...
+src\k_process_priority_queue.h(22): warning:  #1295-D: Deprecated declaration pcb_waiting_queue_is_empty - give arg types
+src\k_process.c(50): warning:  #223-D: function "set_kernel_procs" declared implicitly
+src\k_process.c(46): warning:  #550-D: variable "temp" was set but never used
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.h(22): warning:  #1295-D: Deprecated declaration pcb_waiting_queue_is_empty - give arg types
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(10): error:  #5: cannot open source input file "k_prcoess_priority_queue.h": No such file or directory
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_process_priority_queue.h(22): warning:  #1295-D: Deprecated declaration pcb_waiting_queue_is_empty - give arg types
+src\k_memory.c(128): warning:  #223-D: function "k_release_processor" declared implicitly
+linking...
+Program Size: Code=4572 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).

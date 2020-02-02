@@ -7,6 +7,7 @@
 
 #include "k_memory.h"
 #include "k_memory_queue.h"
+#include "k_process_priority_queue.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -18,6 +19,7 @@ U32 *gp_stack; /* The last allocated stack low address. 8 bytes aligned */
 	       /* stack grows down. Fully decremental stack */
 		   // global pointer stack
 MEMORY_QUEUE gp_memory_queue;
+extern PCB* gp_current_process;
 
 /**
  * @brief: Initialize RAM as follows:
@@ -119,17 +121,25 @@ void *k_request_memory_block(void) {
 #endif /* ! DEBUG_0 */
 	returnAddr = top_mq(gp_memory_queue);
 	gp_memory_queue = pop_mq(gp_memory_queue);
-	if (returnAddr == NULL) {
-		//TODO: block until memory becomes available
+	if (returnAddr == NULL) { //no more memory available for processor to request
+		gp_current_process->m_state = WAITING; // change state  of current process to waiting
+		push_pcb_waiting_queue(gp_current_process); // put current process on pcb_waiting_queue
+		//TODO: set back sp
+		k_release_processor(); // call release processor to give up function
 	}
 	return returnAddr;
 }
 
 int k_release_memory_block(void *p_mem_blk) {
-	
+	PCB* unblocked_pcb ;
 #ifdef DEBUG_0 
 	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
 	gp_memory_queue = push_mq(gp_memory_queue, (U32*)p_mem_blk);
+	if(!pcb_waiting_queue_is_empty()) { //if something in waiting, then unblock on waiting queue
+		unblocked_pcb = pop_pcb_waiting_queue(); //pop pcb from waiting queue;
+		unblocked_pcb->m_state = RDY; //set unblocked pcb state to ready
+		push_pcb_queue(unblocked_pcb); //push pcb to priority queue
+	}
 	return 1; // TODO: not sure what to return 
 }

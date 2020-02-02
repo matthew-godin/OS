@@ -27,6 +27,7 @@
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
 extern PCB* gp_pcb_queue[NUM_TOTAL_PROCS];
+extern PCB* gp_pcb_waiting_queue[NUM_TOTAL_PROCS];
 
 /* process initialization table */
 PROC_INIT g_proc_table[NUM_TOTAL_PROCS];
@@ -96,6 +97,7 @@ void process_init()
 
 PCB *scheduler(void)
 {
+	
 	PCB* next_pcb;
 	
 	if(gp_current_process != NULL) {
@@ -117,13 +119,19 @@ PCB *scheduler(void)
  */
 int process_switch(PCB *p_pcb_old) 
 {
+	//process_switch ALWAYS sets state of p_pcb_old to RDY
 	PROC_STATE_E state;
 	
 	state = gp_current_process->m_state;
 
 	if (state == NEW) {
 		if (gp_current_process != p_pcb_old && p_pcb_old->m_state != NEW) {
-			p_pcb_old->m_state = RDY;
+			
+			//TODO: check with group to make sure this works
+			if(p_pcb_old->m_state != WAITING) {
+					p_pcb_old->m_state = RDY; //don't overwrite waiting state
+			}
+			
 			p_pcb_old->mp_sp = (U32 *) __get_MSP();
 		}
 		gp_current_process->m_state = RUN;
@@ -134,8 +142,13 @@ int process_switch(PCB *p_pcb_old)
 	/* The following will only execute if the if block above is FALSE */
 
 	if (gp_current_process != p_pcb_old) {
-		if (state == RDY){ 		
-			p_pcb_old->m_state = RDY; 
+		if (state == RDY){ 	
+			
+			//TODO: check with group to make sure this works
+			if(p_pcb_old->m_state != WAITING) {
+					p_pcb_old->m_state = RDY; //don't overwrite waiting state
+			}
+			
 			p_pcb_old->mp_sp = (U32 *) __get_MSP(); // save the old process's sp
 			gp_current_process->m_state = RUN;
 			__set_MSP((U32) gp_current_process->mp_sp); //switch to the new proc's stack    
