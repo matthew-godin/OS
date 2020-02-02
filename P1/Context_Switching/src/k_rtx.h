@@ -22,7 +22,7 @@
 
 #define NUM_KERNEL_PROCS 1
 
-#define NUM_TOTAL_PROCS NUM_TEST_PROCS + NUM_KERNEL_PROCS
+#define NUM_TOTAL_PROCS 7
 
 // some buffer space for the null process
 #define NULL_PROC_STACK 0x0100

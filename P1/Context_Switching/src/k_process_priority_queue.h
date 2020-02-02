@@ -19,6 +19,6 @@ PCB* pop_pcb_waiting_queue(void);
 
 void updated_pcb_waiting_priority(int pid);
 
-int pcb_waiting_queue_is_empty();
+int pcb_waiting_queue_is_empty(void);
 
 #endif

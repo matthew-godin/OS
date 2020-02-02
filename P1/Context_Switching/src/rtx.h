@@ -10,7 +10,7 @@
 #define NULL 0
 #define NUM_TEST_PROCS 6
 #define NUM_KERNEL_PROCS 1
-#define NUM_TOTAL_PROCS NUM_TEST_PROCS + NUM_KERNEL_PROCS
+#define NUM_TOTAL_PROCS 7
 /* Process Priority. The bigger the number is, the lower the priority is*/
 #define HIGH    0
 #define MEDIUM  1

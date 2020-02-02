@@ -25,5 +25,6 @@ int k_release_process(void);           /* kernel release_process function */
 extern U32 *alloc_stack(U32 size_b);   /* allocate stack for a process */
 extern void __rte(void);               /* pop exception stack frame */
 extern void set_test_procs(void);      /* test process initial set up */
+extern void set_kernel_procs(void);      /* kernel process initial set up */
 
 #endif /* ! K_PROCESS_H_ */

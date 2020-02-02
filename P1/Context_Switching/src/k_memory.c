@@ -6,6 +6,7 @@
  */
 
 #include "k_memory.h"
+#include "k_process.h"
 #include "k_memory_queue.h"
 #include "k_process_priority_queue.h"
 
@@ -38,7 +39,7 @@ extern PCB* gp_current_process;
           |        PCB 1              |
           |---------------------------|
           |        PCB pointers       |
-          |---------------------------|<--- gp_pcbs
+          |---------------------------|<--- gp_pcbs 0x39c
           |        Padding            |
           |---------------------------|  
           |Image$$RW_IRAM1$$ZI$$Limit |
@@ -63,9 +64,9 @@ void memory_init(void)
 
 	/* allocate memory for pcb pointers   */
 	gp_pcbs = (PCB **)p_end;
-	p_end += NUM_TEST_PROCS * sizeof(PCB *);
+	p_end += NUM_TOTAL_PROCS * sizeof(PCB *);
   
-	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		gp_pcbs[i] = (PCB *)p_end;
 		p_end += sizeof(PCB); 
 	}
@@ -119,12 +120,13 @@ void *k_request_memory_block(void) {
 #endif /* ! DEBUG_0 */
 	returnAddr = top_mq(gp_memory_queue);
 	gp_memory_queue = pop_mq(gp_memory_queue);
-	if (returnAddr == NULL) { //no more memory available for processor to request
-		gp_current_process->m_state = WAITING; // change state  of current process to waiting
-		push_pcb_waiting_queue(gp_current_process); // put current process on pcb_waiting_queue
-		//TODO: set back sp OR rerequest memory after k_release_processor
-		k_release_processor(); // call release processor to give up function
+	
+	while(returnAddr == NULL) {
+		k_release_blocked_processor(); // call release processor to give up function
+		returnAddr = top_mq(gp_memory_queue);
+		gp_memory_queue = pop_mq(gp_memory_queue);
 	}
+
 	return returnAddr;
 }
 
@@ -134,6 +136,7 @@ int k_release_memory_block(void *p_mem_blk) {
 	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
 	gp_memory_queue = push_mq(gp_memory_queue, (U32*)p_mem_blk);
+	
 	if(!pcb_waiting_queue_is_empty()) { //if something in waiting, then unblock on waiting queue
 		unblocked_pcb = pop_pcb_waiting_queue(); //pop pcb from waiting queue;
 		unblocked_pcb->m_state = RDY; //set unblocked pcb state to ready

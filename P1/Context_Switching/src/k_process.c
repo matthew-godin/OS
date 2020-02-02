@@ -43,9 +43,8 @@ void process_init()
 	int i;
 	int j;
 	U32 *sp;
-	PCB* temp;
   
-        /* fill out the initialization table */
+  /* fill out the initialization table */
 	set_test_procs();
 	set_kernel_procs();
 	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
@@ -77,15 +76,15 @@ void process_init()
 		}
 		(gp_pcbs[i])->mp_sp = sp;
 	}
-	
-	for (i = 0; i < NUM_TOTAL_PROCS; ++i) {
-		temp = gp_pcbs[i];
-	}
 
+	// Initialize ready process queue
 	init_pcb_queue();
 	for(i=0; i < NUM_TOTAL_PROCS; ++i) {
 		push_pcb_queue(gp_pcbs[i]); // add all pcbs to process priority queue
 	}
+	
+	// Initialize waiting queue for mem-blocked queue
+	init_pcb_waiting_queue();
 }
 
 /*@brief: scheduler, pick the pid of the next to run process
@@ -96,14 +95,8 @@ void process_init()
  */
 
 PCB *scheduler(void)
-{
-	
+{	
 	PCB* next_pcb;
-	
-	if(gp_current_process != NULL) {
-		gp_current_process->m_state = RDY; // sets state of old process to ready before pushing to pcb_queue
-		push_pcb_queue(gp_current_process);
-	}
 	next_pcb = pop_pcb_queue();
 	
 	return next_pcb;
@@ -126,12 +119,6 @@ int process_switch(PCB *p_pcb_old)
 
 	if (state == NEW) {
 		if (gp_current_process != p_pcb_old && p_pcb_old->m_state != NEW) {
-			
-			//TODO: check with group to make sure this works
-			if(p_pcb_old->m_state != WAITING) {
-					p_pcb_old->m_state = RDY; //don't overwrite waiting state
-			}
-			
 			p_pcb_old->mp_sp = (U32 *) __get_MSP();
 		}
 		gp_current_process->m_state = RUN;
@@ -143,12 +130,6 @@ int process_switch(PCB *p_pcb_old)
 
 	if (gp_current_process != p_pcb_old) {
 		if (state == RDY){ 	
-			
-			//TODO: check with group to make sure this works
-			if(p_pcb_old->m_state != WAITING) {
-					p_pcb_old->m_state = RDY; //don't overwrite waiting state
-			}
-			
 			p_pcb_old->mp_sp = (U32 *) __get_MSP(); // save the old process's sp
 			gp_current_process->m_state = RUN;
 			__set_MSP((U32) gp_current_process->mp_sp); //switch to the new proc's stack    
@@ -166,21 +147,55 @@ int process_switch(PCB *p_pcb_old)
  */
 int k_release_processor(void)
 {
-	PCB *p_pcb_old = NULL;
+	PCB *p_pcb_old = gp_current_process;
 	
-	p_pcb_old = gp_current_process;
+	if(p_pcb_old != NULL) {
+		p_pcb_old->m_state = RDY; // sets state of old process to ready before pushing to pcb_queue
+		push_pcb_queue(p_pcb_old); // since the old process is eligible to be chosen and run again, push to ready queue
+	}
+	
 	gp_current_process = scheduler(); // sets gp_current_process to newly selected process based on priority
 	
-	if ( gp_current_process == NULL  ) { // may never hit this condition
+	if ( gp_current_process == NULL  ) { // should never hit this condition, as long as we push p_pcb_old to the ready queue, should never get NULL from scheduler
 		gp_current_process = p_pcb_old; // revert back to the old process
+		gp_current_process->m_state = RUN;
 		return RTX_ERR;
 	}
-    if ( p_pcb_old == NULL ) {
+  if ( p_pcb_old == NULL ) {
 		p_pcb_old = gp_current_process;
 	}
 	process_switch(p_pcb_old);
 	return RTX_OK;
 }
+
+/**
+ * @brief 
+ * @return RTX_ERR on error and zero on success
+ * PRE: current process is blocked on memory
+ * POST: gp_current_process gets updated to next to run process
+ */
+int k_release_blocked_processor(void) {
+	PCB *p_pcb_blocked = gp_current_process;
+	
+	if(p_pcb_blocked != NULL) { 
+		p_pcb_blocked->m_state = WAITING; // change blocked process's state to waiting
+		push_pcb_waiting_queue(p_pcb_blocked); // put blocked process on pcb_waiting_queue
+	} else { //could happen if we call k_release_blocked_processor on set up
+		return RTX_ERR;
+	}
+	
+	gp_current_process = scheduler(); 
+	
+	if ( gp_current_process == NULL  ) { // should never hit this condition, as long as null process is ready and not blocked on memory
+		gp_current_process = p_pcb_blocked; // revert back to the old process, which is still blocked
+		gp_current_process->m_state = RUN;
+		return RTX_ERR;
+	}
+	
+	process_switch(p_pcb_blocked);
+	return RTX_OK;
+}
+
 
 int set_process_priority(int process_id, int priority) {
 	int i;
@@ -199,7 +214,7 @@ int set_process_priority(int process_id, int priority) {
 			if(process_id != gp_current_process->m_pid && /* if processor whose priority is  changed isn't the current processor */
 				 priority < gp_current_process->m_priority && /*if processor whose priority is changed has a more important priority (lower number)*/
 			   ((gp_pcbs[i])->m_state == RDY || (gp_pcbs[i])->m_state == NEW)) { //if processor whose priority is changed is in ready or new state
-					k_release_processor(); //TODO: not sure if we should just be release_processor()
+					k_release_processor(); 
 			}
 			return 1;
 		}
