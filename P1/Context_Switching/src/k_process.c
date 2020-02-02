@@ -40,6 +40,7 @@ void process_init()
 {
 	int i;
 	U32 *sp;
+	PCB* temp;
   
         /* fill out the initialization table */
 	set_test_procs();
@@ -64,6 +65,10 @@ void process_init()
 			*(--sp) = 0x0;
 		}
 		(gp_pcbs[i])->mp_sp = sp;
+	}
+	
+	for (i = 0; i < NUM_TEST_PROCS; ++i) {
+		temp = gp_pcbs[i];
 	}
 
 	init_pcb_queue();
