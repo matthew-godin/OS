@@ -2,4 +2,4 @@
 -I c:\Software\Keil\ARM\RV31\INC 
 -I c:\Software\Keil\ARM\CMSIS\Include 
 -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--o "k_process.o" --omf_browse "k_process.crf" --depend "k_process.d" "src\k_process.c"
+-o "printf.o" --omf_browse "printf.crf" --depend "printf.d" "src\printf.c"

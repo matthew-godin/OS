@@ -71,8 +71,8 @@ void memory_init(void)
 		p_end += sizeof(PCB); 
 	}
 #ifdef DEBUG_0  
-	printf("gp_pcbs[0] = 0x%x \n", gp_pcbs[0]);
-	printf("gp_pcbs[1] = 0x%x \n", gp_pcbs[1]);
+	printf("gp_pcbs[0] = 0x%x \r\n", gp_pcbs[0]);
+	printf("gp_pcbs[1] = 0x%x \r\n", gp_pcbs[1]);
 #endif
 	
 	/* prepare for alloc_stack() to allocate memory for stacks */
@@ -133,7 +133,7 @@ void *k_request_memory_block(void) {
 int k_release_memory_block(void *p_mem_blk) {
 	PCB* unblocked_pcb ;
 #ifdef DEBUG_0 
-	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
+	printf("k_release_memory_block: releasing block @ 0x%x\r\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
 	gp_memory_queue = push_mq(gp_memory_queue, (U32*)p_mem_blk);
 	

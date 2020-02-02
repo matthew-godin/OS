@@ -11,6 +11,8 @@
 #define NUM_TEST_PROCS 6
 #define NUM_KERNEL_PROCS 1
 #define NUM_TOTAL_PROCS 7
+#define NUM_MEMORY_BLOCKS 8
+#define MEM_BLOCK_SIZE 128
 /* Process Priority. The bigger the number is, the lower the priority is*/
 #define HIGH    0
 #define MEDIUM  1

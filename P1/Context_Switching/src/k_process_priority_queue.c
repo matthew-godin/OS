@@ -16,12 +16,12 @@ void push_pcb_queue(PCB* pcb) {
 	int i;
 
 	if (pcb->m_state != NEW && pcb->m_state != RDY) {
-		printf("ERROR: tried to push a non ready pcb\n");
+		printf("ERROR: tried to push a non ready pcb\r\n");
 		return;
 	}
 
 	if (gp_pcb_queue[NUM_TOTAL_PROCS-1] != NULL) { // Should never hit here
-		printf("ERROR: tried to push more processes than exist\n");
+		printf("ERROR: tried to push more processes than exist\r\n");
 		return;
 	}
 	gp_pcb_queue[NUM_TOTAL_PROCS-1] = pcb;
@@ -87,12 +87,12 @@ void push_pcb_waiting_queue(PCB* pcb) {
 	int i;
 
 	if (pcb->m_state != WAITING) {
-		printf("ERROR: tried to push a non waitin pcb to waiting queue\n");
+		printf("ERROR: tried to push a non waiting pcb to waiting queue\r\n");
 		return;
 	}
 
 	if (gp_pcb_waiting_queue[NUM_TOTAL_PROCS-1] != NULL) { // Should never hit here
-		printf("ERROR: tried to push more processes than exist\n");
+		printf("ERROR: tried to push more processes than exist\r\n");
 		return;
 	}
 	gp_pcb_waiting_queue[NUM_TOTAL_PROCS-1] = pcb; //push to end
@@ -126,7 +126,7 @@ void updated_pcb_waiting_priority(int pid) {
 	// Find the updated PCB
 	for (i = 0; i < NUM_TOTAL_PROCS; ++i) {
 		if (gp_pcb_waiting_queue[i]->m_pid == pid) {
-			updatedPCB = gp_pcb_queue[i];
+			updatedPCB = gp_pcb_waiting_queue[i];
 			found = 1;
 			break;
 		}
