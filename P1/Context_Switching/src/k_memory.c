@@ -112,8 +112,6 @@ U32 *alloc_stack(U32 size_b)
 	return sp;
 }
 
-
-
 void *k_request_memory_block(void) {
 	U32* returnAddr;
 #ifdef DEBUG_0 
@@ -124,7 +122,7 @@ void *k_request_memory_block(void) {
 	if (returnAddr == NULL) { //no more memory available for processor to request
 		gp_current_process->m_state = WAITING; // change state  of current process to waiting
 		push_pcb_waiting_queue(gp_current_process); // put current process on pcb_waiting_queue
-		//TODO: set back sp
+		//TODO: set back sp OR rerequest memory after k_release_processor
 		k_release_processor(); // call release processor to give up function
 	}
 	return returnAddr;
@@ -140,6 +138,7 @@ int k_release_memory_block(void *p_mem_blk) {
 		unblocked_pcb = pop_pcb_waiting_queue(); //pop pcb from waiting queue;
 		unblocked_pcb->m_state = RDY; //set unblocked pcb state to ready
 		push_pcb_queue(unblocked_pcb); //push pcb to priority queue
+		k_release_processor(); //gives up processor to potentially higher priority which just became unblocked, this is also preemption
 	}
 	return 1; // TODO: not sure what to return 
 }

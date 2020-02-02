@@ -139,3 +139,10 @@ src\k_memory.c(128): warning:  #223-D: function "k_release_processor" declared i
 linking...
 Program Size: Code=4572 RO-data=236 RW-data=32 ZI-data=888  
 "context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_process_priority_queue.h(22): warning:  #1295-D: Deprecated declaration pcb_waiting_queue_is_empty - give arg types
+src\k_memory.c(128): warning:  #223-D: function "k_release_processor" declared implicitly
+linking...
+Program Size: Code=4572 RO-data=236 RW-data=32 ZI-data=888  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).
