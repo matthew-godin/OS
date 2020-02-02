@@ -1,5 +1,7 @@
 #include "k_process_priority_queue.h"
+#ifdef DEBUG_0
 #include "printf.h"
+#endif
 
 PCB* gp_pcb_queue[NUM_TOTAL_PROCS];
 PCB* gp_pcb_waiting_queue[NUM_TOTAL_PROCS];
@@ -16,12 +18,16 @@ void push_pcb_queue(PCB* pcb) {
 	int i;
 
 	if (pcb->m_state != NEW && pcb->m_state != RDY) {
+		#ifdef DEBUG_0
 		printf("ERROR: tried to push a non ready pcb\r\n");
+		#endif
 		return;
 	}
 
 	if (gp_pcb_queue[NUM_TOTAL_PROCS-1] != NULL) { // Should never hit here
+		#ifdef DEBUG_0
 		printf("ERROR: tried to push more processes than exist\r\n");
+		#endif
 		return;
 	}
 	gp_pcb_queue[NUM_TOTAL_PROCS-1] = pcb;
@@ -87,12 +93,16 @@ void push_pcb_waiting_queue(PCB* pcb) {
 	int i;
 
 	if (pcb->m_state != WAITING) {
+		#ifdef DEBUG_0
 		printf("ERROR: tried to push a non waiting pcb to waiting queue\r\n");
+		#endif
 		return;
 	}
 
 	if (gp_pcb_waiting_queue[NUM_TOTAL_PROCS-1] != NULL) { // Should never hit here
+		#ifdef DEBUG_0
 		printf("ERROR: tried to push more processes than exist\r\n");
+		#endif
 		return;
 	}
 	gp_pcb_waiting_queue[NUM_TOTAL_PROCS-1] = pcb; //push to end

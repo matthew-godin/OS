@@ -47,18 +47,26 @@ void proc1(void) {
 
 	lastRunProc = 1;
 
+	#ifdef DEBUG_0
 	printf("Starting process 1\r\n");
-	printf("Setting process 2 priority to 1: \r\n");
+	printf("Setting process 2 priority to 1 \r\n");
+	#endif
 	set_process_priority(2, 1);
 	priority = get_process_priority(2);
+	#ifdef DEBUG_0
 	printf("Process 2 priority = %d \r\n", priority);
+	#endif
 
 	// Should jump to proc2
-	printf("Setting proc1 (running) to priority 2\r\n");
+	#ifdef DEBUG_0
+	printf("Setting process 1 (current process) to priority 2\r\n");
+	#endif
 	set_process_priority(1, 2);
 
+	#ifdef DEBUG_0
 	printf("Have returned to process 1\r\n");
 	printf("Checking last process run was process 3\r\n");
+	#endif
 	if (lastRunProc != 3) {
 		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
 	}
@@ -78,8 +86,10 @@ void proc2(void)
 	U32* mem_addresses[NUM_MEMORY_BLOCKS];
 	int i;
 
+	#ifdef DEBUG_0
 	printf("Starting process 2\r\n");
 	printf("Checking last process run was process 1\r\n");
+	#endif
 	if (lastRunProc == 1) {
 		uart0_put_string("G024_test: TEST 1 OK\r\n");
 		passedTests++;
@@ -89,23 +99,31 @@ void proc2(void)
 
 	lastRunProc = 2;
 
+	#ifdef DEBUG_0
 	printf("Allocating %d memory blocks for process 2\r\n", NUM_MEMORY_BLOCKS);
+	#endif
 	for (i = 0; i < NUM_MEMORY_BLOCKS ; ++i) {
 		mem_addresses[i] = request_memory_block();
+		#ifdef DEBUG_0
 		printf("Allocated block at: %d\r\n", mem_addresses[i]);
+		#endif
 	}
 
 	//Should jump to proc 3
 	set_process_priority(3, 0);
 	lastRunProc = 2;
+	#ifdef DEBUG_0
 	printf("Have returned to process 2\r\n");
+	#endif
 	set_process_priority(4, 3);
 	set_process_priority(3, 3);
 
 	i = 0;
 	// Expecting to not change processes
+	#ifdef DEBUG_0
 	printf("Releasing memory block from process 2: should not jump\r\n");
 	printf("Checking last process run was process 1\r\n");
+	#endif
 	release_memory_block(mem_addresses[i++]);
 	if (lastRunProc == 2) {
 		uart0_put_string("G024_test: TEST 3 OK\r\n");
@@ -115,17 +133,25 @@ void proc2(void)
 	}
 
 	// Expecting to change processes
+	#ifdef DEBUG_0
 	printf("Switching to process 3 \r\n");
+	#endif
 	set_process_priority(3, 0);
 
 	lastRunProc = 2;
+	#ifdef DEBUG_0
 	printf("Have returned to process 2\r\n");
+	#endif
 	set_process_priority(2, 1);
+	#ifdef DEBUG_0
 	printf("Releasing memory block from process 2: should jump to process 3\r\n");
+	#endif
 	release_memory_block(mem_addresses[i++]);
 
+	#ifdef DEBUG_0
 	printf("Have returned to process 2\r\n");
 	printf("Checking last process run was process 1\r\n");
+	#endif
 	if (lastRunProc != 1) {
 		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
 	}
@@ -144,7 +170,9 @@ void proc3(void)
 {
 	U32* mem_addr1;
 	U32* mem_addr2;
+	#ifdef DEBUG_0
 	printf("Starting process 3\r\n");
+	#endif
 	lastRunProc = 3;
 
 	// Updating priorities so we go to proc4 after we're blocked
@@ -152,17 +180,23 @@ void proc3(void)
 	set_process_priority(2, 3);
 	set_process_priority(4, 1);
 
+	#ifdef DEBUG_0
 	printf("Requesting for 1 block of memory (process should be blocked)\r\n");
+	#endif
 	mem_addr1 = request_memory_block();
 
 	lastRunProc = 3;
+	#ifdef DEBUG_0
 	printf("Returned to process 3 \r\n");
 	printf("Requesting for 1 block of memory (process should be blocked)\r\n");
+	#endif
 	mem_addr2 = request_memory_block();
 
+	#ifdef DEBUG_0
 	printf("Returned to process 3 \r\n");
 	printf("Checking last process run was process 2 ");
 	printf("since process 3 is no longer memory blocked and has higher priority than process 2\r\n");
+	#endif
 	if (lastRunProc == 2) {
 		uart0_put_string("G024_test: TEST 4 OK\r\n");
 		passedTests++;
@@ -171,19 +205,27 @@ void proc3(void)
 	}
 	lastRunProc = 3;
 
+	#ifdef DEBUG_0
 	printf("Updating all processes except process 3 to priority 3 \r\n");
+	#endif
 	set_process_priority(1, 3);
 	set_process_priority(2, 3);
 	set_process_priority(4, 3);
 	set_process_priority(5, 3);
 	set_process_priority(6, 3);
+	#ifdef DEBUG_0
 	printf("Releasing Processor 3: expect to stay in process 3 since it's higher priority than all other processes\r\n");
+	#endif
 	release_processor();
+	#ifdef DEBUG_0
 	printf("Updating process 3 to priority 3, expect to jump to 1\r\n");
+	#endif
 	set_process_priority(3, 3);
 
+	#ifdef DEBUG_0
 	printf("Have returned to process 3\r\n");
 	printf("Checking last process run was process 6\r\n");
+	#endif
 	if (lastRunProc != 6) {
 		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
 	}
@@ -219,10 +261,12 @@ void proc3(void)
  */
 void proc4(void)
 {
+	#ifdef DEBUG_0
 	printf("Starting process 4\r\n");
 
 	printf("Checking last process run was process 3 ");
 	printf("since we should be memory blocked on process 3\r\n");
+	#endif
 	if (lastRunProc == 3) {
 		uart0_put_string("G024_test: TEST 2 OK\r\n");
 		passedTests++;
@@ -233,8 +277,10 @@ void proc4(void)
 	lastRunProc = 4;
 	set_process_priority(2, 0);
 
+	#ifdef DEBUG_0
 	printf("Have returned to process 4\r\n");
 	printf("Checking last process run was process 2\r\n");
+	#endif
 	if (lastRunProc != 2) {
 		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
 	}
@@ -251,8 +297,10 @@ void proc4(void)
  */
 void proc5(void)
 {
+	#ifdef DEBUG_0
 	printf("Have returned to process 5\r\n");
 	printf("Checking last process run was process 4\r\n");
+	#endif
 	if (lastRunProc != 4) {
 		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
 	}
@@ -269,8 +317,10 @@ void proc5(void)
  */
 void proc6(void)
 {
+	#ifdef DEBUG_0
 	printf("Have returned to process 6\r\n");
 	printf("Checking last process run was process 5\r\n");
+	#endif
 	if (lastRunProc == 5) {
 		uart0_put_string("G024_test: TEST 5 OK\r\n");
 		passedTests++;
