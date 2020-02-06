@@ -200,11 +200,14 @@ int k_release_blocked_processor(void) {
 int k_set_process_priority(int process_id, int priority) {
 	int i;
 	//TODO: a process cannot change the priority of the i-process
+	if (priority < 0 || priority > 4) {
+		return RTX_ERR;
+	}
 	if (process_id == 0 && priority != 4) {
-		return 0;
+		return RTX_ERR;
 	}
 	if(process_id != 0 && priority ==4) {
-		return 0;
+		return RTX_ERR;
 	}
 	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
@@ -215,7 +218,7 @@ int k_set_process_priority(int process_id, int priority) {
 			return 1;
 		}
 	}
-	return 0;
+	return RTX_ERR;
 }
 
 int k_get_process_priority(int process_id) {
