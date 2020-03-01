@@ -214,10 +214,11 @@ int k_set_process_priority(int process_id, int priority) {
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
 			updated_pcb_waiting_priority(gp_pcbs[i]->m_pid);
-			k_release_processor(); 
+			k_release_processor();
 			return 1;
 		}
 	}
+	k_release_processor();
 	return RTX_ERR;
 }
 
@@ -225,8 +226,10 @@ int k_get_process_priority(int process_id) {
 	int i;
 	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
+			k_release_processor();
 			return (gp_pcbs[i])->m_priority;
 		}
 	}
+	k_release_processor();
 	return -1;
 }
