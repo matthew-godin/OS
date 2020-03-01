@@ -25,7 +25,7 @@ I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB16D34)
 I (c:\Software\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x5059F73C)
 I (c:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDB2F0C)
 I (c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h)(0x4F58E032)
-I (src\rtx.h)(0x5E373224)
+I (src\rtx.h)(0x5E5C1938)
 I (src\uart_polling.h)(0x5E361245)
 I (src\printf.h)(0x5E361245)
 I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB16D2C)
@@ -70,7 +70,7 @@ I (src\printf.h)(0x5E361245)
 I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB16D2C)
 F (.\src\k_process_priority_queue.h)(0x5E5C0337)()
 F (.\src\k_procs.c)(0x5E3627ED)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -DK_MSG_ENV -o "k_procs.o" --omf_browse "k_procs.crf" --depend "k_procs.d")
-I (src\rtx.h)(0x5E373224)
+I (src\rtx.h)(0x5E5C1938)
 I (src\k_procs.h)(0x5E3627ED)
 F (.\src\k_procs.h)(0x5E3627ED)()
 F (.\src\common.h)(0x5E5C139A)()
@@ -78,18 +78,19 @@ F (.\src\k_mailbox.c)(0x5E5C13B7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -
 I (src\k_mailbox.h)(0x5E5C139A)
 I (src\common.h)(0x5E5C139A)
 F (.\src\k_mailbox.h)(0x5E5C139A)()
-F (.\src\k_message.c)(0x5E5C138B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -DK_MSG_ENV -o "k_message.o" --omf_browse "k_message.crf" --depend "k_message.d")
-I (src\k_message.h)(0x5E5C1397)
+F (.\src\k_message.c)(0x5E5C17F6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -DK_MSG_ENV -o "k_message.o" --omf_browse "k_message.crf" --depend "k_message.d")
+I (src\k_message.h)(0x5E5C1821)
 I (src\k_mailbox.h)(0x5E5C139A)
 I (src\common.h)(0x5E5C139A)
 I (src\k_rtx.h)(0x5E5C01F4)
 I (src\k_process.h)(0x5E5C0FF1)
 I (src\k_process_priority_queue.h)(0x5E5C0337)
-F (.\src\k_message.h)(0x5E5C1397)()
-F (.\src\usr_proc.c)(0x5E37523E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -DK_MSG_ENV -o "usr_proc.o" --omf_browse "usr_proc.crf" --depend "usr_proc.d")
-I (src\rtx.h)(0x5E373224)
+F (.\src\k_message.h)(0x5E5C1821)()
+F (.\src\usr_proc.c)(0x5E5C1FA4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DDEBUG_0 -DK_MSG_ENV -o "usr_proc.o" --omf_browse "usr_proc.crf" --depend "usr_proc.d")
+I (src\rtx.h)(0x5E5C1938)
 I (src\uart_polling.h)(0x5E361245)
 I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB16D34)
-I (src\usr_proc.h)(0x5E371561)
+I (src\usr_proc.h)(0x5E5C1CF1)
+I (src\common.h)(0x5E5C139A)
 I (src\printf.h)(0x5E361245)
 I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB16D2C)

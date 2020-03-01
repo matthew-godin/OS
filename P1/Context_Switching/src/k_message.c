@@ -8,14 +8,14 @@ extern PCB* gp_current_process;
 extern PCB* gp_pcb_message_waiting_queue[];
 MAILBOX mailboxes[NUM_TEST_PROCS];
 
-void init_mailboxes() {
+void k_init_mailboxes() {
     int i;
     for (i = 0; i < NUM_TEST_PROCS; ++i) {
         init_mailbox(&mailboxes[i]);
     }
 }
 
-int send_message(int process_id, void* message_envelope) {
+int k_send_message(int process_id, void* message_envelope) {
 	PCB* unblocked_pcb = NULL;
 	MSG_BUF* incoming_message_envelope = (MSG_BUF*)message_envelope;
 
@@ -34,7 +34,7 @@ int send_message(int process_id, void* message_envelope) {
 	return RTX_OK;
 }
 
-void* receive_message(int* sender_id) {
+void* k_receive_message(int* sender_id) {
 	int process_id = gp_current_process->m_pid;
 	if (is_empty(&mailboxes[process_id-1])) { //Could and probably should be an if statement
         k_release_blocked_processor(WAITING_MESSAGE);

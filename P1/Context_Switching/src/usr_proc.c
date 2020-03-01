@@ -9,6 +9,7 @@
 #include "rtx.h"
 #include "uart_polling.h"
 #include "usr_proc.h"
+#include "common.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -28,9 +29,20 @@ void set_test_procs() {
 		g_test_procs[i].m_priority=LOWEST;
 		g_test_procs[i].m_stack_size=0x100;
 	}
+
+	// P1 tests
+	// g_test_procs[0].m_priority = HIGH;
+	// g_test_procs[0].mpf_start_pc = &proc1;
+	// g_test_procs[1].mpf_start_pc = &proc2;
+	// g_test_procs[2].mpf_start_pc = &proc3;
+	// g_test_procs[3].mpf_start_pc = &proc4;
+	// g_test_procs[4].mpf_start_pc = &proc5;
+	// g_test_procs[5].mpf_start_pc = &proc6;
+
+	// Messaging Test
 	g_test_procs[0].m_priority = HIGH;
-	g_test_procs[0].mpf_start_pc = &proc1;
-	g_test_procs[1].mpf_start_pc = &proc2;
+	g_test_procs[0].mpf_start_pc = &proc1Message;
+	g_test_procs[1].mpf_start_pc = &proc2Message;
 	g_test_procs[2].mpf_start_pc = &proc3;
 	g_test_procs[3].mpf_start_pc = &proc4;
 	g_test_procs[4].mpf_start_pc = &proc5;
@@ -329,6 +341,36 @@ void proc6(void)
 	}
 	lastRunProc = 6;
 
+	while (1) {
+		release_processor();
+	}
+}
+
+void proc1Message(void) {
+	U32* mem_addr1;
+	MSG_BUF message;
+	mem_addr1 = request_memory_block();
+	message.mtype = 3;
+	//*mem_addr1 = message;
+
+	send_message(2, &message);
+	set_process_priority(1, 3);
+
+	while (1) {
+		release_processor();
+	}
+}
+
+void proc2Message(void) {
+	int type = 2;
+	int* sender_id = NULL;
+	MSG_BUF * receivedMessage;
+	receivedMessage = receive_message(sender_id);
+	type = receivedMessage->mtype;
+	//printf(type);
+	if (type == 3) {
+		printf(":B)");
+	}
 	while (1) {
 		release_processor();
 	}
