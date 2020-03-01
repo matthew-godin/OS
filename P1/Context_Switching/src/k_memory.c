@@ -122,7 +122,7 @@ void *k_request_memory_block(void) {
 	gp_memory_queue = pop_mq(gp_memory_queue);
 	
 	while (returnAddr == NULL) { //This could be an if as long as we return and there is memory available to us
-		k_release_blocked_processor(); // call release processor to give up function
+		k_release_blocked_processor(WAITING_MEMORY); // call release processor to give up function
 		returnAddr = top_mq(gp_memory_queue);
 		gp_memory_queue = pop_mq(gp_memory_queue);
 	}
@@ -137,8 +137,8 @@ int k_release_memory_block(void *p_mem_blk) {
 #endif /* ! DEBUG_0 */
 	gp_memory_queue = push_mq(gp_memory_queue, (U32*)p_mem_blk);
 	
-	if(!pcb_waiting_queue_is_empty()) { //if something in waiting, then unblock on waiting queue
-		unblocked_pcb = pop_pcb_waiting_queue(); //pop pcb from waiting queue;
+	if(!pcb_waiting_memory_queue_is_empty()) { //if something in waiting, then unblock on waiting queue
+		unblocked_pcb = pop_pcb_waiting_memory_queue(); //pop pcb from waiting queue;
 		unblocked_pcb->m_state = RDY; //set unblocked pcb state to ready
 		push_pcb_queue(unblocked_pcb); //push pcb to priority queue
 		k_release_processor(); //gives up processor to potentially higher priority which just became unblocked, this is also preemption

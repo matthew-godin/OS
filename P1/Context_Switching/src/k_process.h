@@ -21,7 +21,7 @@
 void process_init(void);               /* initialize all procs in the system */
 PCB *scheduler(void);                  /* pick the pid of the next to run process */
 int k_release_processor(void);           /* kernel release_process function */
-int k_release_blocked_processor(void);   /* kernel release_blocked_processor function */
+int k_release_blocked_processor(int state);   /* kernel release_blocked_processor function */
 int k_set_process_priority(int process_id, int priority);
 int k_get_process_priority(int process_id);
 

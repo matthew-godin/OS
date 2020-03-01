@@ -27,7 +27,8 @@
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
 extern PCB* gp_pcb_queue[NUM_TOTAL_PROCS];
-extern PCB* gp_pcb_waiting_queue[NUM_TOTAL_PROCS];
+extern PCB* gp_pcb_waiting_memory_queue[NUM_TOTAL_PROCS];
+PCB* gp_pcb_message_waiting_queue[NUM_TEST_PROCS];
 
 /* process initialization table */
 PROC_INIT g_proc_table[NUM_TOTAL_PROCS];
@@ -84,7 +85,7 @@ void process_init()
 	}
 	
 	// Initialize waiting queue for mem-blocked queue
-	init_pcb_waiting_queue();
+	init_pcb_waiting_memory_queue();
 }
 
 /*@brief: scheduler, pick the pid of the next to run process
@@ -161,7 +162,7 @@ int k_release_processor(void)
 		gp_current_process->m_state = RUN;
 		return RTX_ERR;
 	}
-  if ( p_pcb_old == NULL ) {
+    if ( p_pcb_old == NULL ) {
 		p_pcb_old = gp_current_process;
 	}
 	process_switch(p_pcb_old);
@@ -174,12 +175,19 @@ int k_release_processor(void)
  * PRE: current process is blocked on memory
  * POST: gp_current_process gets updated to next to run process
  */
-int k_release_blocked_processor(void) {
+int k_release_blocked_processor(int state) {
 	PCB *p_pcb_blocked = gp_current_process;
 	
 	if(p_pcb_blocked != NULL) { 
-		p_pcb_blocked->m_state = WAITING; // change blocked process's state to waiting
-		push_pcb_waiting_queue(p_pcb_blocked); // put blocked process on pcb_waiting_queue
+		p_pcb_blocked->m_state = state; // change blocked process's state to waiting
+		switch(state) {
+			case WAITING_MEMORY:
+				push_pcb_waiting_memory_queue(p_pcb_blocked); // put blocked process on pcb_waiting_queue
+				break;
+			case WAITING_MESSAGE:
+				gp_pcb_message_waiting_queue[p_pcb_blocked->m_pid-1] = p_pcb_blocked;
+				break;
+		}
 	} else { //could happen if we call k_release_blocked_processor on set up
 		return RTX_ERR;
 	}
@@ -213,7 +221,7 @@ int k_set_process_priority(int process_id, int priority) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
-			updated_pcb_waiting_priority(gp_pcbs[i]->m_pid);
+			updated_pcb_waiting_memory_priority(gp_pcbs[i]->m_pid);
 			k_release_processor();
 			return 1;
 		}

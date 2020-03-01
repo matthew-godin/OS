@@ -2,7 +2,6 @@
 #define K_MAILBOX_H_
 
 #include "common.h"
-//typedef struct msgbuf msgbuf;
 
 typedef struct MAILBOX
 {
@@ -13,5 +12,6 @@ typedef struct MAILBOX
 void push_msg(MAILBOX* mailbox, MSG_BUF* msg);
 MSG_BUF* pop_msg(MAILBOX* mailbox);
 void init_mailbox(MAILBOX* mailbox);
+int is_empty(MAILBOX* mailbox);
 
 #endif

@@ -379,3 +379,450 @@ src\usr_proc.c(172): warning:  #550-D: variable "mem_addr2" was set but never us
 linking...
 Program Size: Code=6820 RO-data=500 RW-data=44 ZI-data=900  
 "context_switching.axf" - 0 Error(s), 16 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(87): warning:  #223-D: function "init_pcb_waiting_memory_queue" declared implicitly
+src\k_process.c(182): warning:  #223-D: function "push_pcb_waiting_memory_queue" declared implicitly
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(102): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(123): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(138): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(151): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(153): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+src\k_process_priority_queue.c(160): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(18): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(18): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(23): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(27): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(15): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(34): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(35): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(39): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(39): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+src\k_memory.c(140): warning:  #223-D: function "pcb_waiting_memory_queue_is_empty" declared implicitly
+src\k_memory.c(141): warning:  #223-D: function "pop_pcb_waiting_memory_queue" declared implicitly
+src\k_memory.c(141): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
+compiling k_process.c...
+src\k_process.c(87): warning:  #223-D: function "init_pcb_waiting_memory_queue" declared implicitly
+src\k_process.c(182): warning:  #223-D: function "push_pcb_waiting_memory_queue" declared implicitly
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(18): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(18): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(23): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(27): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(15): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(34): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(35): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(37): error:  #120: return value type does not match the function type
+src\k_message.c(40): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(216): warning:  #223-D: function "updated_pcb_waiting_priority" declared implicitly
+compiling k_process_priority_queue.c...
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(18): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(18): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(23): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(27): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(15): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(34): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(35): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(37): error:  #120: return value type does not match the function type
+src\k_message.c(40): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(20): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(24): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(28): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(16): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(36): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(38): error:  #120: return value type does not match the function type
+src\k_message.c(41): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(217): warning:  #223-D: function "updated_pcb_waiting_priority" declared implicitly
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(20): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(24): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(28): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(16): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(36): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(38): error:  #120: return value type does not match the function type
+src\k_message.c(41): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(21): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(22): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(26): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(38): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(40): error:  #120: return value type does not match the function type
+src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(21): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(22): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(26): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(38): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_message.c(40): error:  #120: return value type does not match the function type
+src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(21): error:  #154: expression must have struct or union type
+src\k_message.c(22): error:  #132: expression must have pointer-to-struct-or-union type
+src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(31): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(181): error:  #20: identifier "WAITING" is undefined
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(31): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol pcb_waiting_queue_is_empty (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol pop_pcb_waiting_queue (referred from k_memory.o).
+context_switching.axf: Error: L6218E: Undefined symbol init_pcb_waiting_queue (referred from k_process.o).
+context_switching.axf: Error: L6218E: Undefined symbol push_pcb_waiting_queue (referred from k_process.o).
+context_switching.axf: Error: L6218E: Undefined symbol updated_pcb_waiting_priority (referred from k_process.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(140): warning:  #223-D: function "pcb_waiting_memory_queue_is_empty" declared implicitly
+src\k_memory.c(141): warning:  #223-D: function "pop_pcb_waiting_memory_queue" declared implicitly
+src\k_memory.c(141): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(87): warning:  #223-D: function "init_pcb_waiting_queue" declared implicitly
+src\k_process.c(182): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+linking...
+context_switching.axf: Error: L6218E: Undefined symbol init_pcb_waiting_queue (referred from k_process.o).
+context_switching.axf: Error: L6218E: Undefined symbol push_pcb_waiting_queue (referred from k_process.o).
+context_switching.axf: Error: L6218E: Undefined symbol updated_pcb_waiting_priority (referred from k_process.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+compiling k_process.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+linking...
+Program Size: Code=6820 RO-data=500 RW-data=44 ZI-data=900  
+"context_switching.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(125): error:  #140: too many arguments in function call
+compiling k_process.c...
+src\k_process.c(177): error:  #147-D: declaration is incompatible with "int k_release_blocked_processor(void)" (declared at line 24 of "src\k_process.h")
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+src\k_process.c(187): error:  #20: identifier "process_id" is undefined
+compiling k_mailbox.c...
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
+src\k_mailbox.c(40): warning:  #1-D: last line of file ends without a newline
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_message.c(39): error:  #20: identifier "WAITING_MESSAGING" is undefined
+src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(125): error:  #140: too many arguments in function call
+compiling k_process.c...
+src\k_process.c(177): error:  #147-D: declaration is incompatible with "int k_release_blocked_processor(void)" (declared at line 24 of "src\k_process.h")
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(21): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(37): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(19): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(28): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(35): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(37): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_message.c(39): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(42): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(29): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(31): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(38): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
+src\k_message.c(40): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(21): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(37): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(21): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(37): error:  #20: identifier "gp_current_process" is undefined
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process.c...
+src\k_process.c(182): warning:  #188-D: enumerated type mixed with another type
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(26): error:  #41: expression must have arithmetic or pointer type
+src\k_message.c(27): error:  #513: a value of type "PCB" cannot be assigned to an entity of type "PCB *"
+src\k_message.c(28): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB"
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Context Switching SIM'
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
+"context_switching.axf" - 0 Error(s), 5 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
+src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
+"context_switching.axf" - 0 Error(s), 5 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_message.c...
+src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
+src\common.h(71): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
+src\k_message.c(45): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
+"context_switching.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_mailbox.c...
+src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
+src\k_mailbox.c(40): warning:  #1-D: last line of file ends without a newline
+compiling k_message.c...
+linking...
+Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_mailbox.c...
+linking...
+Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).

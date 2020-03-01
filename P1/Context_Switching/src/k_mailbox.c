@@ -3,9 +3,7 @@
 
 
 void push_msg(MAILBOX* mailbox, MSG_BUF* msg) {
-	int type;
 	if (mailbox->tail != NULL) {
-		type = mailbox->tail->mtype;
 		mailbox->tail->mp_next = msg; //Update current tail to point to new tail
 	}
 	mailbox->tail = msg;
@@ -33,4 +31,8 @@ MSG_BUF* pop_msg(MAILBOX* mailbox) {
 void init_mailbox(MAILBOX* mailbox) {
     mailbox->head = NULL;
     mailbox->tail = NULL;
+}
+
+int is_empty(MAILBOX* mailbox) {
+	return mailbox->head == NULL || mailbox->tail == NULL;
 }
