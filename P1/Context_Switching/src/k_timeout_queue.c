@@ -65,6 +65,20 @@ MSG_BUF* top(TIMEOUT_QUEUE* timeout_queue) {
   return timeout_queue->head;
 }
 
+MSG_BUF* pop_msg(TIMEOUT_QUEUE* timeout_queue) {
+    MSG_BUF* head;
+	if(timeout_queue->head == NULL) {
+		return NULL;
+	}
+  head = timeout_queue->head;
+	timeout_queue->head = (MSG_BUF*) timeout_queue->head->mp_next; // Dereference the ptr at head to get the next mem block its pointing to
+
+	if (timeout_queue->head == NULL) { // If head is null at this point we know the queue is empty so update tail to null
+		timeout_queue->tail = NULL;
+	}
+	return head;
+}
+
 void init_timeout_queue(TIMEOUT_QUEUE* timeout_queue) {
   timeout_queue->head = NULL;
   timeout_queue->tail = NULL;
