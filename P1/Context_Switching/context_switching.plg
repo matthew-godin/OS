@@ -8,342 +8,149 @@ Project File Date:  02/01/2020
 
 <h2>Output:</h2>
 Build target 'Context Switching SIM'
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling printf.c...
+compiling main_svc.c...
+compiling HAL.c...
 compiling k_rtx_init.c...
-linking...
-Program Size: Code=6804 RO-data=500 RW-data=44 ZI-data=900  
-"context_switching.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Context Switching SIM'
+compiling k_memory.c...
 compiling k_process.c...
-linking...
-Program Size: Code=6820 RO-data=500 RW-data=44 ZI-data=900  
-"context_switching.axf" - 0 Error(s), 0 Warning(s).
-Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
-Internal DLL Error
-Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Context Switching SIM'
-linking...
-Program Size: Code=6820 RO-data=500 RW-data=44 ZI-data=900  
-"context_switching.axf" - 0 Error(s), 0 Warning(s).
-Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Context Switching SIM'
-compiling k_process.c...
+src\k_process.c(182): warning:  #188-D: enumerated type mixed with another type
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_procs.c...
+src\k_procs.c(33): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(33): error:  #44: expression must have pointer type
+src\k_procs.c(35): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(35): error:  #44: expression must have pointer type
+src\k_procs.c(37): error:  #136: struct "msgbuf" has no field "m_recv_pid"
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
 compiling k_mailbox.c...
-src\k_mailbox.h(8): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(9): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(12): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(4): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(6): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(9): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(14): error:  #118: a void function may not return a value
-src\k_mailbox.c(17): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(18): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(18): error:  #20: identifier "head" is undefined
-src\k_mailbox.c(23): error:  #29: expected an expression
-src\k_mailbox.c(23): error:  #65: expected a ";"
-src\k_mailbox.c(34): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(8): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(9): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(12): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\k_mailbox.h(4): warning:  #375-D: declaration requires a typedef name
-src\k_mailbox.h(8): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(9): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(12): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(4): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(6): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(9): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(14): error:  #118: a void function may not return a value
-src\k_mailbox.c(17): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(18): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(18): error:  #20: identifier "head" is undefined
-src\k_mailbox.c(23): error:  #29: expected an expression
-src\k_mailbox.c(23): error:  #65: expected a ";"
-src\k_mailbox.c(34): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(4): warning:  #375-D: declaration requires a typedef name
-src\k_mailbox.h(8): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(9): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(12): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(6): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(9): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(14): error:  #118: a void function may not return a value
-src\k_mailbox.c(23): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(34): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(3): warning:  #2775-D: white space is required between the macro name "K_MSG_ENV" and its replacement text
-src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(10): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(24): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(10): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(24): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(8): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(9): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(12): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(5): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(7): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(10): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(18): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "head" is undefined
-src\k_mailbox.c(24): error:  #29: expected an expression
-src\k_mailbox.c(24): error:  #65: expected a ";"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(8): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(9): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(12): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.h(16): warning:  #1-D: last line of file ends without a newline
-src\k_rtx.h(58): error:  #101: "proc_init" has already been declared in the current scope
-src\k_rtx.h(64): error:  #256: invalid redeclaration of type name "PROC_INIT" (declared at line 65 of "src\common.h")
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(5): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(10): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(18): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "msgbuf" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "head" is undefined
-src\k_mailbox.c(24): error:  #29: expected an expression
-src\k_mailbox.c(24): error:  #65: expected a ";"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_rtx.h(58): error:  #101: "proc_init" has already been declared in the current scope
-src\k_rtx.h(64): error:  #256: invalid redeclaration of type name "PROC_INIT" (declared at line 65 of "src\common.h")
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(9): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(10): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(14): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(5): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.c(7): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(10): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(18): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "head" is undefined
-src\k_mailbox.c(24): error:  #29: expected an expression
-src\k_mailbox.c(24): error:  #65: expected a ";"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(80): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(9): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(10): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(14): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_rtx.h(58): error:  #101: "proc_init" has already been declared in the current scope
-src\k_rtx.h(64): error:  #256: invalid redeclaration of type name "PROC_INIT" (declared at line 65 of "src\common.h")
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(9): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(10): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(14): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(5): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.c(7): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(10): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(18): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.c(19): error:  #20: identifier "head" is undefined
-src\k_mailbox.c(24): error:  #29: expected an expression
-src\k_mailbox.c(24): error:  #65: expected a ";"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(9): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(10): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(13): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(14): error:  #20: identifier "MSGBUF" is undefined
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(10): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(24): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(10): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(15): error:  #118: a void function may not return a value
-src\k_mailbox.c(24): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(35): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
 src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
 src\k_mailbox.c(10): error:  #136: struct "msgbuf" has no field "mp_next"
 src\k_mailbox.c(23): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(34): warning:  #1-D: last line of file ends without a newline
+compiling k_message.c...
+src\k_timeout_queue.h(14): error:  #147-D: declaration is incompatible with "MSG_BUF *pop_msg(MAILBOX *)" (declared at line 13 of "src\k_mailbox.h")
+src\k_timeout_queue.h(17): error:  #147-D: declaration is incompatible with "int is_empty(MAILBOX *)" (declared at line 15 of "src\k_mailbox.h")
+src\k_message.c(28): error:  #136: struct "msgbuf" has no field "m_send_pid"
+src\k_message.c(29): error:  #136: struct "msgbuf" has no field "m_recv_pid"
+src\k_message.c(30): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_message.c(47): error:  #20: identifier "MSG_BUG" is undefined
+src\k_message.c(47): error:  #20: identifier "incoming_message_envelope" is undefined
+src\k_message.c(62): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(64): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(69): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+compiling k_timeout_queue.c...
+src\k_timeout_queue.c(16): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(18): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(28): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(29): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(30): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(36): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(37): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(38): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(39): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(49): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(50): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(51): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(52): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(53): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(57): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(57): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(58): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(59): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(74): error:  #136: struct "msgbuf" has no field "mp_next"
+compiling usr_proc.c...
+src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
 Target not created
 Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\k_procs.c(33): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(33): error:  #44: expression must have pointer type
+src\k_procs.c(35): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(35): error:  #44: expression must have pointer type
+src\k_procs.c(37): error:  #136: struct "msgbuf" has no field "m_recv_pid"
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
 compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(8): error:  #136: struct "msgbuf" has no field "m_type"
-src\k_mailbox.c(9): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(12): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(25): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(36): warning:  #1-D: last line of file ends without a newline
+src\k_mailbox.c(7): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_mailbox.c(10): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_mailbox.c(23): error:  #136: struct "msgbuf" has no field "mp_next"
+compiling k_message.c...
+src\k_timeout_queue.h(14): error:  #147-D: declaration is incompatible with "MSG_BUF *pop_msg(MAILBOX *)" (declared at line 13 of "src\k_mailbox.h")
+src\k_timeout_queue.h(17): error:  #147-D: declaration is incompatible with "int is_empty(MAILBOX *)" (declared at line 15 of "src\k_mailbox.h")
+src\k_message.c(28): error:  #136: struct "msgbuf" has no field "m_send_pid"
+src\k_message.c(29): error:  #136: struct "msgbuf" has no field "m_recv_pid"
+src\k_message.c(30): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_message.c(47): error:  #20: identifier "MSG_BUG" is undefined
+src\k_message.c(47): error:  #20: identifier "incoming_message_envelope" is undefined
+src\k_message.c(62): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(64): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(69): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+compiling k_timeout_queue.c...
+src\k_timeout_queue.c(16): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(18): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(28): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(29): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(30): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(36): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(37): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(38): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(39): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(49): error:  #136: struct "msgbuf" has no field "m_time"
+src\k_timeout_queue.c(50): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(51): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(52): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(53): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(57): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(57): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(58): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(59): error:  #136: struct "msgbuf" has no field "mp_next"
+src\k_timeout_queue.c(74): error:  #136: struct "msgbuf" has no field "mp_next"
+compiling usr_proc.c...
+src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
 Target not created
 Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\k_procs.c(33): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(33): error:  #44: expression must have pointer type
+src\k_procs.c(35): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(35): error:  #44: expression must have pointer type
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
 compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(9): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(12): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(25): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(36): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(3): warning:  #2775-D: white space is required between the macro name "K_MSG_ENV" and its replacement text
-src\k_mailbox.c(9): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(12): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(25): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(36): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(3): warning:  #2775-D: white space is required between the macro name "K_MSG_ENV" and its replacement text
-src\k_mailbox.c(9): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(12): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(25): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(36): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(9): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(12): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(25): error:  #136: struct "msgbuf" has no field "mp_next"
-src\k_mailbox.c(36): warning:  #1-D: last line of file ends without a newline
+compiling k_message.c...
+src\k_timeout_queue.h(14): error:  #147-D: declaration is incompatible with "MSG_BUF *pop_msg(MAILBOX *)" (declared at line 13 of "src\k_mailbox.h")
+src\k_timeout_queue.h(17): error:  #147-D: declaration is incompatible with "int is_empty(MAILBOX *)" (declared at line 15 of "src\k_mailbox.h")
+src\k_message.c(47): error:  #20: identifier "MSG_BUG" is undefined
+src\k_message.c(47): error:  #20: identifier "incoming_message_envelope" is undefined
+src\k_message.c(62): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(64): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(69): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+compiling k_timeout_queue.c...
+compiling usr_proc.c...
+src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
 Target not created
 Build target 'Context Switching SIM'
 compiling system_LPC17xx.c...
@@ -354,656 +161,86 @@ compiling HAL.c...
 compiling k_rtx_init.c...
 compiling k_memory.c...
 compiling k_process.c...
-compiling k_memory_queue.c...
-compiling k_process_priority_queue.c...
-compiling k_procs.c...
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(36): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(15): warning:  #940-D: missing return statement at end of non-void function "send_message"
-src\k_message.c(18): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-compiling usr_proc.c...
-src\usr_proc.c(236): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(239): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(244): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(247): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(171): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(172): warning:  #550-D: variable "mem_addr2" was set but never used
-linking...
-Program Size: Code=6820 RO-data=500 RW-data=44 ZI-data=900  
-"context_switching.axf" - 0 Error(s), 16 Warning(s).
-Build target 'Context Switching SIM'
-compiling k_rtx_init.c...
-compiling k_memory.c...
-compiling k_process.c...
-src\k_process.c(87): warning:  #223-D: function "init_pcb_waiting_memory_queue" declared implicitly
-src\k_process.c(182): warning:  #223-D: function "push_pcb_waiting_memory_queue" declared implicitly
-compiling k_memory_queue.c...
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(102): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
-src\k_process_priority_queue.c(123): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
-src\k_process_priority_queue.c(138): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
-src\k_process_priority_queue.c(151): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
-src\k_process_priority_queue.c(153): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
-src\k_process_priority_queue.c(160): error:  #20: identifier "gp_pcb_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(18): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(23): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(27): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(15): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(34): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(35): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(39): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(39): warning:  #940-D: missing return statement at end of non-void function "receive_mesage"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_rtx_init.c...
-compiling k_memory.c...
-src\k_memory.c(140): warning:  #223-D: function "pcb_waiting_memory_queue_is_empty" declared implicitly
-src\k_memory.c(141): warning:  #223-D: function "pop_pcb_waiting_memory_queue" declared implicitly
-src\k_memory.c(141): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
-compiling k_process.c...
-src\k_process.c(87): warning:  #223-D: function "init_pcb_waiting_memory_queue" declared implicitly
-src\k_process.c(182): warning:  #223-D: function "push_pcb_waiting_memory_queue" declared implicitly
-compiling k_memory_queue.c...
-compiling k_process_priority_queue.c...
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(18): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(23): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(27): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(15): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(34): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(35): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(37): error:  #120: return value type does not match the function type
-src\k_message.c(40): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_memory.c...
-compiling k_process.c...
-src\k_process.c(216): warning:  #223-D: function "updated_pcb_waiting_priority" declared implicitly
-compiling k_process_priority_queue.c...
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(18): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(18): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(23): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(27): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(15): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(34): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(35): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(37): error:  #120: return value type does not match the function type
-src\k_message.c(40): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(20): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(24): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(28): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(16): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(36): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(38): error:  #120: return value type does not match the function type
-src\k_message.c(41): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(217): warning:  #223-D: function "updated_pcb_waiting_priority" declared implicitly
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(19): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(20): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(24): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(28): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(16): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(36): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(38): error:  #120: return value type does not match the function type
-src\k_message.c(41): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_rtx_init.c...
-compiling k_memory.c...
-compiling k_process.c...
-compiling k_memory_queue.c...
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(21): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(22): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(26): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(38): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(40): error:  #120: return value type does not match the function type
-src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(21): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(22): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(26): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(38): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_message.c(40): error:  #120: return value type does not match the function type
-src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(21): error:  #154: expression must have struct or union type
-src\k_message.c(22): error:  #132: expression must have pointer-to-struct-or-union type
-src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(95): error:  #20: identifier "WAITING_MEMORY" is undefined
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(31): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_rtx_init.c...
-compiling k_memory.c...
-compiling k_process.c...
-src\k_process.c(181): error:  #20: identifier "WAITING" is undefined
-compiling k_memory_queue.c...
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(31): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(18): warning:  #550-D: variable "waitingPCB" was set but never used
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-linking...
-context_switching.axf: Error: L6218E: Undefined symbol pcb_waiting_queue_is_empty (referred from k_memory.o).
-context_switching.axf: Error: L6218E: Undefined symbol pop_pcb_waiting_queue (referred from k_memory.o).
-context_switching.axf: Error: L6218E: Undefined symbol init_pcb_waiting_queue (referred from k_process.o).
-context_switching.axf: Error: L6218E: Undefined symbol push_pcb_waiting_queue (referred from k_process.o).
-context_switching.axf: Error: L6218E: Undefined symbol updated_pcb_waiting_priority (referred from k_process.o).
-Target not created
-Build target 'Context Switching SIM'
-compiling k_memory.c...
-src\k_memory.c(140): warning:  #223-D: function "pcb_waiting_memory_queue_is_empty" declared implicitly
-src\k_memory.c(141): warning:  #223-D: function "pop_pcb_waiting_memory_queue" declared implicitly
-src\k_memory.c(141): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB *"
-Target not created
-Build target 'Context Switching SIM'
-compiling k_memory.c...
-compiling k_process.c...
-src\k_process.c(87): warning:  #223-D: function "init_pcb_waiting_queue" declared implicitly
-src\k_process.c(182): warning:  #223-D: function "push_pcb_waiting_queue" declared implicitly
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-linking...
-context_switching.axf: Error: L6218E: Undefined symbol init_pcb_waiting_queue (referred from k_process.o).
-context_switching.axf: Error: L6218E: Undefined symbol push_pcb_waiting_queue (referred from k_process.o).
-context_switching.axf: Error: L6218E: Undefined symbol updated_pcb_waiting_priority (referred from k_process.o).
-Target not created
-Build target 'Context Switching SIM'
-compiling k_memory.c...
-compiling k_process.c...
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
-linking...
-Program Size: Code=6820 RO-data=500 RW-data=44 ZI-data=900  
-"context_switching.axf" - 0 Error(s), 4 Warning(s).
-Build target 'Context Switching SIM'
-compiling k_memory.c...
-src\k_memory.c(125): error:  #140: too many arguments in function call
-compiling k_process.c...
-src\k_process.c(177): error:  #147-D: declaration is incompatible with "int k_release_blocked_processor(void)" (declared at line 24 of "src\k_process.h")
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-src\k_process.c(187): error:  #20: identifier "process_id" is undefined
-compiling k_mailbox.c...
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(40): warning:  #1-D: last line of file ends without a newline
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
-src\k_message.c(39): error:  #20: identifier "WAITING_MESSAGING" is undefined
-src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_memory.c...
-src\k_memory.c(125): error:  #140: too many arguments in function call
-compiling k_process.c...
-src\k_process.c(177): error:  #147-D: declaration is incompatible with "int k_release_blocked_processor(void)" (declared at line 24 of "src\k_process.h")
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
-src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_rtx_init.c...
-compiling k_memory.c...
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
-src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(21): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(32): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(37): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(39): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
-src\k_message.c(41): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(19): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(28): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(30): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(35): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(37): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
-src\k_message.c(39): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(42): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(29): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(31): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(38): warning:  #223-D: function "k_release_blocked_processor" declared implicitly
-src\k_message.c(40): warning:  #223-D: function "k_release_processor" declared implicitly
-src\k_message.c(43): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(21): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(37): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(21): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(37): error:  #20: identifier "gp_current_process" is undefined
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
-src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
-src\k_process.c(187): error:  #20: identifier "gp_pcb_message_waiting_queue" is undefined
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'Context Switching SIM'
-compiling k_process.c...
 src\k_process.c(182): warning:  #188-D: enumerated type mixed with another type
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
+src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
+compiling k_procs.c...
+src\k_procs.c(33): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(33): error:  #44: expression must have pointer type
+src\k_procs.c(35): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(35): error:  #44: expression must have pointer type
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
+compiling k_mailbox.c...
 compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(26): error:  #41: expression must have arithmetic or pointer type
-src\k_message.c(27): error:  #513: a value of type "PCB" cannot be assigned to an entity of type "PCB *"
-src\k_message.c(28): error:  #513: a value of type "int" cannot be assigned to an entity of type "PCB"
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
+src\k_timeout_queue.h(14): error:  #147-D: declaration is incompatible with "MSG_BUF *pop_msg(MAILBOX *)" (declared at line 13 of "src\k_mailbox.h")
+src\k_timeout_queue.h(17): error:  #147-D: declaration is incompatible with "int is_empty(MAILBOX *)" (declared at line 15 of "src\k_mailbox.h")
+src\k_message.c(47): error:  #20: identifier "MSG_BUG" is undefined
+src\k_message.c(47): error:  #20: identifier "incoming_message_envelope" is undefined
+src\k_message.c(62): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(64): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(69): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+compiling k_timeout_queue.c...
+compiling usr_proc.c...
+src\usr_proc.c(56): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(247): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(372): warning:  #223-D: function "printf" declared implicitly
 Target not created
 Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\k_procs.c(33): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(33): error:  #44: expression must have pointer type
+src\k_procs.c(35): warning:  #223-D: function "top" declared implicitly
+src\k_procs.c(35): error:  #44: expression must have pointer type
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
 compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 5 Warning(s).
+src\k_timeout_queue.h(14): error:  #147-D: declaration is incompatible with "MSG_BUF *pop_msg(MAILBOX *)" (declared at line 13 of "src\k_mailbox.h")
+src\k_timeout_queue.h(17): error:  #147-D: declaration is incompatible with "int is_empty(MAILBOX *)" (declared at line 15 of "src\k_mailbox.h")
+src\k_message.c(62): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(64): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(69): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+Target not created
 Build target 'Context Switching SIM'
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(30): warning:  #223-D: function "push_pcb_queue" declared implicitly
-src\k_message.c(44): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 5 Warning(s).
-Build target 'Context Switching SIM'
-compiling k_message.c...
-src\k_message.h(7): warning:  #1-D: last line of file ends without a newline
-src\common.h(71): warning:  #1-D: last line of file ends without a newline
-src\k_mailbox.h(17): warning:  #1-D: last line of file ends without a newline
-src\k_message.c(45): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 4 Warning(s).
-Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\k_procs.c(28): warning:  #223-D: function "insert_tq_msg" declared implicitly
+src\k_procs.c(32): warning:  #223-D: function "is_tq_empty" declared implicitly
+src\k_procs.c(33): warning:  #223-D: function "top_tq" declared implicitly
+src\k_procs.c(33): error:  #44: expression must have pointer type
+src\k_procs.c(35): warning:  #223-D: function "top_tq" declared implicitly
+src\k_procs.c(35): error:  #44: expression must have pointer type
+src\k_procs.c(36): warning:  #223-D: function "pop_tq_msg" declared implicitly
+src\k_procs.c(36): error:  #513: a value of type "int" cannot be assigned to an entity of type "MSG_BUF *"
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
 compiling k_mailbox.c...
-src\k_mailbox.c(6): warning:  #550-D: variable "type" was set but never used
-src\k_mailbox.c(40): warning:  #1-D: last line of file ends without a newline
 compiling k_message.c...
+src\k_timeout_queue.h(14): error:  #147-D: declaration is incompatible with "MSG_BUF *pop_msg(MAILBOX *)" (declared at line 13 of "src\k_mailbox.h")
+src\k_timeout_queue.h(17): error:  #147-D: declaration is incompatible with "int is_empty(MAILBOX *)" (declared at line 15 of "src\k_mailbox.h")
+src\k_message.c(62): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(64): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+src\k_message.c(69): error:  #167: argument of type "MAILBOX *" is incompatible with parameter of type "TIMEOUT_QUEUE *"
+compiling k_timeout_queue.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
+compiling k_message.c...
+compiling k_timeout_queue.c...
+src\k_timeout_queue.c(21): warning:  #223-D: function "is_empty" declared implicitly
 linking...
-Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
+Program Size: Code=8270 RO-data=250 RW-data=56 ZI-data=1232  
 "context_switching.axf" - 0 Error(s), 2 Warning(s).
 Build target 'Context Switching SIM'
-compiling k_mailbox.c...
+compiling k_timeout_queue.c...
 linking...
-Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Context Switching SIM'
-linking...
-Program Size: Code=6852 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 0 Warning(s).
-Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'Context Switching SIM'
-compiling main_svc.c...
-compiling k_procs.c...
-compiling k_message.c...
-src\k_message.h(4): warning:  #1295-D: Deprecated declaration k_init_mailboxes - give arg types
-compiling usr_proc.c...
-src\usr_proc.c(236): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(239): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(244): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(247): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(171): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(172): warning:  #550-D: variable "mem_addr2" was set but never used
-linking...
-Program Size: Code=6856 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 7 Warning(s).
-Build target 'Context Switching SIM'
-compiling k_message.c...
-linking...
-Program Size: Code=6856 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 0 Warning(s).
-Build target 'Context Switching SIM'
-compiling main_svc.c...
-compiling k_procs.c...
-compiling usr_proc.c...
-src\usr_proc.c(236): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(239): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(244): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(247): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(171): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(172): warning:  #550-D: variable "mem_addr2" was set but never used
-linking...
-Program Size: Code=6856 RO-data=500 RW-data=44 ZI-data=924  
-"context_switching.axf" - 0 Error(s), 6 Warning(s).
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(44): error:  #20: identifier "proc1Message" is undefined
-src\usr_proc.c(45): error:  #20: identifier "proc2Message" is undefined
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(353): error:  #44: expression must have pointer type
-src\usr_proc.c(354): error:  #513: a value of type "MSG_BUF" cannot be assigned to an entity of type "U32"
-src\usr_proc.c(356): warning:  #223-D: function "sendMessage" declared implicitly
-src\usr_proc.c(367): error:  #167: argument of type "int" is incompatible with parameter of type "int *"
-src\usr_proc.c(368): error:  #20: identifier "receive_message" is undefined
-src\usr_proc.c(369): error:  #167: argument of type "int" is incompatible with parameter of type "char *"
-src\usr_proc.c(366): warning:  #550-D: variable "receivedMessage" was set but never used
-Target not created
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(44): error:  #20: identifier "proc1Message" is undefined
-src\usr_proc.c(45): error:  #20: identifier "proc2Message" is undefined
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(354): error:  #513: a value of type "MSG_BUF" cannot be assigned to an entity of type "U32"
-src\usr_proc.c(356): warning:  #223-D: function "sendMessage" declared implicitly
-src\usr_proc.c(367): error:  #167: argument of type "int" is incompatible with parameter of type "int *"
-src\usr_proc.c(369): error:  #167: argument of type "int" is incompatible with parameter of type "char *"
-Target not created
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(44): error:  #20: identifier "proc1Message" is undefined
-src\usr_proc.c(45): error:  #20: identifier "proc2Message" is undefined
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(354): error:  #513: a value of type "MSG_BUF" cannot be assigned to an entity of type "U32"
-src\usr_proc.c(356): warning:  #223-D: function "sendMessage" declared implicitly
-src\usr_proc.c(370): error:  #167: argument of type "int" is incompatible with parameter of type "char *"
-Target not created
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(354): error:  #513: a value of type "MSG_BUF" cannot be assigned to an entity of type "U32"
-src\usr_proc.c(356): warning:  #223-D: function "sendMessage" declared implicitly
-src\usr_proc.c(370): error:  #167: argument of type "int" is incompatible with parameter of type "char *"
-Target not created
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(356): warning:  #223-D: function "sendMessage" declared implicitly
-src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(365): warning:  #550-D: variable "type" was set but never used
-linking...
-context_switching.axf: Error: L6218E: Undefined symbol sendMessage (referred from usr_proc.o).
-Target not created
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(365): warning:  #550-D: variable "type" was set but never used
-linking...
-Program Size: Code=7172 RO-data=500 RW-data=44 ZI-data=972  
-"context_switching.axf" - 0 Error(s), 8 Warning(s).
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(365): warning:  #550-D: variable "type" was set but never used
-linking...
-Program Size: Code=7172 RO-data=500 RW-data=44 ZI-data=972  
-"context_switching.axf" - 0 Error(s), 8 Warning(s).
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(365): warning:  #550-D: variable "type" was set but never used
-linking...
-Program Size: Code=7176 RO-data=500 RW-data=44 ZI-data=972  
-"context_switching.axf" - 0 Error(s), 8 Warning(s).
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
-linking...
-Program Size: Code=7192 RO-data=500 RW-data=44 ZI-data=972  
-"context_switching.axf" - 0 Error(s), 7 Warning(s).
-Build target 'Context Switching SIM'
-compiling usr_proc.c...
-src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
-src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
-src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
-src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
-linking...
-Program Size: Code=7188 RO-data=500 RW-data=44 ZI-data=972  
-"context_switching.axf" - 0 Error(s), 7 Warning(s).
-Build target 'Context Switching SIM'
-linking...
-Program Size: Code=7188 RO-data=500 RW-data=44 ZI-data=972  
+Program Size: Code=8262 RO-data=250 RW-data=56 ZI-data=1232  
 "context_switching.axf" - 0 Error(s), 0 Warning(s).

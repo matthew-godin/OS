@@ -9,14 +9,18 @@
 #include "uart_polling.h"
 #include "k_memory.h"
 #include "k_process.h"
+#include "k_message.h"
 
 void k_rtx_init(void)
 {
         __disable_irq();
         uart0_init();
-				uart1_init();
+	uart1_init();
         memory_init();
         process_init();
+
+        mailboxes_init();
+        timeout_queue_init();
         __enable_irq();
 	
 	/* start the first process */

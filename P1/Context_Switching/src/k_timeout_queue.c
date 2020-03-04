@@ -10,7 +10,7 @@ insert(38)
 
 */
 
-void insert_msg(TIMEOUT_QUEUE* timeout_queue, MSG_BUF* msg) {
+void insert_tq_msg(TIMEOUT_QUEUE* timeout_queue, MSG_BUF* msg) {
   MSG_BUF* iter;
   int cur_time;
   int msg_time = msg->m_time;
@@ -18,7 +18,7 @@ void insert_msg(TIMEOUT_QUEUE* timeout_queue, MSG_BUF* msg) {
   msg->mp_next = NULL; //reset mp_next pointer
 
   //empty queue
-  if(is_empty(timeout_queue)) {
+  if(is_tq_empty(timeout_queue)) {
     timeout_queue->head = msg;
     timeout_queue->tail = msg;
     return;
@@ -61,11 +61,11 @@ void insert_msg(TIMEOUT_QUEUE* timeout_queue, MSG_BUF* msg) {
 
 }
 
-MSG_BUF* top(TIMEOUT_QUEUE* timeout_queue) {
+MSG_BUF* top_tq(TIMEOUT_QUEUE* timeout_queue) {
   return timeout_queue->head;
 }
 
-MSG_BUF* pop_msg(TIMEOUT_QUEUE* timeout_queue) {
+MSG_BUF* pop_tq_msg(TIMEOUT_QUEUE* timeout_queue) {
     MSG_BUF* head;
 	if(timeout_queue->head == NULL) {
 		return NULL;
@@ -84,7 +84,7 @@ void init_timeout_queue(TIMEOUT_QUEUE* timeout_queue) {
   timeout_queue->tail = NULL;
 }
 
-int is_empty(TIMEOUT_QUEUE* timeout_queue) {
+int is_tq_empty(TIMEOUT_QUEUE* timeout_queue) {
   if (timeout_queue->head == NULL || timeout_queue->tail == NULL ) {
     return 1;
   }
