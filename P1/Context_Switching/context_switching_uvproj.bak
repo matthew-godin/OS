@@ -461,6 +461,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\k_process_priority_queue.h</FilePath>
             </File>
+            <File>
+              <FileName>k_procs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\k_procs.c</FilePath>
+            </File>
+            <File>
+              <FileName>k_procs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\k_procs.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -2,4 +2,4 @@
 -I c:\Software\Keil\ARM\RV31\INC 
 -I c:\Software\Keil\ARM\CMSIS\Include 
 -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--DK_MSG_ENV -o "k_timeout_queue.o" --omf_browse "k_timeout_queue.crf" --depend "k_timeout_queue.d" "src\k_timeout_queue.c"
+-DDEBUG_0 -DK_MSG_ENV -o "k_timeout_queue.o" --omf_browse "k_timeout_queue.crf" --depend "k_timeout_queue.d" "src\k_timeout_queue.c"

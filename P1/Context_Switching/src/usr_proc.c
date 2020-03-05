@@ -369,7 +369,7 @@ void proc2Message(void) {
 	type = receivedMessage->mtype;
 	//printf(type);
 	if (type == 3) {
-		printf(":B)");
+ 		printf(":B)");
 	}
 	while (1) {
 		release_processor();

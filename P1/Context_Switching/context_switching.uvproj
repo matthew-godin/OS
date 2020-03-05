@@ -348,7 +348,7 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>DEBUG_0</Define>
+              <Define>DEBUG_0 K_MSG_ENV</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -470,6 +470,21 @@
               <FileName>k_procs.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\k_procs.h</FilePath>
+            </File>
+            <File>
+              <FileName>k_mailbox.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\k_mailbox.c</FilePath>
+            </File>
+            <File>
+              <FileName>k_message.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\k_message.c</FilePath>
+            </File>
+            <File>
+              <FileName>k_timeout_queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\k_timeout_queue.c</FilePath>
             </File>
           </Files>
         </Group>
