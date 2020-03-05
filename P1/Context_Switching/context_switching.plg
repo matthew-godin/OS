@@ -7,3 +7,9 @@ N:\se350\temp\os\P1\Context_Switching\context_switching.uvproj
 Project File Date:  03/04/2020
 
 <h2>Output:</h2>
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+compiling timer.c...
+linking...
+Program Size: Code=7668 RO-data=500 RW-data=56 ZI-data=976  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
