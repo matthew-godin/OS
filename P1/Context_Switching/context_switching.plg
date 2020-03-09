@@ -4,30 +4,95 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 N:\se350\temp\os\P1\Context_Switching\context_switching.uvproj
-Project File Date:  03/04/2020
+Project File Date:  03/09/2020
 
 <h2>Output:</h2>
 Build target 'Context Switching SIM'
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling printf.c...
+linking...
+Program Size: Code=8224 RO-data=500 RW-data=80 ZI-data=976  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Erase skipped!
+Build target 'Context Switching SIM'
+assembling startup_LPC17xx.s...
+linking...
+Program Size: Code=8228 RO-data=500 RW-data=80 ZI-data=976  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Partial Erase Done (areas with no algorithms skipped!)
+No Algorithm found for: 10000000H - 10002263H
+Partial Programming Done (areas with no algorithms skipped!)
+Partial Verify OK (areas with no algorithms skipped!)
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=8228 RO-data=500 RW-data=80 ZI-data=976  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Partial Erase Done (areas with no algorithms skipped!)
+No Algorithm found for: 10000000H - 10002263H
+Partial Programming Done (areas with no algorithms skipped!)
+Partial Verify OK (areas with no algorithms skipped!)
+Build target 'Context Switching SIM'
+linking...
+Program Size: Code=8228 RO-data=500 RW-data=80 ZI-data=976  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 10002263H
+Partial Erase Done (areas with no algorithms skipped!)
+No Algorithm found for: 10000000H - 10002263H
+Partial Programming Done (areas with no algorithms skipped!)
+Partial Verify OK (areas with no algorithms skipped!)
+Build target 'Context Switching SIM'
 compiling main_svc.c...
 compiling k_rtx_init.c...
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
 compiling k_memory.c...
+src\k_memory.c(67): error:  #20: identifier "NUM_TESTE_PROCS" is undefined
 compiling k_process.c...
 src\k_process.c(182): warning:  #188-D: enumerated type mixed with another type
-compiling k_memory_queue.c...
-compiling k_process_priority_queue.c...
-src\k_process_priority_queue.c(102): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(108): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(127): warning:  #175-D: subscript out of range
-src\k_process_priority_queue.c(153): warning:  #175-D: subscript out of range
 compiling k_procs.c...
-src\k_procs.c(40): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(45): error:  #20: identifier "true" is undefined
+src\k_procs.c(46): error:  #165: too few arguments in function call
+src\k_procs.c(43): warning:  #550-D: variable "receive_message" was set but never used
+src\k_procs.c(44): warning:  #177-D: variable "received_char" was declared but never referenced
+src\k_procs.c(53): error:  #20: identifier "true" is undefined
+src\k_procs.c(54): error:  #165: too few arguments in function call
+src\k_procs.c(56): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(52): warning:  #550-D: variable "receive_message" was set but never used
 compiling k_mailbox.c...
 compiling k_message.c...
-compiling k_timeout_queue.c...
 compiling timer.c...
+compiling uart_irq.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "src\uart_def.h")
+src\uart_irq.c(228): warning:  #1-D: last line of file ends without a newline
 compiling usr_proc.c...
 src\usr_proc.c(248): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
 src\usr_proc.c(251): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
@@ -36,6 +101,35 @@ src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible
 src\usr_proc.c(183): warning:  #550-D: variable "mem_addr1" was set but never used
 src\usr_proc.c(184): warning:  #550-D: variable "mem_addr2" was set but never used
 src\usr_proc.c(350): warning:  #550-D: variable "mem_addr1" was set but never used
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(67): error:  #20: identifier "NUM_TESTE_PROCS" is undefined
+compiling k_procs.c...
+src\k_procs.c(46): error:  #165: too few arguments in function call
+src\k_procs.c(43): warning:  #550-D: variable "receive_message" was set but never used
+src\k_procs.c(44): warning:  #177-D: variable "received_char" was declared but never referenced
+src\k_procs.c(54): error:  #165: too few arguments in function call
+src\k_procs.c(56): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(52): warning:  #550-D: variable "receive_message" was set but never used
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
+src\k_memory.c(67): error:  #20: identifier "NUM_TESTE_PROCS" is undefined
+compiling k_procs.c...
+src\k_procs.c(43): warning:  #550-D: variable "receive_message" was set but never used
+src\k_procs.c(44): warning:  #177-D: variable "received_char" was declared but never referenced
+src\k_procs.c(56): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(52): warning:  #550-D: variable "receive_message" was set but never used
+Target not created
+Build target 'Context Switching SIM'
+compiling k_memory.c...
 linking...
-Program Size: Code=7676 RO-data=500 RW-data=56 ZI-data=976  
-"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Program Size: Code=8252 RO-data=500 RW-data=80 ZI-data=1080  
+"context_switching.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\se350\\temp\\os\\P1\\Context_Switching\\context_switching.AXF" 
+No Algorithm found for: 10000000H - 1000227BH
+Partial Erase Done (areas with no algorithms skipped!)
+No Algorithm found for: 10000000H - 1000227BH
+Partial Programming Done (areas with no algorithms skipped!)
+Partial Verify OK (areas with no algorithms skipped!)

@@ -7,12 +7,12 @@
 
 extern PCB* gp_current_process;
 extern PCB* gp_pcb_message_waiting_queue[];
-MAILBOX mailboxes[NUM_TEST_PROCS + 1];
+MAILBOX mailboxes[16];
 TIMEOUT_QUEUE timeout_queue;
 
 void mailboxes_init(void) {
     int i;
-    for (i = 0; i < NUM_TEST_PROCS + 1; ++i) {
+    for (i = 0; i < 16; ++i) {
         init_mailbox(&mailboxes[i]);
     }
 }

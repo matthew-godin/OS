@@ -7,3 +7,5 @@ k_rtx_init.o: src\k_memory.h
 k_rtx_init.o: src\k_process.h
 k_rtx_init.o: src\k_message.h
 k_rtx_init.o: src\timer.h
+k_rtx_init.o: src\uart.h
+k_rtx_init.o: src\uart_def.h

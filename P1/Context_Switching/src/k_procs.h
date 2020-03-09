@@ -4,5 +4,6 @@
 void set_kernel_procs(void);
 void null_proc(void);
 void timer_i_proc(void);
+void crt_procs(void);
 
 #endif

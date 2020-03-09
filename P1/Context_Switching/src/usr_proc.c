@@ -24,7 +24,7 @@ char str[10];
 
 void set_test_procs() {
 	int i;
-	for( i = 0; i < NUM_TOTAL_PROCS; i++ ) { // User Procs
+	for( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) { // User Procs
 		g_test_procs[i].m_pid=(U32)(i+NUM_KERNEL_PROCS);
 		g_test_procs[i].m_priority=LOWEST;
 		g_test_procs[i].m_stack_size=0x100;

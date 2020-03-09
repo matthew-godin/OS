@@ -26,12 +26,12 @@
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
-extern PCB* gp_pcb_queue[NUM_TOTAL_PROCS];
-extern PCB* gp_pcb_waiting_memory_queue[NUM_TOTAL_PROCS];
+extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
+extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 PCB* gp_pcb_message_waiting_queue[NUM_TEST_PROCS];
 
 /* process initialization table */
-PROC_INIT g_proc_table[NUM_TOTAL_PROCS];
+PROC_INIT g_proc_table[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
 extern PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
 
@@ -63,7 +63,7 @@ void process_init()
 	}
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
-	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
 		int j;
 		(gp_pcbs[i])->m_pid = (g_proc_table[i]).m_pid;
 		(gp_pcbs[i])->m_priority = (g_proc_table[i]).m_priority;
@@ -80,7 +80,7 @@ void process_init()
 
 	// Initialize ready process queue
 	init_pcb_queue();
-	for(i=0; i < NUM_TOTAL_PROCS; ++i) {
+	for(i=0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; ++i) {
 		push_pcb_queue(gp_pcbs[i]); // add all pcbs to process priority queue
 	}
 	
@@ -217,7 +217,7 @@ int k_set_process_priority(int process_id, int priority) {
 	if(process_id != 0 && priority ==4) {
 		return RTX_ERR;
 	}
-	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
@@ -232,7 +232,7 @@ int k_set_process_priority(int process_id, int priority) {
 
 int k_get_process_priority(int process_id) {
 	int i;
-	for ( i = 0; i < NUM_TOTAL_PROCS; i++ ) {
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
 			k_release_processor();
 			return (gp_pcbs[i])->m_priority;

@@ -38,3 +38,19 @@ void timer_i_proc() {
         k_send_message(pid, ready_message);
     }
 }
+
+void crt_proc() {
+    MSG_BUF* receive_message = NULL;
+    char* received_char;
+    while(1) {
+        receive_message = k_receive_message(NULL);
+        //send it to UART1_IRQ
+    }
+}
+
+void kcd_proc() {
+    MSG_BUF* receive_message = NULL;
+    while(1) {
+        receive_message = k_receive_message(NULL);
+    }
+}

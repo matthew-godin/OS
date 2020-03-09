@@ -11,6 +11,7 @@
 #include "k_process.h"
 #include "k_message.h"
 #include "timer.h"
+#include "uart.h"
 
 void k_rtx_init(void)
 {
@@ -23,6 +24,8 @@ void k_rtx_init(void)
 
         mailboxes_init();
         timeout_queue_init();
+        uart0_irq_init();
+        uart1_irq_init();
         __enable_irq();
 	
 	/* start the first process */
