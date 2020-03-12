@@ -30,7 +30,7 @@ int k_send_message(int process_id, void* message_envelope) {
 	incoming_message_envelope->mp_next = NULL;
 
 	push_msg(&mailboxes[process_id], incoming_message_envelope); //not sure if we want to modify some more fields
-	
+
 	if (gp_pcb_message_waiting_queue[process_id] != NULL) { //process was waiting for message, wake up
 		unblocked_pcb = gp_pcb_message_waiting_queue[process_id];
 		gp_pcb_message_waiting_queue[process_id] = NULL; // remove from waiting
@@ -61,6 +61,9 @@ void* k_receive_message(int* sender_id) {
 	if (process_id == PID_TIMER_IPROC) {
 		return pop_msg(&mailboxes[0]); // 0 is the timer mailbox
 	}
+  if(process_id < 0 || process_id > 16) {
+    return NULL;
+  }
 	if (is_empty(&mailboxes[process_id])) { //Could and probably should be an if statement
         k_release_blocked_processor(WAITING_MESSAGE);
 	} else {

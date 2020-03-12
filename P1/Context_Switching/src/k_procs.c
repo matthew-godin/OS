@@ -74,19 +74,22 @@ void kcd_proc() {
     int pid;
     while(1) {
         receive_message = k_receive_message(NULL);
-        cmd = receive_message->mtext[1];
+        if(receive_message != NULL) {
+          cmd = receive_message->mtext[1];
 
-        if(receive_message->mtype == KCD_REG) { //command registration
-          if(receive_message->mtext[0] =='%') { //check if valid keyboard command
-            insert_cmd(cmd, receive_message->m_send_pid);
-          }
-        } else { // invocation of command
-          //send to output
+          if(receive_message->mtype == KCD_REG) { //command registration
+            if(receive_message->mtext[0] =='%') { //check if valid keyboard command
+              insert_cmd(cmd, receive_message->m_send_pid);
+            }
+          } else { // invocation of command
+            //send to output
 
-          if(receive_message->mtext[0] =='%') {  //check if valid keyboard command
-            pid = get_pid_from_cmd(cmd);
-            if(pid != RTX_ERR) {
-              k_send_message(pid, receive_message); //send message to process associated with the command
+            if(receive_message->mtext[0] =='%') {  //check if valid keyboard command
+              pid = get_pid_from_cmd(cmd);
+              if(pid != RTX_ERR) {
+                // i think it is unnecessary to reset the sender/receiver pid on the message
+                k_send_message(pid, receive_message); //send message to process associated with the command
+              }
             }
           }
         }
@@ -97,6 +100,8 @@ void wall_proc() {
   MSG_BUF* receive_message = NULL;
   while(1) {
     receive_message = k_receive_message(NULL);
-    update_wall_time(receive_message->mtext);
+    if(receive_message != NULL) {
+      update_wall_time(receive_message);
+    }
   }
 }

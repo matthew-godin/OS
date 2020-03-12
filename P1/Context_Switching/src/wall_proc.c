@@ -3,7 +3,8 @@
 
 //reset, terminate, or set to specific time, this is called ONLY by the wall_proc
 //note, this assumes a correctly formatted wall proc command
-void update_wall_time(char* cmd_str) {
+void update_wall_time(MSG_BUF* msg) {
+  char* cmd_str = msg->mtext;
   int i;
   if(cmd_str[2] == 'R') { //reset
     wall_is_running = 1;
@@ -15,9 +16,9 @@ void update_wall_time(char* cmd_str) {
       wall_time[i] = cmd_str[i+4];
     }
   }
-
+  
   if(wall_is_running) {
-    //display on CRT
+  //display on CRT
   }
 }
 
