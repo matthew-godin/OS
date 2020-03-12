@@ -3,8 +3,8 @@
 #include "printf.h"
 #endif
 
-PCB* gp_pcb_queue[NUM_TOTAL_PROCS];
-PCB* gp_pcb_waiting_memory_queue[NUM_TEST_PROCS];
+PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
+PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 
 void init_pcb_queue(void) {
 	int i;
@@ -66,11 +66,11 @@ void updated_pcb_priority(int pid) {
 			break;
 		}
 	}
-	
+
 	if (!found) {
 		return;
 	}
-	
+
 	// "Remove" pcb from array
 	for (; i < NUM_TOTAL_PROCS-1; ++i) {
 		gp_pcb_queue[i] = gp_pcb_queue[i+1];
@@ -159,9 +159,6 @@ void updated_pcb_waiting_memory_priority(int pid) {
 int pcb_waiting_memory_queue_is_empty() {
 	if(gp_pcb_waiting_memory_queue[0] == NULL) {
 		return 1;
-	} 
+	}
 	return 0;
 }
-
-
-
