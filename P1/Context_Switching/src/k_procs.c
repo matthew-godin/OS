@@ -3,7 +3,6 @@
 #include "k_timeout_queue.h"
 #include "k_message.h"
 #include "k_command_map.h"
-#include "wall_proc.h"
 
 PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
 extern TIMEOUT_QUEUE timeout_queue;
@@ -23,12 +22,6 @@ void set_kernel_procs() {
     g_kernel_procs[2].m_priority= 0;
     g_kernel_procs[2].m_stack_size= 128;
     g_kernel_procs[2].mpf_start_pc= &crt_proc;
-
-    g_kernel_procs[3].m_pid= 11;
-    g_kernel_procs[3].m_priority= 0;
-    g_kernel_procs[3].m_stack_size= 128;
-    g_kernel_procs[3].mpf_start_pc= &wall_proc;
-
 }
 
 void null_proc() {
@@ -94,14 +87,4 @@ void kcd_proc() {
           }
         }
     }
-}
-
-void wall_proc() {
-  MSG_BUF* receive_message = NULL;
-  while(1) {
-    receive_message = k_receive_message(NULL);
-    if(receive_message != NULL) {
-      update_wall_time(receive_message);
-    }
-  }
 }

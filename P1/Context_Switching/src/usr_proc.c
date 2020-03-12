@@ -10,6 +10,7 @@
 #include "uart_polling.h"
 #include "usr_proc.h"
 #include "common.h"
+#include "wall_proc.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -47,6 +48,12 @@ void set_test_procs() {
 	g_test_procs[3].mpf_start_pc = &proc4;
 	g_test_procs[4].mpf_start_pc = &proc5;
 	g_test_procs[5].mpf_start_pc = &proc6;
+
+	//wall proc
+	g_test_procs[6].m_pid= 11;
+	g_test_procs[6].m_priority= 0;
+	g_test_procs[6].m_stack_size= 128;
+	g_test_procs[6].mpf_start_pc= &wall_proc;
 }
 
 /**
@@ -374,4 +381,14 @@ void proc2Message(void) {
 	while (1) {
 		release_processor();
 	}
+}
+
+void wall_proc() {
+  MSG_BUF* receive_message = NULL;
+  while(1) {
+    receive_message = k_receive_message(NULL);
+    if(receive_message != NULL) {
+      update_wall_time(receive_message);
+    }
+  }
 }

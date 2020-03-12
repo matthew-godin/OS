@@ -8,8 +8,8 @@
 /* ----- Definitations ----- */
 #define RTX_ERR -1
 #define NULL 0
-#define NUM_TEST_PROCS 6
-#define NUM_KERNEL_PROCS 4
+#define NUM_TEST_PROCS 7
+#define NUM_KERNEL_PROCS 3
 #define NUM_TOTAL_PROCS 10
 #define NUM_MEMORY_BLOCKS 8
 #define MEM_BLOCK_SIZE 128

@@ -4,9 +4,9 @@
  * @author: Yiqing Huang
  * @date:   2014/01/17
  */
- 
+
 #ifndef USR_PROC_H_
-#define USR_PROC_H
+#define USR_PROC_H_
 
 void set_test_procs(void);
 void proc1(void);
@@ -19,4 +19,5 @@ void proc6(void);
 void proc1Message(void);
 void proc2Message(void);
 
+void wall_proc(void);
 #endif /* USR_PROC_H_ */

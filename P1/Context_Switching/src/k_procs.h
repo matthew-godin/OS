@@ -6,7 +6,5 @@ void null_proc(void);
 void timer_i_proc(void);
 void crt_proc(void);
 void kcd_proc(void);
-void wall_proc(void);
-
 
 #endif
