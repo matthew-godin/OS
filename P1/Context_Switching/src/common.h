@@ -1,5 +1,5 @@
-/* @brief: common defines and structs for both kernel and user 
- * @file: common.h 
+/* @brief: common defines and structs for both kernel and user
+ * @file: common.h
  * @author: Yiqing Huang
  * @date: 2017/01/04
  */
@@ -66,7 +66,7 @@ typedef struct msgbuf
 	int m_time;             /* time relative to previous message in timeout_queue */
 #endif
 	int mtype;              /* user defined message type */
-	char mtext[1];          /* body of the message */
+	char mtext[24];          /* body of the message */
 } MSG_BUF;
 
 #endif // COMMON_H_

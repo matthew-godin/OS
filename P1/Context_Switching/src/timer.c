@@ -9,6 +9,7 @@
 #include <LPC17xx.h>
 #include "timer.h"
 #include "k_procs.h"
+#include "wall_proc.h"
 
 #define BIT(X) (1<<X)
 
@@ -105,14 +106,17 @@ __asm void TIMER0_IRQHandler(void)
 	PUSH{r4-r11, lr}
 	BL c_TIMER0_IRQHandler
 	POP{r4-r11, pc}
-} 
+}
 /**
  * @brief: c TIMER0 IRQ Handler
  */
 void c_TIMER0_IRQHandler(void)
 {
 	/* ack inttrupt, see section  21.6.1 on pg 493 of LPC17XX_UM */
-	LPC_TIM0->IR = BIT(0);  
+	LPC_TIM0->IR = BIT(0);
 	timer_i_proc();
 	g_timer_count++;
+	if(g_timer_count%1000 == 0) { //every second increment wall time
+		increment_wall_time();
+	}
 }

@@ -22,13 +22,14 @@ void k_rtx_init(void)
         memory_init();
         process_init();
 
+        command_map_init();
         mailboxes_init();
         timeout_queue_init();
         uart0_irq_init();
         uart1_irq_init();
         __enable_irq();
-	
+
 	/* start the first process */
-	
+
         k_release_processor();
 }
