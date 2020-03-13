@@ -7,6 +7,9 @@
 PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
 extern TIMEOUT_QUEUE timeout_queue;
 
+MSG_BUF* kcd_buffer = NULL;
+int kcd_buffer_index = 0;
+
 void set_kernel_procs() {
     g_kernel_procs[0].m_pid= 0;
     g_kernel_procs[0].m_priority= 4;
@@ -50,17 +53,46 @@ void timer_i_proc() {
     }
 }
 
+//called after each character
+void uart_i_proc(char c) {
+   MSG_BUF* kcd_msg_env;
+   MSG_BUF* crt_msg_env = (MSG_BUF*) k_request_memory_block(); //make this non-blocking
+
+   crt_msg_env->mtype = CRT_DISPLAY;
+   crt_msg_env->mtext[0] = c; //add character to be printed in message body
+   k_send_message(PID_CRT, crt_msg_env);
+
+   //build message buffer
+   if(kcd_buffer == NULL) {
+     kcd_buffer = (MSG_BUF*) k_request_memory_block(); //make this non-blocking
+     kcd_buffer->mtype = KCD_CMD;
+   }
+   kcd_buffer->mtext[kcd_buffer_index++] = c; //put char on buffer, increment index
+
+   if(c == '\n') { //last character
+     kcd_msg_env = kcd_buffer; // set kcd_msg_evn to buffer
+     kcd_buffer = NULL;  //flush the buffer
+     kcd_buffer_index = 0; //reset index
+
+     k_send_message(PID_KCD, kcd_msg_env); //send message to kcd
+   }
+
+}
+
 void crt_proc() {
     MSG_BUF* receive_message = NULL;
     char* received_char;
     while(1) {
         receive_message = k_receive_message(NULL);
         //send it to UART1_IRQ
+        k_release_memory_block(receive_message);
     }
 }
 
 //hot keys will not enter this code
 //hot keys should be handled in uart i process
+// this assumes that the message received ty the kcd is a COMLETE COMMAND,
+// not just individual characters
 void kcd_proc() {
     MSG_BUF* receive_message = NULL;
     char cmd;

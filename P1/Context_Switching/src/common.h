@@ -48,6 +48,11 @@
 #define KCD_CMD 2
 #define CRT_DISPLAY 3
 
+
+/* PID for useful processes */
+#define PID_CRT 13
+#define PID_KCD 12
+
 /* ----- Types ----- */
 typedef unsigned char U8;
 typedef unsigned int U32;

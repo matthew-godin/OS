@@ -1,9 +1,12 @@
 
 #include "wall_proc.h"
+#include "common.h"
+#include "rtx.h"
 
 //reset, terminate, or set to specific time, this is called ONLY by the wall_proc
 //note, this assumes a correctly formatted wall proc command
 void update_wall_time(MSG_BUF* msg) {
+  MSG_BUF* crt_msg_env;
   char* cmd_str = msg->mtext;
   int i;
   if(cmd_str[2] == 'R') { //reset
@@ -16,15 +19,24 @@ void update_wall_time(MSG_BUF* msg) {
       wall_time[i] = cmd_str[i+4];
     }
   }
-  
+
   if(wall_is_running) {
-  //display on CRT
+    crt_msg_env = (MSG_BUF*) request_memory_block();
+    crt_msg_env->mtype = CRT_DISPLAY;
+
+    for(i = 0; i < 8; i++) {
+      crt_msg_env->mtext[i] = wall_time[i];
+    }
+    send_message(PID_CRT, crt_msg_env);
   }
 }
 
 //should be called every second by timer
 void increment_wall_time() {
+  MSG_BUF* crt_msg_env;
   char newChar;
+  int i;
+
   newChar = helper_increment(wall_time[7]);
   if(newChar == '0') { //need to increment another digit
     newChar = helper_increment(wall_time[6]);
@@ -42,7 +54,13 @@ void increment_wall_time() {
     }
   }
   if(wall_is_running) {
-    //display on CRT????
+    crt_msg_env = (MSG_BUF*) request_memory_block();
+    crt_msg_env->mtype = CRT_DISPLAY;
+
+    for(i = 0; i < 8; i++) {
+      crt_msg_env->mtext[i] = wall_time[i];
+    }
+    send_message(PID_CRT, crt_msg_env);
   }
 }
 

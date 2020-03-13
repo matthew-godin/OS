@@ -44,6 +44,7 @@ int k_send_message(int process_id, void* message_envelope) {
 }
 
 int k_delayed_send(int process_id, void* message_envelope, int delay) {
+  if(delay < 0) return RTX_ERR;
 	MSG_BUF* incoming_message_envelope = (MSG_BUF*)message_envelope;
 
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid;
