@@ -1,6 +1,8 @@
 #include "k_command_map.h"
 #include "k_rtx.h"
 
+COMMAND registered_cmds[26] = {{0,0}};
+
 void insert_cmd(char cmd, int pid) {
   int i;
   for(i = 0; i < 26; i++) {

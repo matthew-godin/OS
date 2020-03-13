@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork 
+-I c:\Software\Keil\ARM\RV31\INC 
+-I c:\Software\Keil\ARM\CMSIS\Include 
+-I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
+-DDEBUG_0 -DK_MSG_ENV -o "k_command_map.o" --omf_browse "k_command_map.crf" --depend "k_command_map.d" "src\k_command_map.c"

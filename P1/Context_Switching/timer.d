@@ -7,3 +7,5 @@ timer.o: c:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h
 timer.o: c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
 timer.o: src\timer.h
 timer.o: src\k_procs.h
+timer.o: src\wall_proc.h
+timer.o: src\common.h

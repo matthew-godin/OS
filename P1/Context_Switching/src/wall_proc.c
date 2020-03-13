@@ -3,6 +3,9 @@
 #include "common.h"
 #include "rtx.h"
 
+char* wall_time = "00:00:00";
+int wall_is_running = 0; //wall is initially not running
+
 //reset, terminate, or set to specific time, this is called ONLY by the wall_proc
 //note, this assumes a correctly formatted wall proc command
 void update_wall_time(MSG_BUF* msg) {

@@ -1,5 +1,4 @@
 #include "hot_key_procs.h"
-#include "k_rtx.h"
 #include "printf.h"
 
 extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];

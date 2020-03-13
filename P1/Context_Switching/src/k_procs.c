@@ -1,4 +1,3 @@
-#include "rtx.h"
 #include "k_procs.h"
 #include "k_timeout_queue.h"
 #include "k_message.h"
@@ -30,7 +29,7 @@ void set_kernel_procs() {
 
 void null_proc() {
     while(1) {
-        release_processor();
+        k_release_processor();
     }
 }
 
