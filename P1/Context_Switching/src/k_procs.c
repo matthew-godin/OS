@@ -3,6 +3,7 @@
 #include "k_timeout_queue.h"
 #include "k_message.h"
 #include "k_command_map.h"
+#include "hot_key_procs.h"
 
 PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
 extern TIMEOUT_QUEUE timeout_queue;
@@ -56,13 +57,24 @@ void timer_i_proc() {
 //called after each character
 void uart_i_proc(char c) {
    MSG_BUF* kcd_msg_env;
+
+   //display character regardless
    MSG_BUF* crt_msg_env = (MSG_BUF*) k_request_memory_block(); //make this non-blocking
 
    crt_msg_env->mtype = CRT_DISPLAY;
    crt_msg_env->mtext[0] = c; //add character to be printed in message body
    k_send_message(PID_CRT, crt_msg_env);
 
-   //build message buffer
+   //handle hotkey
+   if (c == '!') {
+     print_ready_queue();
+   } else if(c == '@') {
+     print_blocked_memory_queue();
+   } else if (c == '#') {
+     print_blocked_message_queue();
+   }
+
+   //build message buffer for kcd display
    if(kcd_buffer == NULL) {
      kcd_buffer = (MSG_BUF*) k_request_memory_block(); //make this non-blocking
      kcd_buffer->mtype = KCD_CMD;
