@@ -18,6 +18,7 @@ void update_wall_time(MSG_BUF* msg) {
   } else if(cmd_str[2] == 'T') { //terminate
     wall_is_running = 0;
   } else if(cmd_str[2] == 'S') { //set to a specific time
+		//just copies the string over, no check yet
     for(i= 0; i < 8; i++) {
       wall_time[i] = cmd_str[i+4];
     }

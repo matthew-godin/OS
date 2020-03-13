@@ -7,6 +7,8 @@
 
 extern PCB* gp_current_process;
 extern PCB* gp_pcb_message_waiting_queue[];
+extern int interrupt;
+
 MAILBOX mailboxes[16];
 TIMEOUT_QUEUE timeout_queue;
 
@@ -57,6 +59,16 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 	// same comment as above release processor
 	k_release_processor();
 	return RTX_OK;
+}
+
+
+void* k_receive_message_non_blocking(int* sender_id) {
+	int process_id = interrupt;
+	
+	if (process_id == 1) {
+		return pop_msg(&mailboxes[0]); // 0 is the timer mailbox
+	}
+
 }
 
 void* k_receive_message(int* sender_id) {

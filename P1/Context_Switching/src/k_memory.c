@@ -130,6 +130,16 @@ void *k_request_memory_block(void) {
 	return returnAddr;
 }
 
+void* k_request_memory_block_non_blocking(void) {
+		U32* returnAddr;
+#ifdef DEBUG_0 
+	printf("k_request_memory_block_non_blocking: entering...\n");
+#endif /* ! DEBUG_0 */
+	returnAddr = top_mq(gp_memory_queue);
+	gp_memory_queue = pop_mq(gp_memory_queue);
+	return returnAddr;
+}
+
 int k_release_memory_block(void *p_mem_blk) {
 	PCB* unblocked_pcb ;
 #ifdef DEBUG_0 

@@ -348,7 +348,7 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>DEBUG_0 K_MSG_ENV</Define>
+              <Define>DEBUG_0 K_MSG_ENV DEBUG_HOTKEYS</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -487,11 +487,6 @@
               <FilePath>.\src\k_timeout_queue.c</FilePath>
             </File>
             <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\timer.c</FilePath>
-            </File>
-            <File>
               <FileName>uart_irq.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\uart_irq.c</FilePath>
@@ -510,6 +505,11 @@
               <FileName>uart_polling.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\uart_polling.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\timer.c</FilePath>
             </File>
           </Files>
         </Group>

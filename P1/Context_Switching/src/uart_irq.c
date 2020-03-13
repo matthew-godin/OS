@@ -19,6 +19,7 @@ uint8_t g_send_char = 0;
 uint8_t g_char_in;
 uint8_t g_char_out;
 
+extern int interrupt;
 /**
  * @brief: initialize the n_uart
  * NOTES: It only supports UART0. It can be easily extended to support UART1 IRQ.
@@ -173,6 +174,8 @@ void c_UART0_IRQHandler(void)
 {
 	uint8_t IIR_IntId;	    // Interrupt ID from IIR
 	LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
+	
+	interrupt = 2;
 
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
@@ -226,6 +229,7 @@ void c_UART0_IRQHandler(void)
 #ifdef DEBUG_0
 			uart1_put_string("Should not get here!\n\r");
 #endif // DEBUG_0
+		interrupt = 0;
 		return;
 	}
 }

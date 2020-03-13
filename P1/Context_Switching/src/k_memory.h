@@ -24,6 +24,7 @@ extern PROC_INIT g_proc_table[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 void memory_init(void);
 U32 *alloc_stack(U32 size_b);
 void *k_request_memory_block(void);
+void* k_request_memory_block_non_blocking(void);
 int k_release_memory_block(void *);
 
 #endif /* ! K_MEM_H_ */

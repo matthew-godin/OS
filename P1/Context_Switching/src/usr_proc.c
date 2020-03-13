@@ -25,8 +25,8 @@ char str[10];
 
 void set_test_procs() {
 	int i;
-	for( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) { // User Procs
-		g_test_procs[i].m_pid=(U32)(i+NUM_KERNEL_PROCS);
+	for( i = 0; i < NUM_TEST_PROCS; i++ ) { // User Procs
+		g_test_procs[i].m_pid=(U32)(i+1);
 		g_test_procs[i].m_priority=LOWEST;
 		g_test_procs[i].m_stack_size=0x100;
 	}
@@ -52,7 +52,6 @@ void set_test_procs() {
 	//wall proc
 	g_test_procs[6].m_pid= 11;
 	g_test_procs[6].m_priority= 0;
-	g_test_procs[6].m_stack_size= 128;
 	g_test_procs[6].mpf_start_pc= &wall_proc;
 }
 
@@ -390,5 +389,6 @@ void wall_proc() {
     if(receive_message != NULL) {
       update_wall_time(receive_message);
     }
+		release_processor();
   }
 }

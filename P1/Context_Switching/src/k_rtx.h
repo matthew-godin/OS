@@ -22,8 +22,6 @@
 
 #define NUM_KERNEL_PROCS 3
 
-#define NUM_TOTAL_PROCS 10
-
 // some buffer space for the null process
 #define NULL_PROC_STACK 0x0100
 
