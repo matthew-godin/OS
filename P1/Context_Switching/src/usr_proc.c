@@ -353,10 +353,10 @@ void proc6(void)
 }
 
 void proc1Message(void) {
-	U32* mem_addr1;
-	MSG_BUF message;
-	mem_addr1 = request_memory_block();
-	message.mtype = 3;
+	MSG_BUF* message;
+	message = (MSG_BUF*) request_memory_block();
+	message->mtext[0] = ":";
+	message->mtext[1] = ")";
 	//*mem_addr1 = message;
 
 	send_message(2, &message);
@@ -368,13 +368,11 @@ void proc1Message(void) {
 }
 
 void proc2Message(void) {
-	int type = 2;
 	int* sender_id = NULL;
 	MSG_BUF * receivedMessage;
 	receivedMessage = receive_message(sender_id);
-	type = receivedMessage->mtype;
 	//printf(type);
-	if (type == 3) {
+	if (receivedMessage->mtext[0] == ":" && receivedMessage->mtext[1] == ")") {
  		printf(":B)");
 	}
 	while (1) {
