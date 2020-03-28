@@ -355,8 +355,8 @@ void proc6(void)
 void proc1Message(void) {
 	MSG_BUF* message;
 	message = (MSG_BUF*) request_memory_block();
-	message->mtext[0] = ":";
-	message->mtext[1] = ")";
+	message->mtext[0] = ':';
+	message->mtext[1] = ')';
 	//*mem_addr1 = message;
 
 	send_message(2, &message);
@@ -372,7 +372,7 @@ void proc2Message(void) {
 	MSG_BUF * receivedMessage;
 	receivedMessage = receive_message(sender_id);
 	//printf(type);
-	if (receivedMessage->mtext[0] == ":" && receivedMessage->mtext[1] == ")") {
+	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
  		printf(":B)");
 	}
 	while (1) {

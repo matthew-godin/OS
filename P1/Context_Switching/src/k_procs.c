@@ -4,9 +4,12 @@
 #include "k_message.h"
 #include "k_command_map.h"
 #include "hot_key_procs.h"
+#include "LPC17xx.h"
+#include "uart.h"
 
 PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
 extern TIMEOUT_QUEUE timeout_queue;
+extern uint8_t *gp_buffer;
 
 MSG_BUF* kcd_buffer = NULL;
 int kcd_buffer_index = 0;
@@ -111,9 +114,13 @@ void uart_i_proc(char c) {
 void crt_proc() {
     MSG_BUF* receive_message = NULL;
     char* received_char;
+	  LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
+	
     while(1) {
         receive_message = k_receive_message(NULL);
         //send it to UART1_IRQ
+				pUart->IER ^= IER_THRE;
+			  gp_buffer =(uint8_t*) received_char;
         k_release_memory_block(receive_message);
 				k_release_processor();
     }
