@@ -28,7 +28,7 @@ void set_test_procs() {
 	for( i = 0; i < NUM_TEST_PROCS; i++ ) { // User Procs
 		g_test_procs[i].m_pid=(U32)(i+1);
 		g_test_procs[i].m_priority=LOWEST;
-		g_test_procs[i].m_stack_size=0x100;
+		g_test_procs[i].m_stack_size=0x20;
 	}
 
 	// P1 tests
@@ -42,6 +42,7 @@ void set_test_procs() {
 
 	// Messaging Test
 	g_test_procs[0].m_priority = HIGH;
+	
 	g_test_procs[0].mpf_start_pc = &proc1Message;
 	g_test_procs[1].mpf_start_pc = &proc2Message;
 	g_test_procs[2].mpf_start_pc = &proc3;
@@ -50,8 +51,8 @@ void set_test_procs() {
 	g_test_procs[5].mpf_start_pc = &proc6;
 
 	//wall proc
-	g_test_procs[6].m_pid= 11;
-	g_test_procs[6].m_priority= 0;
+	g_test_procs[6].m_pid= (U32) 11;
+	g_test_procs[6].m_priority= 3;
 	g_test_procs[6].mpf_start_pc= &wall_proc;
 }
 
@@ -188,6 +189,7 @@ void proc3(void)
 {
 	U32* mem_addr1;
 	U32* mem_addr2;
+		
 	#ifdef DEBUG_0
 	printf("Starting process 3\r\n");
 	#endif
@@ -279,6 +281,7 @@ void proc3(void)
  */
 void proc4(void)
 {
+		
 	#ifdef DEBUG_0
 	printf("Starting process 4\r\n");
 
@@ -315,6 +318,7 @@ void proc4(void)
  */
 void proc5(void)
 {
+		
 	#ifdef DEBUG_0
 	printf("Have returned to process 5\r\n");
 	printf("Checking last process run was process 4\r\n");
@@ -335,6 +339,7 @@ void proc5(void)
  */
 void proc6(void)
 {
+		
 	#ifdef DEBUG_0
 	printf("Have returned to process 6\r\n");
 	printf("Checking last process run was process 5\r\n");
@@ -354,12 +359,13 @@ void proc6(void)
 
 void proc1Message(void) {
 	MSG_BUF* message;
+		
 	message = (MSG_BUF*) request_memory_block();
 	message->mtext[0] = ':';
 	message->mtext[1] = ')';
 	//*mem_addr1 = message;
 
-	send_message(2, &message);
+	send_message(2, message);
 	set_process_priority(1, 3);
 
 	while (1) {
@@ -368,8 +374,12 @@ void proc1Message(void) {
 }
 
 void proc2Message(void) {
+	
 	int* sender_id = NULL;
 	MSG_BUF * receivedMessage;
+	
+	release_processor();
+	
 	receivedMessage = receive_message(sender_id);
 	//printf(type);
 	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {

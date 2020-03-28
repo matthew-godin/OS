@@ -17,17 +17,17 @@ int kcd_buffer_index = 0;
 void set_kernel_procs() {
     g_kernel_procs[0].m_pid= 0;
     g_kernel_procs[0].m_priority= 4;
-    g_kernel_procs[0].m_stack_size= 128;
+    g_kernel_procs[0].m_stack_size= 0x20;
     g_kernel_procs[0].mpf_start_pc= &null_proc;
 
     g_kernel_procs[1].m_pid= PID_KCD;
     g_kernel_procs[1].m_priority= 0;
-    g_kernel_procs[1].m_stack_size= 128;
+    g_kernel_procs[1].m_stack_size= 0x20;
     g_kernel_procs[1].mpf_start_pc= &kcd_proc;
 
     g_kernel_procs[2].m_pid= PID_CRT;
     g_kernel_procs[2].m_priority= 0;
-    g_kernel_procs[2].m_stack_size= 128;
+    g_kernel_procs[2].m_stack_size= 0x20;
     g_kernel_procs[2].mpf_start_pc= &crt_proc;
 }
 
@@ -116,6 +116,7 @@ void crt_proc() {
     char* received_char;
 	  LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
 	
+	
     while(1) {
         receive_message = k_receive_message(NULL);
         //send it to UART1_IRQ
@@ -134,6 +135,7 @@ void kcd_proc() {
     MSG_BUF* receive_message = NULL;
     char cmd;
     int pid;
+		
     while(1) {
         receive_message = k_receive_message(NULL);
         if(receive_message != NULL) {

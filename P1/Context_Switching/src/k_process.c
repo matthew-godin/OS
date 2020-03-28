@@ -98,10 +98,7 @@ void process_init()
 
 PCB *scheduler(void)
 {
-	PCB* next_pcb;
-	next_pcb = pop_pcb_queue();
-
-	return next_pcb;
+	return pop_pcb_queue();
 }
 
 /*@brief: switch out old pcb (p_pcb_old), run the new pcb (gp_current_process)
