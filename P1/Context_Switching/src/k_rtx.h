@@ -18,9 +18,7 @@
 #define NUM_MEMORY_BLOCKS 8 // we can set this
 #define MEM_BLOCK_SIZE 128 // we can set this TODO: might need to increase
 
-#define NUM_TEST_PROCS 7
 
-#define NUM_KERNEL_PROCS 3
 
 // some buffer space for the null process
 #define NULL_PROC_STACK 0x0100
@@ -52,14 +50,6 @@ typedef struct pcb
 	PROC_STATE_E m_state;   /* state of the process */  
 } PCB;
 
-/* initialization table item */
-typedef struct proc_init
-{	
-	int m_pid;	        /* process id */ 
-	int m_priority;         /* initial priority, not used in this example. */ 
-	int m_stack_size;       /* size of stack in words */
-	void (*mpf_start_pc) ();/* entry point of the process */    
-} PROC_INIT;
 
 int set_process_priority(int process_id, int priority);
 int get_process_priority(int process_id);

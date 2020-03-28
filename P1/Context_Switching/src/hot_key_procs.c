@@ -1,5 +1,6 @@
 #include "hot_key_procs.h"
 #include "printf.h"
+#include "common.h"
 
 extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];

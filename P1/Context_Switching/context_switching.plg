@@ -523,3 +523,23 @@ linking...
 context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
 Program Size: Code=9304 RO-data=492 RW-data=100 ZI-data=1420  
 "context_switching.axf" - 0 Error(s), 8 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(125): warning:  #223-D: function "k_release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling usr_proc.c...
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(264): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9272 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 14 Warning(s).

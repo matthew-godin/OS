@@ -2,6 +2,7 @@
 #ifdef DEBUG_0
 #include "printf.h"
 #endif
+#include "common.h"
 
 PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];

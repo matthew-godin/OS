@@ -28,7 +28,7 @@ void set_test_procs() {
 	for( i = 0; i < NUM_TEST_PROCS; i++ ) { // User Procs
 		g_test_procs[i].m_pid=(U32)(i+1);
 		g_test_procs[i].m_priority=LOWEST;
-		g_test_procs[i].m_stack_size=0x20;
+		g_test_procs[i].m_stack_size=0x200;
 	}
 
 	// P1 tests
@@ -52,7 +52,7 @@ void set_test_procs() {
 
 	//wall proc
 	g_test_procs[6].m_pid= (U32) 11;
-	g_test_procs[6].m_priority= 3;
+	g_test_procs[6].m_priority= 0;
 	g_test_procs[6].mpf_start_pc= &wall_proc;
 }
 
@@ -190,6 +190,9 @@ void proc3(void)
 	U32* mem_addr1;
 	U32* mem_addr2;
 		
+	while(1) {
+			release_processor();
+}
 	#ifdef DEBUG_0
 	printf("Starting process 3\r\n");
 	#endif
@@ -282,6 +285,9 @@ void proc3(void)
 void proc4(void)
 {
 		
+	while(1) {
+			release_processor();
+}
 	#ifdef DEBUG_0
 	printf("Starting process 4\r\n");
 
@@ -318,6 +324,9 @@ void proc4(void)
  */
 void proc5(void)
 {
+	while(1) {
+			release_processor();
+}
 		
 	#ifdef DEBUG_0
 	printf("Have returned to process 5\r\n");
@@ -339,7 +348,9 @@ void proc5(void)
  */
 void proc6(void)
 {
-		
+		while(1) {
+			release_processor();
+}
 	#ifdef DEBUG_0
 	printf("Have returned to process 6\r\n");
 	printf("Checking last process run was process 5\r\n");
@@ -378,7 +389,6 @@ void proc2Message(void) {
 	int* sender_id = NULL;
 	MSG_BUF * receivedMessage;
 	
-	release_processor();
 	
 	receivedMessage = receive_message(sender_id);
 	//printf(type);
@@ -391,12 +401,13 @@ void proc2Message(void) {
 }
 
 void wall_proc() {
-  MSG_BUF* receive_message = NULL;
+  MSG_BUF* receive_msg = NULL;
   while(1) {
-    receive_message = k_receive_message(NULL);
-    if(receive_message != NULL) {
-      update_wall_time(receive_message);
+    receive_msg = receive_message(NULL);
+    if(receive_msg != NULL) {
+      update_wall_time(receive_msg);
     }
 		release_processor();
   }
 }
+

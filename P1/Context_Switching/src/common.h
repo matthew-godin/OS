@@ -53,11 +53,23 @@
 #define PID_CRT 13
 #define PID_KCD 12
 
+#define NUM_TEST_PROCS 7
+#define NUM_KERNEL_PROCS 3
+
 /* ----- Types ----- */
 typedef unsigned char U8;
 typedef unsigned int U32;
 
 /* common data structures in both kernel and user spaces */
+
+/* initialization table item */
+typedef struct proc_init
+{	
+	int m_pid;	        /* process id */ 
+	int m_priority;         /* initial priority, not used in this example. */ 
+	int m_stack_size;       /* size of stack in words */
+	void (*mpf_start_pc) ();/* entry point of the process */    
+} PROC_INIT;
 
 /* message buffer */
 typedef struct msgbuf

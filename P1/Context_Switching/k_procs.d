@@ -14,3 +14,4 @@ k_procs.o: c:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h
 k_procs.o: c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
 k_procs.o: src\uart.h
 k_procs.o: src\uart_def.h
+k_procs.o: src\rtx.h

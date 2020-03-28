@@ -18,6 +18,7 @@
 #include "uart_polling.h"
 #include "k_process_priority_queue.h"
 #include "k_process.h"
+#include "common.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
