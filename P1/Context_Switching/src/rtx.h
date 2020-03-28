@@ -5,21 +5,6 @@
 #ifndef RTX_H_
 #define RTX_H_
 
-/* ----- Definitations ----- */
-#define RTX_ERR -1
-#define NULL 0
-
-#define NUM_MEMORY_BLOCKS 8
-#define MEM_BLOCK_SIZE 128
-/* Process Priority. The bigger the number is, the lower the priority is*/
-#define HIGH    0
-#define MEDIUM  1
-#define LOW     2
-#define LOWEST  3
-
-/* ----- Types ----- */
-typedef unsigned int U32;
-
 
 /* ----- RTX User API ----- */
 #define __SVC_0  __svc_indirect(0)

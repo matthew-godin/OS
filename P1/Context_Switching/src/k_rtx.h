@@ -10,28 +10,13 @@
 
 /*----- Definitations -----*/
 
-#define RTX_ERR -1
-#define RTX_OK  0
-
-#define NULL 0
-
-#define NUM_MEMORY_BLOCKS 8 // we can set this
-#define MEM_BLOCK_SIZE 128 // we can set this TODO: might need to increase
-
-
-
 // some buffer space for the null process
-#define NULL_PROC_STACK 0x0100
 
 #ifdef DEBUG_0
 #define USR_SZ_STACK 0x200         /* user proc stack size 512B   */
 #else
 #define USR_SZ_STACK 0x100         /* user proc stack size 218B  */
 #endif /* DEBUG_0 */
-
-/*----- Types -----*/
-typedef unsigned char U8;
-typedef unsigned int U32;
 
 /* process states, note we only assume three states in this example */
 typedef enum {NEW = 0, RDY, RUN, WAITING_MEMORY, WAITING_MESSAGE} PROC_STATE_E;  
