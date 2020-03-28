@@ -6,6 +6,7 @@ main_svc.o: c:\Software\Keil\ARM\CMSIS\Include\core_cmInstr.h
 main_svc.o: c:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h
 main_svc.o: c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
 main_svc.o: src\rtx.h
+main_svc.o: src\common.h
 main_svc.o: src\uart_polling.h
 main_svc.o: src\printf.h
 main_svc.o: c:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h

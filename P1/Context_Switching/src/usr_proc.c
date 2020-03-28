@@ -52,7 +52,7 @@ void set_test_procs() {
 
 	//wall proc
 	g_test_procs[6].m_pid= (U32) 11;
-	g_test_procs[6].m_priority= 0;
+	g_test_procs[6].m_priority= 3;
 	g_test_procs[6].mpf_start_pc= &wall_proc;
 }
 

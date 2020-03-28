@@ -543,3 +543,572 @@ linking...
 context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
 Program Size: Code=9272 RO-data=492 RW-data=100 ZI-data=1420  
 "context_switching.axf" - 0 Error(s), 14 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(125): warning:  #223-D: function "k_release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling usr_proc.c...
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(264): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9268 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 14 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9268 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(125): warning:  #223-D: function "k_release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling usr_proc.c...
+src\usr_proc.c(256): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(264): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9272 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 14 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9272 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9272 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9272 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+compiling k_rtx_init.c...
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_rtx_init.c(25): warning:  #223-D: function "command_map_init" declared implicitly
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(180): warning:  #188-D: enumerated type mixed with another type
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(125): warning:  #223-D: function "k_release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling k_message.c...
+src\k_message.c(72): warning:  #940-D: missing return statement at end of non-void function "k_receive_message_non_blocking"
+compiling k_command_map.c...
+compiling hot_key_procs.c...
+compiling usr_proc.c...
+src\usr_proc.c(62): error:  #20: identifier "kcd_proc" is undefined
+src\usr_proc.c(67): error:  #20: identifier "crt_proc" is undefined
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(275): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(418): error:  #20: identifier "LPC_UART_TypeDef" is undefined
+src\usr_proc.c(418): error:  #20: identifier "pUart" is undefined
+src\usr_proc.c(418): error:  #29: expected an expression
+src\usr_proc.c(418): error:  #65: expected a ";"
+src\usr_proc.c(424): error:  #20: identifier "IER_THRE" is undefined
+src\usr_proc.c(425): error:  #20: identifier "gp_buffer" is undefined
+src\usr_proc.c(447): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(452): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+compiling wall_proc.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(62): error:  #20: identifier "kcd_proc" is undefined
+src\usr_proc.c(67): error:  #20: identifier "crt_proc" is undefined
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(275): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(418): error:  #20: identifier "LPC_UART_TypeDef" is undefined
+src\usr_proc.c(418): error:  #20: identifier "pUart" is undefined
+src\usr_proc.c(418): error:  #29: expected an expression
+src\usr_proc.c(418): error:  #65: expected a ";"
+src\usr_proc.c(417): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(447): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(452): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(62): error:  #20: identifier "kcd_proc" is undefined
+src\usr_proc.c(67): error:  #20: identifier "crt_proc" is undefined
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(275): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(417): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(447): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(452): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(275): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(417): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(447): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(452): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+context_switching.axf: Error: L6200E: Symbol crt_proc multiply defined (by usr_proc.o and k_procs.o).
+context_switching.axf: Error: L6200E: Symbol kcd_proc multiply defined (by usr_proc.o and k_procs.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(275): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(417): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(447): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(452): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=9388 RO-data=492 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 10 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(434): warning:  #128-D: loop is not reachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(462): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(467): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+src\usr_proc.c(455): warning:  #128-D: loop is not reachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7788 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 16 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7788 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7864 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 14 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7864 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 14 Warning(s).
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+src\main_svc.c(24): error:  #7: unrecognized token
+src\main_svc.c(24): error:  #130: expected a "{"
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+src\main_svc.c(24): error:  #7: unrecognized token
+src\main_svc.c(24): error:  #130: expected a "{"
+Target not created
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7868 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+compiling k_rtx_init.c...
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_rtx_init.c(25): warning:  #223-D: function "command_map_init" declared implicitly
+compiling k_memory.c...
+compiling k_process.c...
+src\k_process.c(180): warning:  #188-D: enumerated type mixed with another type
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(125): warning:  #223-D: function "k_release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "k_release_processor" declared implicitly
+compiling k_message.c...
+src\k_message.c(72): warning:  #940-D: missing return statement at end of non-void function "k_receive_message_non_blocking"
+compiling k_command_map.c...
+compiling hot_key_procs.c...
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+compiling wall_proc.c...
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7852 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 27 Warning(s).
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(121): error:  #109: expression must have (pointer-to-) function type
+src\k_procs.c(125): warning:  #223-D: function "release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "release_processor" declared implicitly
+src\k_procs.c(140): error:  #109: expression must have (pointer-to-) function type
+src\k_procs.c(154): warning:  #223-D: function "send_message" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "release_processor" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(121): error:  #109: expression must have (pointer-to-) function type
+src\k_procs.c(125): warning:  #223-D: function "release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "release_processor" declared implicitly
+src\k_procs.c(140): warning:  #223-D: function "receive_message" declared implicitly
+src\k_procs.c(140): error:  #513: a value of type "int" cannot be assigned to an entity of type "MSG_BUF *"
+src\k_procs.c(154): warning:  #223-D: function "send_message" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "release_processor" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(121): error:  #109: expression must have (pointer-to-) function type
+src\k_procs.c(125): warning:  #223-D: function "release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "release_processor" declared implicitly
+src\k_procs.c(140): warning:  #223-D: function "receive_message" declared implicitly
+src\k_procs.c(154): warning:  #223-D: function "send_message" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "release_processor" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(36): warning:  #223-D: function "k_release_processor" declared implicitly
+src\k_procs.c(74): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+src\k_procs.c(121): warning:  #223-D: function "receive_message" declared implicitly
+src\k_procs.c(125): warning:  #223-D: function "release_memory_block" declared implicitly
+src\k_procs.c(126): warning:  #223-D: function "release_processor" declared implicitly
+src\k_procs.c(140): warning:  #223-D: function "receive_message" declared implicitly
+src\k_procs.c(154): warning:  #223-D: function "send_message" declared implicitly
+src\k_procs.c(159): warning:  #223-D: function "release_processor" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+context_switching.axf: Error: L6218E: Undefined symbol receive_message (referred from k_procs.o).
+context_switching.axf: Error: L6218E: Undefined symbol release_memory_block (referred from k_procs.o).
+context_switching.axf: Error: L6218E: Undefined symbol release_processor (referred from k_procs.o).
+context_switching.axf: Error: L6218E: Undefined symbol send_message (referred from k_procs.o).
+Target not created
+Build target 'Context Switching SIM'
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\rtx.h(25): error:  #101: "proc_init" has already been declared in the current scope
+src\rtx.h(31): error:  #256: invalid redeclaration of type name "PROC_INIT" (declared at line 62 of "src\k_rtx.h")
+src\k_procs.c(76): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+Target not created
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(76): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+compiling usr_proc.c...
+src\usr_proc.c(20): error:  #20: identifier "PROC_INIT" is undefined
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+compiling wall_proc.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\rtx.h(25): error:  #101: "proc_init" has already been declared in the current scope
+src\rtx.h(31): error:  #256: invalid redeclaration of type name "PROC_INIT" (declared at line 62 of "src\k_rtx.h")
+src\k_procs.c(76): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+compiling wall_proc.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling main_svc.c...
+compiling k_rtx_init.c...
+src\k_memory.h(21): error:  #20: identifier "PROC_INIT" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_rtx_init.c(25): warning:  #223-D: function "command_map_init" declared implicitly
+compiling k_memory.c...
+src\k_memory.h(21): error:  #20: identifier "PROC_INIT" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+compiling k_process.c...
+src\k_process.c(29): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_process.c(29): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+src\k_process.c(35): error:  #20: identifier "PROC_INIT" is undefined
+src\k_process.c(36): error:  #20: identifier "PROC_INIT" is undefined
+src\k_process.c(37): error:  #20: identifier "PROC_INIT" is undefined
+src\k_process.c(180): warning:  #188-D: enumerated type mixed with another type
+compiling k_memory_queue.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+compiling k_procs.c...
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_procs.c(76): warning:  #223-D: function "k_request_memory_block_non_blocking" declared implicitly
+compiling k_mailbox.c...
+compiling k_message.c...
+src\k_message.c(72): warning:  #940-D: missing return statement at end of non-void function "k_receive_message_non_blocking"
+compiling k_timeout_queue.c...
+compiling k_command_map.c...
+compiling hot_key_procs.c...
+src\hot_key_procs.c(4): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\hot_key_procs.c(4): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+compiling timer.c...
+compiling usr_proc.c...
+src\usr_proc.c(208): warning:  #111-D: statement is unreachable
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(273): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(278): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(281): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(201): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(202): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(303): warning:  #111-D: statement is unreachable
+src\usr_proc.c(343): warning:  #111-D: statement is unreachable
+src\usr_proc.c(366): warning:  #111-D: statement is unreachable
+src\usr_proc.c(428): warning:  #177-D: variable "received_char" was declared but never referenced
+src\usr_proc.c(457): warning:  #223-D: function "insert_cmd" declared implicitly
+src\usr_proc.c(462): warning:  #223-D: function "get_pid_from_cmd" declared implicitly
+compiling wall_proc.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+src\k_memory.h(21): error:  #20: identifier "PROC_INIT" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_rtx_init.c(25): warning:  #223-D: function "command_map_init" declared implicitly
+compiling k_memory.c...
+src\k_memory.h(21): error:  #20: identifier "PROC_INIT" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+compiling k_process.c...
+src\k_process.c(29): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_process.c(29): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+src\k_process.c(35): error:  #20: identifier "PROC_INIT" is undefined
+src\k_process.c(36): error:  #20: identifier "PROC_INIT" is undefined
+src\k_process.c(37): error:  #20: identifier "PROC_INIT" is undefined
+src\k_process.c(180): warning:  #188-D: enumerated type mixed with another type
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+compiling hot_key_procs.c...
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+src\k_memory.h(21): error:  #20: identifier "PROC_INIT" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_rtx_init.c(25): warning:  #223-D: function "command_map_init" declared implicitly
+compiling k_memory.c...
+src\k_memory.h(21): error:  #20: identifier "PROC_INIT" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_memory.h(21): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+compiling k_process.c...
+src\k_process.c(181): warning:  #188-D: enumerated type mixed with another type
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+Target not created
+Build target 'Context Switching SIM'
+compiling k_rtx_init.c...
+src\uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "src\uart_polling.h")
+src\uart_def.h(57): warning:  #1-D: last line of file ends without a newline
+src\uart.h(61): warning:  #1-D: last line of file ends without a newline
+src\k_rtx_init.c(25): warning:  #223-D: function "command_map_init" declared implicitly
+compiling k_memory.c...
+compiling k_process_priority_queue.c...
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_KERNEL_PROCS" is undefined
+src\k_process_priority_queue.c(6): error:  #20: identifier "NUM_TEST_PROCS" is undefined
+Target not created
+Build target 'Context Switching SIM'
+compiling k_process_priority_queue.c...
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7880 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(197): warning:  #111-D: statement is unreachable
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(292): warning:  #111-D: statement is unreachable
+src\usr_proc.c(332): warning:  #111-D: statement is unreachable
+src\usr_proc.c(355): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7776 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 11 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(197): warning:  #111-D: statement is unreachable
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(292): warning:  #111-D: statement is unreachable
+src\usr_proc.c(332): warning:  #111-D: statement is unreachable
+src\usr_proc.c(355): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7776 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 11 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7776 RO-data=296 RW-data=100 ZI-data=1420  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).

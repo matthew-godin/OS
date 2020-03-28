@@ -18,6 +18,8 @@
 #define USR_SZ_STACK 0x100         /* user proc stack size 218B  */
 #endif /* DEBUG_0 */
 
+#include "common.h"
+
 /* process states, note we only assume three states in this example */
 typedef enum {NEW = 0, RDY, RUN, WAITING_MEMORY, WAITING_MESSAGE} PROC_STATE_E;  
 
