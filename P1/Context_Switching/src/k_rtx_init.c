@@ -16,7 +16,7 @@
 void k_rtx_init(void)
 {
         __disable_irq();
-				timer_init(0);
+			//	timer_init(0);
         uart0_init();
 	uart1_init();
         memory_init();

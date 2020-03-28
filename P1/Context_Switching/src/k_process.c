@@ -28,7 +28,7 @@ PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
 extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
-PCB* gp_pcb_message_waiting_queue[NUM_TEST_PROCS+NUM_KERNEL_PROCS];
+PCB* gp_pcb_message_waiting_queue[16];
 int interrupt = 0;
 
 /* process initialization table */
@@ -186,7 +186,7 @@ int k_release_blocked_processor(int state) {
 				push_pcb_waiting_memory_queue(p_pcb_blocked); // put blocked process on pcb_waiting_queue
 				break;
 			case WAITING_MESSAGE:
-				gp_pcb_message_waiting_queue[p_pcb_blocked->m_pid-1] = p_pcb_blocked;
+				gp_pcb_message_waiting_queue[p_pcb_blocked->m_pid] = p_pcb_blocked;
 				break;
 		}
 	} else { //could happen if we call k_release_blocked_processor on set up
