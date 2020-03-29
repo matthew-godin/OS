@@ -2,4 +2,4 @@
 -I c:\Software\Keil\ARM\RV31\INC 
 -I c:\Software\Keil\ARM\CMSIS\Include 
 -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--DDEBUG_0 -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "k_message.o" --omf_browse "k_message.crf" --depend "k_message.d" "src\k_message.c"
+-DDEBUG_0 -DK_MSG_ENV -DDEBUG_HOTKEYS -o "k_message.o" --omf_browse "k_message.crf" --depend "k_message.d" "src\k_message.c"

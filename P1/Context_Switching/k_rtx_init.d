@@ -11,3 +11,4 @@ k_rtx_init.o: src\timer.h
 k_rtx_init.o: src\uart.h
 k_rtx_init.o: src\uart_def.h
 k_rtx_init.o: src\wall_proc.h
+k_rtx_init.o: src\k_command_map.h

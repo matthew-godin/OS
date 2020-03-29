@@ -4,6 +4,7 @@
 #include "k_message.h"
 #include "k_command_map.h"
 #include "hot_key_procs.h"
+#include "k_memory.h"
 #include "LPC17xx.h"
 #include "uart.h"
 #include "rtx.h"
@@ -123,7 +124,7 @@ void crt_proc() {
         receive_msg = (MSG_BUF*) receive_message(NULL);
         //send it to UART1_IRQ
 				pUart->IER ^= IER_THRE;
-			  gp_buffer =(uint8_t*) received_char;
+			  gp_buffer =(uint8_t*) receive_msg->mtext;
         release_memory_block(receive_msg);
 				release_processor();
     }

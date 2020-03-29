@@ -75,7 +75,8 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid;
 	incoming_message_envelope->m_recv_pid = process_id;
 
-	push_msg(&mailboxes[0], incoming_message_envelope);
+	//push_msg(&mailboxes[0], incoming_message_envelope);
+		push_msg(&mailboxes[PID_TIMER_IPROC], incoming_message_envelope); //push to timer mailbox
 
 	// same comment as above release processor
 	k_release_processor();
@@ -84,19 +85,13 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 
 
 void* k_receive_message_non_blocking(int* sender_id) {
-	int process_id = interrupt;
-	
-	if (process_id == 1) {
-		return pop_msg(&mailboxes[0]); // 0 is the timer mailbox
-	}
-
+//	return pop_msg(&mailboxes[0]); // 0 is the timer mailbox
+	return pop_msg(&mailboxes[PID_TIMER_IPROC]); //pop from timer mailbox
 }
 
 void* k_receive_message(int* sender_id) {
 	int process_id = gp_current_process->m_pid;
-	if (process_id == PID_TIMER_IPROC) {
-		return pop_msg(&mailboxes[0]); // 0 is the timer mailbox
-	}
+
   if(process_id < 0 || process_id > 16) {
     return NULL;
   }

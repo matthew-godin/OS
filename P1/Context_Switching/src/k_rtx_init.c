@@ -13,6 +13,7 @@
 #include "timer.h"
 #include "uart.h"
 #include "wall_proc.h"
+#include "k_command_map.h"
 
 void k_rtx_init(void)
 {

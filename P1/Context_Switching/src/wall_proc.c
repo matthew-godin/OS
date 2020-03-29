@@ -4,8 +4,9 @@
 #include "rtx.h"
 
 char* base_wall_time = "00:00:00";
-char wall_time[8];
+char wall_time[9];
 int wall_is_running = 0; //wall is initially not running
+int hour = 0, min = 0, sec = 0;
 
 //reset, terminate, or set to specific time, this is called ONLY by the wall_proc
 //note, this assumes a correctly formatted wall proc command
@@ -38,27 +39,26 @@ void update_wall_time(MSG_BUF* msg) {
 
 //should be called every second by timer
 void increment_wall_time() {
-  MSG_BUF* crt_msg_env;
-  char newChar;
-  int i;
-
-  newChar = helper_increment(7);
-  if(newChar == '0') { //need to increment another digit
-    newChar = helper_increment(6);
-    if(newChar == '0') {
-      newChar = helper_increment(4);
-      if(newChar == '0') {
-        newChar = helper_increment(3);
-        if(newChar == '0') {
-          newChar = helper_increment(1);
-          if(newChar == '0') {
-            newChar = helper_increment(0);
-          }
-        }
-      }
-    }
-  }
-  if(wall_is_running) {
+	MSG_BUF* crt_msg_env;
+	int i;
+	
+	sec++;
+	if(sec == 60) {
+		sec = 0;
+		min++;
+	}
+	if(min == 60) {
+		min = 0;
+		hour++;
+	}
+	wall_time[0] = hour/10 + '0';
+	wall_time[1] = hour%10 + '0';
+	wall_time[3] = min/10 + '0';
+	wall_time[4] = min%10 + '0';
+	wall_time[6] = sec/10 + '0';
+	wall_time[7] = sec%10 + '0';
+	
+	if(wall_is_running) {
     crt_msg_env = (MSG_BUF*) request_memory_block();
     crt_msg_env->mtype = CRT_DISPLAY;
 
@@ -69,37 +69,9 @@ void increment_wall_time() {
   }
 }
 
-//private helper function
-char helper_increment(int index) {
-  char c = wall_time[index];
-  if(c == '0') {
-		wall_time[index] = '1';
-	}
-  else if(c == '1') {
-		wall_time[index] = '2';
-	}
-  else if(c == '2'){
-		wall_time[index] = '3';
-	}
-  else if(c == '3') {
-		wall_time[index] = '4';
-	}
-  else if(c == '4') {
-		wall_time[index] = '5';
-	}
-  else if(c == '5') {
-		wall_time[index] = '6';
-	}
-  else if(c == '6') {
-		wall_time[index] = '0';
-	}
-
-  return wall_time[index];
-}
-
 void reset_wall_time() {
 		int i;
-		for(i = 0; i < 8; i++) {
+		for(i = 0; i < 9; i++) {
 				wall_time[i] = base_wall_time[i];
 		}
 }
