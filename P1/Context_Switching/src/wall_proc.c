@@ -21,9 +21,11 @@ void update_wall_time(MSG_BUF* msg) {
     wall_is_running = 0;
   } else if(cmd_str[2] == 'S') { //set to a specific time
 		//just copies the string over, no check yet
+		wall_is_running = 1;
     for(i= 0; i < 8; i++) {
       wall_time[i] = cmd_str[i+4];
     }
+		
   }
 
   if(wall_is_running) {
@@ -41,24 +43,24 @@ void update_wall_time(MSG_BUF* msg) {
 void increment_wall_time() {
 	MSG_BUF* crt_msg_env;
 	int i;
-	
-	sec++;
-	if(sec == 60) {
-		sec = 0;
-		min++;
-	}
-	if(min == 60) {
-		min = 0;
-		hour++;
-	}
-	wall_time[0] = hour/10 + '0';
-	wall_time[1] = hour%10 + '0';
-	wall_time[3] = min/10 + '0';
-	wall_time[4] = min%10 + '0';
-	wall_time[6] = sec/10 + '0';
-	wall_time[7] = sec%10 + '0';
-	
 	if(wall_is_running) {
+
+		sec++;
+		if(sec == 60) {
+			sec = 0;
+			min++;
+		}
+		if(min == 60) {
+			min = 0;
+			hour++;
+		}
+		wall_time[0] = hour/10 + '0';
+		wall_time[1] = hour%10 + '0';
+		wall_time[3] = min/10 + '0';
+		wall_time[4] = min%10 + '0';
+		wall_time[6] = sec/10 + '0';
+		wall_time[7] = sec%10 + '0';
+	
     crt_msg_env = (MSG_BUF*) k_request_memory_block();
     crt_msg_env->mtype = CRT_DISPLAY;
 
