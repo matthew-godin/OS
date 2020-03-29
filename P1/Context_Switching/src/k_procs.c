@@ -141,24 +141,28 @@ void kcd_proc() {
 		
     while(1) {
         receive_msg = (MSG_BUF*) receive_message(NULL);
-        if(receive_msg != NULL) {
-					cmd = receive_msg->mtext[1];
+				cmd = receive_msg->mtext[1];
 
-          if(receive_msg->mtype == KCD_REG) { //command registration
-            if(receive_msg->mtext[0] =='%') { //check if valid keyboard command
-              insert_cmd(cmd, receive_msg->m_send_pid);
-            }
-          } else { // invocation of command
+				if(receive_msg->mtype == KCD_REG) { //command registration
+					if(receive_msg->mtext[0] =='%') { //check if valid keyboard command
+						insert_cmd(cmd, receive_msg->m_send_pid);
+					}
+					release_memory_block(receive_msg);
+				} else { // invocation of command
 
-            if(receive_msg->mtext[0] =='%') {  //check if valid keyboard command
-              pid = get_pid_from_cmd(cmd);
-              if(pid != RTX_ERR) {
-                // i think it is unnecessary to reset the sender/receiver pid on the message
-                send_message(pid, receive_msg); //send message to process associated with the command
-              }
-            }
-          }
-        }
+					if(receive_msg->mtext[0] =='%') {  //check if valid keyboard command
+						pid = get_pid_from_cmd(cmd);
+						if(pid != RTX_ERR) {
+							// i think it is unnecessary to reset the sender/receiver pid on the message
+							send_message(pid, receive_msg); //send message to process associated with the command
+						} else {
+							release_memory_block(receive_msg);
+						}
+					} else {
+						release_memory_block(receive_msg);
+					}
+				}
+
 				release_processor();
     }
 }

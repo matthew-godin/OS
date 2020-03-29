@@ -404,9 +404,9 @@ void wall_proc() {
   MSG_BUF* receive_msg = NULL;
   while(1) {
     receive_msg = receive_message(NULL);
-    if(receive_msg != NULL) {
-      update_wall_time(receive_msg);
-    }
+		//update wall time always calls release_memory_block
+    update_wall_time(receive_msg);
+		
 		release_processor();
   }
 }

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [C:\Users\TEMP.NEXUS.011\Documents\os\P1\Context_Switching\context_switching.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C:\Users\TEMP.NEXUS.011\Documents\os\P1\Context_Switching\context_switching.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sun Mar 29 16:15:41 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sun Mar 29 16:33:28 2020
 <BR><P>
 <H3>Maximum Stack Usage =        192 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -81,7 +81,7 @@ Function Pointers
  <LI><a href="#[7b]">crt_proc</a> from k_procs.o(.text) referenced from k_procs.o(.text)
  <LI><a href="#[3a]">k_get_process_priority</a> from k_process.o(.text) referenced from usr_proc.o(.text)
  <LI><a href="#[34]">k_receive_message</a> from k_message.o(.text) referenced 2 times from k_procs.o(.text)
- <LI><a href="#[35]">k_release_memory_block</a> from k_memory.o(.text) referenced 2 times from k_procs.o(.text)
+ <LI><a href="#[35]">k_release_memory_block</a> from k_memory.o(.text) referenced 3 times from k_procs.o(.text)
  <LI><a href="#[36]">k_release_processor</a> from k_process.o(.text) referenced 2 times from k_procs.o(.text)
  <LI><a href="#[38]">k_request_memory_block</a> from k_memory.o(.text) referenced 2 times from usr_proc.o(.text)
  <LI><a href="#[33]">k_rtx_init</a> from k_rtx_init.o(.text) referenced from main_svc.o(.text)
@@ -576,7 +576,8 @@ Global Symbols
 <LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> usr_proc.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> wall_proc.o(.text)
+<LI> usr_proc.o(.text)
 <LI> k_procs.o(.text)
 </UL>
 <P><STRONG><a name="[5c]"></a>process_init</STRONG> (Thumb, 320 bytes, Stack size 24 bytes, k_process.o(.text))
@@ -746,7 +747,7 @@ Global Symbols
 <P><STRONG><a name="[7b]"></a>crt_proc</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, k_procs.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> k_procs.o(.text)
 </UL>
-<P><STRONG><a name="[77]"></a>kcd_proc</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, k_procs.o(.text))
+<P><STRONG><a name="[77]"></a>kcd_proc</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, k_procs.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;insert_cmd
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pid_from_cmd
 </UL>
@@ -937,7 +938,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[8c]"></a>wall_proc</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, usr_proc.o(.text))
+<P><STRONG><a name="[8c]"></a>wall_proc</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, usr_proc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = wall_proc &rArr; update_wall_time
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_wall_time
@@ -985,7 +986,7 @@ Global Symbols
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
 
-<P><STRONG><a name="[8d]"></a>update_wall_time</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, wall_proc.o(.text))
+<P><STRONG><a name="[8d]"></a>update_wall_time</STRONG> (Thumb, 132 bytes, Stack size 24 bytes, wall_proc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = update_wall_time
 </UL>
 <BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_wall_time

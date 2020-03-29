@@ -25,8 +25,8 @@ void update_wall_time(MSG_BUF* msg) {
     for(i= 0; i < 8; i++) {
       wall_time[i] = cmd_str[i+4];
     }
-		
   }
+	release_memory_block(msg);
 
   if(wall_is_running) {
     crt_msg_env = (MSG_BUF*) request_memory_block();
@@ -36,7 +36,7 @@ void update_wall_time(MSG_BUF* msg) {
       crt_msg_env->mtext[i] = wall_time[i];
     }
     send_message(PID_CRT, crt_msg_env);
-  }
+  } 
 }
 
 //should be called every second by timer
