@@ -59,7 +59,7 @@ void increment_wall_time() {
 	wall_time[7] = sec%10 + '0';
 	
 	if(wall_is_running) {
-    crt_msg_env = (MSG_BUF*) request_memory_block();
+    crt_msg_env = (MSG_BUF*) k_request_memory_block();
     crt_msg_env->mtype = CRT_DISPLAY;
 
     for(i = 0; i < 8; i++) {

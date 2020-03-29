@@ -3,7 +3,7 @@
 <title>Static Call Graph - [C:\Users\TEMP.NEXUS.001\Documents\os\P1\Context_Switching\context_switching.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C:\Users\TEMP.NEXUS.001\Documents\os\P1\Context_Switching\context_switching.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sun Mar 29 13:30:12 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sun Mar 29 14:26:51 2020
 <BR><P>
 <H3>Maximum Stack Usage =        192 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -245,7 +245,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, timer.o(.emb_text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = TIMER0_IRQHandler &rArr; c_TIMER0_IRQHandler &rArr; timer_i_proc &rArr; i_send_message &rArr; push_pcb_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
+<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = TIMER0_IRQHandler &rArr; c_TIMER0_IRQHandler &rArr; increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; push_pcb_waiting_memory_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_TIMER0_IRQHandler
 </UL>
@@ -551,10 +551,12 @@ Global Symbols
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_blocked_processor
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
 </UL>
+<BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;increment_wall_time
+</UL>
 <BR>[Address Reference Count : 2]<UL><LI> wall_proc.o(.text)
 <LI> usr_proc.o(.text)
 </UL>
-<P><STRONG><a name="[67]"></a>k_request_memory_block_non_blocking</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, k_memory.o(.text))
+<P><STRONG><a name="[67]"></a>k_request_memory_block_non_blocking</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, k_memory.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = k_request_memory_block_non_blocking &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;top_mq
@@ -716,7 +718,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_init
 </UL>
 
-<P><STRONG><a name="[74]"></a>push_pcb_waiting_memory_queue</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, k_process_priority_queue.o(.text))
+<P><STRONG><a name="[74]"></a>push_pcb_waiting_memory_queue</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, k_process_priority_queue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = push_pcb_waiting_memory_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tfp_printf
@@ -927,7 +929,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[4c]"></a>c_TIMER0_IRQHandler</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, timer.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = c_TIMER0_IRQHandler &rArr; timer_i_proc &rArr; i_send_message &rArr; push_pcb_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
+<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = c_TIMER0_IRQHandler &rArr; increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; push_pcb_waiting_memory_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;increment_wall_time
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_i_proc
@@ -991,10 +993,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wall_proc
 </UL>
 
-<P><STRONG><a name="[8b]"></a>increment_wall_time</STRONG> (Thumb, 214 bytes, Stack size 16 bytes, wall_proc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = increment_wall_time &rArr; i_send_message &rArr; push_pcb_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
+<P><STRONG><a name="[8b]"></a>increment_wall_time</STRONG> (Thumb, 212 bytes, Stack size 16 bytes, wall_proc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; push_pcb_waiting_memory_queue &rArr; tfp_printf &rArr; tfp_format &rArr; putchw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i_send_message
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_request_memory_block
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_TIMER0_IRQHandler
 </UL>

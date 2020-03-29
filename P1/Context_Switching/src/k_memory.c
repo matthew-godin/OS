@@ -137,6 +137,11 @@ void* k_request_memory_block_non_blocking(void) {
 #endif /* ! DEBUG_0 */
 	returnAddr = top_mq(gp_memory_queue);
 	gp_memory_queue = pop_mq(gp_memory_queue);
+	if(returnAddr == NULL) {
+		#ifdef DEBUG_0 
+			printf("k_request_memory_block_non_blocking doesn't have enough memory, do nothing");
+		#endif /* ! DEBUG_0 */
+	}
 	return returnAddr;
 }
 

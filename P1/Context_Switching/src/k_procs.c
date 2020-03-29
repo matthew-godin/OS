@@ -119,12 +119,12 @@ void crt_proc() {
     char* received_char;
 	  LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
 	
-	
     while(1) {
         receive_msg = (MSG_BUF*) receive_message(NULL);
+				
         //send it to UART1_IRQ
-				pUart->IER ^= IER_THRE;
-			  gp_buffer =(uint8_t*) receive_msg->mtext;
+				gp_buffer =(uint8_t*) receive_msg->mtext;
+				pUart->IER |= IER_THRE;
         release_memory_block(receive_msg);
 				release_processor();
     }
