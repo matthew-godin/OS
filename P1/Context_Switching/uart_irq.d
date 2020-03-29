@@ -8,5 +8,3 @@ uart_irq.o: c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
 uart_irq.o: src\uart.h
 uart_irq.o: src\uart_def.h
 uart_irq.o: src\uart_polling.h
-uart_irq.o: src\printf.h
-uart_irq.o: c:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h

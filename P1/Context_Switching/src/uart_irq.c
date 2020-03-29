@@ -193,9 +193,6 @@ void c_UART0_IRQHandler(void)
 		uart1_put_char(g_char_in);
 		uart1_put_string("\n\r");
 #endif // DEBUG_0
-		if (g_char_in == '7') {
-			printf("Here");
-		}
 
 		g_buffer[12] = g_char_in; // nasty hack
 		g_send_char = 1;

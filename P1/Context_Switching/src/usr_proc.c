@@ -407,7 +407,7 @@ void proc2Message(void) {
 	receivedMessage = receive_message(sender_id);
 	//printf(type);
 	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
- 		uart0_put_string(":B) passed basic message sending test");
+ 		uart0_put_string(":B) passed basic message sending test\r\n");
 		//TODO: print passesd test 1 or smth
 	}
 	release_memory_block(receivedMessage);
@@ -417,7 +417,7 @@ void proc2Message(void) {
 	receivedMessage = receive_message(sender_id);
 	receivedMessage2 = receive_message(sender_id);
 	if(receivedMessage->mtext[0] == '1' && receivedMessage2->mtext[0] == '2') {
-		uart0_put_string(":P passed delay message sending test");
+		uart0_put_string(":P passed delay message sending test\r\n");
 	}
 	
 	release_memory_block(receivedMessage);
@@ -468,9 +468,9 @@ void proc3Message(void) {
 				c = receivedMsg->mtext[i++];
 				uart0_put_char(c);
 			} while(c != '\0');
-			uart0_put_string("Received command successfully!");
+			uart0_put_string("Received command successfully!\r\n");
 			
-		} else if(receivedMsg->mtext[1] == 'D') { //print the params separated by a space!
+		} else if(receivedMsg->mtext[1] == 'D') { //print thef params separated by a space!
 			i = 2;		
 			
 			do {
@@ -478,7 +478,7 @@ void proc3Message(void) {
 				uart0_put_char(c);
 				uart0_put_char(' ');
 			} while(c != '\0');	
-				uart0_put_string("Received command successfully!!");
+				uart0_put_string("Received command successfully!!\r\n");
 
 		} else {
 			 //shouldn't get here lol

@@ -5,5 +5,3 @@ k_memory.o: src\common.h
 k_memory.o: src\k_process.h
 k_memory.o: src\k_memory_queue.h
 k_memory.o: src\k_process_priority_queue.h
-k_memory.o: src\printf.h
-k_memory.o: c:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h

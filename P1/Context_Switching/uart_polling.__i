@@ -2,4 +2,4 @@
 -I c:\Software\Keil\ARM\RV31\INC 
 -I c:\Software\Keil\ARM\CMSIS\Include 
 -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--DK_MSG_ENV -D_DEBUG_HOTKEYS -DDEBUG_0 -o "uart_polling.o" --omf_browse "uart_polling.crf" --depend "uart_polling.d" "src\uart_polling.c"
+-DK_MSG_ENV -D_DEBUG_HOTKEYS -o "uart_polling.o" --omf_browse "uart_polling.crf" --depend "uart_polling.d" "src\uart_polling.c"

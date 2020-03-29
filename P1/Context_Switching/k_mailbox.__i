@@ -2,4 +2,4 @@
 -I c:\Software\Keil\ARM\RV31\INC 
 -I c:\Software\Keil\ARM\CMSIS\Include 
 -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--DK_MSG_ENV -D_DEBUG_HOTKEYS -DDEBUG_0 -o "k_mailbox.o" --omf_browse "k_mailbox.crf" --depend "k_mailbox.d" "src\k_mailbox.c"
+-DK_MSG_ENV -D_DEBUG_HOTKEYS -o "k_mailbox.o" --omf_browse "k_mailbox.crf" --depend "k_mailbox.d" "src\k_mailbox.c"
