@@ -6,4 +6,5 @@
 void update_wall_time(MSG_BUF* cmd_str);
 void increment_wall_time(void);
 char helper_increment(int index);
+void reset_wall_time(void);
 #endif

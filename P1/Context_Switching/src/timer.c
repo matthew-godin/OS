@@ -118,7 +118,7 @@ void c_TIMER0_IRQHandler(void)
 	LPC_TIM0->IR = BIT(0);
 	timer_i_proc();
 	g_timer_count++;
-	if(g_timer_count%1000 == 0) { //every second increment wall time
+	if(g_timer_count%2 == 0) { //every second increment wall time
 		increment_wall_time();
 	}
 	interrupt = 0;
