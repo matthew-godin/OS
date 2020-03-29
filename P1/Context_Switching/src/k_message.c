@@ -45,6 +45,27 @@ int k_send_message(int process_id, void* message_envelope) {
 	return RTX_OK;
 }
 
+int i_send_message(int process_id, void* message_envelope) {
+	PCB* unblocked_pcb = NULL;
+	MSG_BUF* incoming_message_envelope = (MSG_BUF*)message_envelope;
+
+	incoming_message_envelope->m_send_pid = gp_current_process->m_pid; //set sender pid to current process's pid
+	incoming_message_envelope->m_recv_pid = process_id; //set receiving pid to process id
+	incoming_message_envelope->mp_next = NULL;
+
+	push_msg(&mailboxes[process_id], incoming_message_envelope); //not sure if we want to modify some more fields
+
+	if (gp_pcb_message_waiting_queue[process_id] != NULL) { //process was waiting for message, wake up
+		unblocked_pcb = gp_pcb_message_waiting_queue[process_id];
+		gp_pcb_message_waiting_queue[process_id] = NULL; // remove from waiting
+        unblocked_pcb->m_state = RDY;
+        push_pcb_queue(unblocked_pcb);
+	}
+	// Right now we release processor everytime but lab manual may suggest non
+	// preempted send should keep running
+	return RTX_OK;
+}
+
 int k_delayed_send(int process_id, void* message_envelope, int delay) {
 	MSG_BUF* incoming_message_envelope;
 	

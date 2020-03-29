@@ -2,4 +2,4 @@
 -I c:\Software\Keil\ARM\RV31\INC 
 -I c:\Software\Keil\ARM\CMSIS\Include 
 -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--DDEBUG_0 -DK_MSG_ENV -DDEBUG_HOTKEYS -o "wall_proc.o" --omf_browse "wall_proc.crf" --depend "wall_proc.d" "src\wall_proc.c"
+-DDEBUG_0 -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "wall_proc.o" --omf_browse "wall_proc.crf" --depend "wall_proc.d" "src\wall_proc.c"

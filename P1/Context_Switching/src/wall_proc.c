@@ -65,7 +65,7 @@ void increment_wall_time() {
     for(i = 0; i < 8; i++) {
       crt_msg_env->mtext[i] = wall_time[i];
     }
-    send_message(PID_CRT, crt_msg_env);
+    i_send_message(PID_CRT, crt_msg_env);
   }
 }
 

@@ -163,9 +163,11 @@ __asm void UART0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_UART0_IRQHandler
+	IMPORT k_release_processor;
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
 	POP{r4-r11, pc}
+//	BL k_release_processor; //TODO: don't restore registers
 }
 /**
  * @brief: c UART0 IRQ Handler

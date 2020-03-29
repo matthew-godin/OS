@@ -59,7 +59,7 @@ void timer_i_proc() {
     while(!is_tq_empty(&timeout_queue) && top_tq(&timeout_queue)->m_time == 0) {
         ready_message = pop_tq_msg(&timeout_queue);
         pid = ready_message->m_recv_pid;
-        k_send_message(pid, ready_message);
+        i_send_message(pid, ready_message);
     }
     
 		__enable_irq();
@@ -77,7 +77,7 @@ void uart_i_proc(char c) {
 	 if(crt_msg_env != NULL ){
 		 crt_msg_env->mtype = CRT_DISPLAY;
 		 crt_msg_env->mtext[0] = c; //add character to be printed in message body
-		 k_send_message(PID_CRT, crt_msg_env);	 
+		 i_send_message(PID_CRT, crt_msg_env);	 
 	 }
 
    //handle hotkey
@@ -106,7 +106,7 @@ void uart_i_proc(char c) {
 			 kcd_buffer = NULL;  //flush the buffer
 			 kcd_buffer_index = 0; //reset index
 
-			 k_send_message(PID_KCD, kcd_msg_env); //send message to kcd
+			 i_send_message(PID_KCD, kcd_msg_env); //send message to kcd
 		 }
 	 }
 	 
