@@ -536,6 +536,7 @@ void proc5Message(void) {
 	msg_to_display->mtext[7] = '\0';
 
 	send_message(PID_CRT, msg_to_display);
+	uart0_put_string(" CRT test works babey\r\n");
 	
 	while(1) {
 		release_processor();

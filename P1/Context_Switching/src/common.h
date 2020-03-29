@@ -50,6 +50,7 @@
 #define KCD_REG 1
 #define KCD_CMD 2
 #define CRT_DISPLAY 3
+#define CRT_DISPLAY_SINGLE_CHAR 4
 
 
 /* PID for useful processes */

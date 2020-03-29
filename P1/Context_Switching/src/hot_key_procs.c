@@ -21,6 +21,7 @@ void print_blocked_message_queue() {
 
 void print_queue(PCB* queue[], int size) {
   int i, pid, priority, a ,b;
+	 uart0_put_string("\r\n"); //newline for cleanliness
   for(i = 0; i < size; i++) {
     if(queue[i] != NULL) {
       pid = queue[i]->m_pid;

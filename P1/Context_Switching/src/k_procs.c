@@ -76,22 +76,10 @@ void uart_i_proc(char c) {
    //display character regardless
    crt_msg_env = (MSG_BUF*) k_request_memory_block_non_blocking(); // non-blocking
 	 if(crt_msg_env != NULL ){
-		 crt_msg_env->mtype = CRT_DISPLAY;
+		 crt_msg_env->mtype = CRT_DISPLAY_SINGLE_CHAR;
 		 crt_msg_env->mtext[0] = c; //add character to be printed in message body
 		 i_send_message(PID_CRT, crt_msg_env);	 
 	 }
-	 
-		//handle hotkey
-	
-	 #ifdef _DEBUG_HOTKEYS
-	 if (c == '!') {
-		 print_ready_queue();
-	 } else if(c == '@') {
-		 print_blocked_memory_queue();
-	 } else if (c == '#') {
-		 print_blocked_message_queue();
-	 }
-	 #endif
 
    //build message buffer for kcd display
    if(kcd_buffer == NULL) { //if buffer has been flushed, we need a new memory block
@@ -117,7 +105,7 @@ void uart_i_proc(char c) {
 
 void crt_proc() {
     MSG_BUF* receive_msg = NULL;
-    char* received_char;
+    char c;
 	  LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
 	
     while(1) {
@@ -126,6 +114,21 @@ void crt_proc() {
         //send it to UART1_IRQ
 				gp_buffer =(uint8_t*) receive_msg->mtext;
 				pUart->IER |= IER_THRE;
+			
+				//handle hotkey
+				if(receive_msg->mtype == CRT_DISPLAY_SINGLE_CHAR) {
+					c = receive_msg->mtext[0];
+						 #ifdef _DEBUG_HOTKEYS
+						 if (c == '!') {
+							 print_ready_queue();
+						 } else if(c == '@') {
+							 print_blocked_memory_queue();
+						 } else if (c == '#') {
+							 print_blocked_message_queue();
+						 }
+						 #endif
+				}
+
         release_memory_block(receive_msg);
 				release_processor();
     }
