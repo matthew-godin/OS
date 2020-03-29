@@ -74,6 +74,7 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 	incoming_message_envelope = (MSG_BUF*)message_envelope;
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid;
 	incoming_message_envelope->m_recv_pid = process_id;
+	incoming_message_envelope->m_time = delay;
 
 	//push_msg(&mailboxes[0], incoming_message_envelope);
 		push_msg(&mailboxes[PID_TIMER_IPROC], incoming_message_envelope); //push to timer mailbox

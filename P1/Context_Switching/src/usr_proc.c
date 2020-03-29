@@ -28,7 +28,7 @@ void set_test_procs() {
 	for( i = 0; i < NUM_TEST_PROCS; i++ ) { // User Procs
 		g_test_procs[i].m_pid=(U32)(i+1);
 		g_test_procs[i].m_priority=LOWEST;
-		g_test_procs[i].m_stack_size=0x200;
+		g_test_procs[i].m_stack_size=0x100;
 	}
 
 	// P1 tests
@@ -36,7 +36,7 @@ void set_test_procs() {
 	// g_test_procs[0].mpf_start_pc = &proc1;
 	// g_test_procs[1].mpf_start_pc = &proc2;
 	// g_test_procs[2].mpf_start_pc = &proc3;
-	// g_test_procs[3].mpf_start_pc = &proc4;
+	 //g_test_procs[3].mpf_start_pc = &proc4;
 	// g_test_procs[4].mpf_start_pc = &proc5;
 	// g_test_procs[5].mpf_start_pc = &proc6;
 
@@ -45,8 +45,8 @@ void set_test_procs() {
 	
 	g_test_procs[0].mpf_start_pc = &proc1Message;
 	g_test_procs[1].mpf_start_pc = &proc2Message;
-	g_test_procs[2].mpf_start_pc = &proc3;
-	g_test_procs[3].mpf_start_pc = &proc4;
+	g_test_procs[2].mpf_start_pc = &proc3Message;
+	g_test_procs[3].mpf_start_pc = &proc4Message;
 	g_test_procs[4].mpf_start_pc = &proc5;
 	g_test_procs[5].mpf_start_pc = &proc6;
 
@@ -369,15 +369,29 @@ void proc6(void)
 }
 
 void proc1Message(void) {
-	MSG_BUF* message;
+	MSG_BUF* message, *message2;
 		
+	//---------------------------------------send message test
+	set_process_priority(2,2);
 	message = (MSG_BUF*) request_memory_block();
 	message->mtext[0] = ':';
 	message->mtext[1] = ')';
 	//*mem_addr1 = message;
 
 	send_message(2, message);
-	set_process_priority(1, 3);
+	set_process_priority(1, 2);
+	
+	//just got back from proc 2
+	//----------------------------------------delayed send test
+	message = (MSG_BUF*) request_memory_block();
+	message->mtext[0] = '2'; //should arrive second
+	delayed_send(2, message, 60);
+	
+	message2 = (MSG_BUF*) request_memory_block();
+	message2->mtext[0] = '1'; //should arrive first 
+	delayed_send(2, message2, 30);
+
+	set_process_priority(1, 2); //downgrade its own priority, go to proc2message
 
 	while (1) {
 		release_processor();
@@ -387,15 +401,117 @@ void proc1Message(void) {
 void proc2Message(void) {
 	
 	int* sender_id = NULL;
-	MSG_BUF * receivedMessage;
+	MSG_BUF * receivedMessage, *receivedMessage2;
 	
-	
+	//---------------------------------------------send message test
 	receivedMessage = receive_message(sender_id);
 	//printf(type);
 	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
- 		printf(":B)");
+ 		uart0_put_string(":B) passed basic message sending test");
+		//TODO: print passesd test 1 or smth
 	}
+	release_memory_block(receivedMessage);
+	
+	//----------------------------------------------delayed send tests
+	set_process_priority(1,0); //go back to proc 1
+	receivedMessage = receive_message(sender_id);
+	receivedMessage2 = receive_message(sender_id);
+	if(receivedMessage->mtext[0] == '1' && receivedMessage2->mtext[0] == '2') {
+		uart0_put_string(":P passed delay message sending test");
+	}
+	
+	release_memory_block(receivedMessage);
+	release_memory_block(receivedMessage2);
+	
+
+	set_process_priority(3,0); //make proc 3 higher priority, go there
+	
 	while (1) {
+		release_processor();
+	}
+}
+
+
+void proc3Message(void) {
+	MSG_BUF * commandRegMsg, *commandRegMsg2, *receivedMsg;
+	int i;
+	char c;
+	
+	set_process_priority(4,1);
+	set_process_priority(2,3);
+	set_process_priority(1,3);
+
+	
+	commandRegMsg = (MSG_BUF*)request_memory_block();
+	commandRegMsg->mtype = KCD_REG;
+	commandRegMsg->mtext[0] = '%';
+	commandRegMsg->mtext[1] = 'C';
+	commandRegMsg->mtext[2] = '\0';
+	send_message(PID_KCD, commandRegMsg);
+	
+	commandRegMsg2 = (MSG_BUF*)request_memory_block();
+	commandRegMsg2->mtype = KCD_REG;
+	commandRegMsg2->mtext[0] = '%';
+	commandRegMsg2->mtext[1] = 'D';
+	commandRegMsg2->mtext[2] = '\0';
+	send_message(PID_KCD, commandRegMsg2);
+
+	while(1) {
+		
+		receivedMsg = receive_message(NULL);
+		
+		if(receivedMsg->mtext[1] == 'C') { //print the params
+			i = 2;	
+			c = receivedMsg->mtext[i];
+	
+			do {
+				c = receivedMsg->mtext[i++];
+				uart0_put_char(c);
+			} while(c != '\0');
+			uart0_put_string("Received command successfully!");
+			
+		} else if(receivedMsg->mtext[1] == 'D') { //print the params separated by a space!
+			i = 2;		
+			
+			do {
+				c = receivedMsg->mtext[i++];
+				uart0_put_char(c);
+				uart0_put_char(' ');
+			} while(c != '\0');	
+				uart0_put_string("Received command successfully!!");
+
+		} else {
+			 //shouldn't get here lol
+		}
+		
+		release_processor();
+	}
+	
+	
+}
+
+void proc4Message(void) {
+	MSG_BUF* command_invok;
+	
+	command_invok = request_memory_block();
+	command_invok->mtext[0] = '%';
+	command_invok->mtext[1] = 'D';
+	command_invok->mtext[2] = '<';
+	command_invok->mtext[3] = ':';
+	command_invok->mtext[4] = 'D';
+	command_invok->mtext[5] = '\0';
+	send_message(PID_KCD, command_invok);
+	
+	command_invok = request_memory_block();
+	command_invok->mtext[0] = '%';
+	command_invok->mtext[1] = 'C';
+	command_invok->mtext[2] = '>';
+	command_invok->mtext[3] = ':';
+	command_invok->mtext[4] = 'C';
+	command_invok->mtext[5] = '\0';
+	send_message(PID_KCD, command_invok);
+	
+	while(1) {
 		release_processor();
 	}
 }
@@ -410,4 +526,5 @@ void wall_proc() {
 		release_processor();
   }
 }
+
 

@@ -20,17 +20,17 @@ int kcd_buffer_index = 0;
 void set_kernel_procs() {
     g_kernel_procs[0].m_pid= 0;
     g_kernel_procs[0].m_priority= 4;
-    g_kernel_procs[0].m_stack_size= 0x200;
+    g_kernel_procs[0].m_stack_size= 0x100;
     g_kernel_procs[0].mpf_start_pc= &null_proc;
 
     g_kernel_procs[1].m_pid= PID_KCD;
     g_kernel_procs[1].m_priority= 0;
-    g_kernel_procs[1].m_stack_size= 0x200;
+    g_kernel_procs[1].m_stack_size= 0x100;
     g_kernel_procs[1].mpf_start_pc= &kcd_proc;
 
    g_kernel_procs[2].m_pid= PID_CRT;
    g_kernel_procs[2].m_priority= 0;
-    g_kernel_procs[2].m_stack_size= 0x200;
+    g_kernel_procs[2].m_stack_size= 0x100;
     g_kernel_procs[2].mpf_start_pc= &crt_proc;
 }
 
@@ -45,7 +45,7 @@ void timer_i_proc() {
     MSG_BUF* ready_message = NULL;
     MSG_BUF* new_message;
     
-	  __disable_irq();
+	  //__disable_irq();
 
 		new_message = k_receive_message_non_blocking(NULL);
 
@@ -63,7 +63,7 @@ void timer_i_proc() {
         i_send_message(pid, ready_message);
     }
     
-		__enable_irq();
+		//__enable_irq();
 }
 
 //called after each character
@@ -71,7 +71,7 @@ void uart_i_proc(char c) {
 	 MSG_BUF* kcd_msg_env;
 	 MSG_BUF* crt_msg_env;
 	
-	 __disable_irq();
+	// __disable_irq();
 	
    //display character regardless
    crt_msg_env = (MSG_BUF*) k_request_memory_block_non_blocking(); // non-blocking
@@ -111,7 +111,7 @@ void uart_i_proc(char c) {
 		 }
 	 }
 	 
-	 __enable_irq();
+	// __enable_irq();
 }
 
 void crt_proc() {

@@ -167,7 +167,7 @@ __asm void UART0_IRQHandler(void)
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
 	POP{r4-r11, pc}
-	//BL k_release_processor; //TODO: don't restore registers
+//	BL k_release_processor; //TODO: don't restore registers
 }
 /**
  * @brief: c UART0 IRQ Handler
@@ -177,7 +177,7 @@ void c_UART0_IRQHandler(void)
 	uint8_t IIR_IntId;	    // Interrupt ID from IIR
 	LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
 	
-	interrupt = 2;
+	__disable_irq();
 
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
@@ -232,6 +232,7 @@ void c_UART0_IRQHandler(void)
 			uart1_put_string("Should not get here!\n\r");
 #endif // DEBUG_0
 		interrupt = 0;
-		return;
 	}
+	
+	__enable_irq();
 }

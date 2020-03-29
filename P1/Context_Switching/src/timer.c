@@ -115,11 +115,14 @@ __asm void TIMER0_IRQHandler(void)
  */
 void c_TIMER0_IRQHandler(void)
 {
+	__disable_irq();
 	/* ack inttrupt, see section  21.6.1 on pg 493 of LPC17XX_UM */
 	LPC_TIM0->IR = BIT(0);
 	g_timer_count++;
-	if(g_timer_count%2 == 0) { //every second increment wall time
+	if(g_timer_count%30 == 0) { //every second increment wall time
 		increment_wall_time();
 	}
 	timer_i_proc();
+	__enable_irq();
+	
 }
