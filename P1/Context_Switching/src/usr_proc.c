@@ -47,7 +47,7 @@ void set_test_procs() {
 	g_test_procs[1].mpf_start_pc = &proc2Message;
 	g_test_procs[2].mpf_start_pc = &proc3Message;
 	g_test_procs[3].mpf_start_pc = &proc4Message;
-	g_test_procs[4].mpf_start_pc = &proc5;
+	g_test_procs[4].mpf_start_pc = &proc5Message;
 	g_test_procs[5].mpf_start_pc = &proc6;
 
 	//wall proc
@@ -511,10 +511,38 @@ void proc4Message(void) {
 	command_invok->mtext[5] = '\0';
 	send_message(PID_KCD, command_invok);
 	
+	set_process_priority(5,0);
+	
 	while(1) {
 		release_processor();
 	}
 }
+
+void proc5Message(void) {
+	MSG_BUF* msg_to_display;
+	
+	set_process_priority(3,3);
+	set_process_priority(4,3);
+	
+	msg_to_display = (MSG_BUF*) request_memory_block();
+	msg_to_display->mtype = CRT_DISPLAY;
+	msg_to_display->mtext[0] = 'w';
+	msg_to_display->mtext[1] = 'o';
+	msg_to_display->mtext[2] = 'o';
+	msg_to_display->mtext[3] = 'h';
+	msg_to_display->mtext[4] = 'o';
+	msg_to_display->mtext[5] = 'o';
+	msg_to_display->mtext[6] = '!';
+	msg_to_display->mtext[7] = '\0';
+
+	send_message(PID_CRT, msg_to_display);
+	
+	while(1) {
+		release_processor();
+	}
+}
+
+
 
 void wall_proc() {
   MSG_BUF* receive_msg = NULL;

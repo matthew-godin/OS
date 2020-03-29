@@ -20,16 +20,20 @@ void print_blocked_message_queue() {
 }
 
 void print_queue(PCB* queue[], int size) {
-  int i, pid, priority;
+  int i, pid, priority, a ,b;
   for(i = 0; i < size; i++) {
     if(queue[i] != NULL) {
       pid = queue[i]->m_pid;
       priority = queue[i]->m_priority;
+			
+			a = pid/10;
+			b = pid%10;
       
 			uart0_put_string("Pid: ");
-			uart0_put_char(pid);
+			if(a != 0) uart0_put_char(a + '0');
+			uart0_put_char(b + '0');
 			uart0_put_string(", priority: ");
-			uart0_put_char(priority);
+			uart0_put_char(priority + '0');
       uart0_put_string("\r\n");
     }
   }

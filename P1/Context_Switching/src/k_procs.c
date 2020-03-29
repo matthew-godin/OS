@@ -80,16 +80,17 @@ void uart_i_proc(char c) {
 		 crt_msg_env->mtext[0] = c; //add character to be printed in message body
 		 i_send_message(PID_CRT, crt_msg_env);	 
 	 }
-
-   //handle hotkey
+	 
+		//handle hotkey
+	
 	 #ifdef _DEBUG_HOTKEYS
-   if (c == '!') {
-     print_ready_queue();
-   } else if(c == '@') {
-     print_blocked_memory_queue();
-   } else if (c == '#') {
-     print_blocked_message_queue();
-   }
+	 if (c == '!') {
+		 print_ready_queue();
+	 } else if(c == '@') {
+		 print_blocked_memory_queue();
+	 } else if (c == '#') {
+		 print_blocked_message_queue();
+	 }
 	 #endif
 
    //build message buffer for kcd display
