@@ -23,7 +23,7 @@ void wall_proc() {
     receive_msg = receive_message(NULL);
 		//update wall time always calls release_memory_block
     update_wall_time(receive_msg);
-		
+
 		release_processor();
   }
 }
@@ -32,6 +32,7 @@ void wall_proc() {
 //note, this assumes a correctly formatted wall proc command
 void update_wall_time(MSG_BUF* msg) {
   MSG_BUF* crt_msg_env;
+	int start_dig = 4;
   char* cmd_str = msg->mtext;
   int i;
   if(cmd_str[2] == 'R') { //reset
@@ -42,12 +43,23 @@ void update_wall_time(MSG_BUF* msg) {
   } else if(cmd_str[2] == 'S') { //set to a specific time
 		//just copies the string over, no check yet
 		wall_is_running = 1;
-		
-		sec = ((int)  (cmd_str[4+7]-'0') ) + (10* ((int) (cmd_str[4+6]-'0') ) );
-		min = ((int) (cmd_str[4+4]-'0') ) + (10* ((int) (cmd_str[4+3]-'0') ) );
-		hour = ((int) (cmd_str[4+1]-'0') ) + (10* ((int) (cmd_str[4+0]-'0') ) );
-		
-		set_wall_str();
+		//check args
+		if(  cmd_str[start_dig+7] < '0'  || cmd_str[start_dig+7] > '9'
+			|| cmd_str[start_dig+6] < '0' || cmd_str[start_dig+6] > '6'
+			|| cmd_str[start_dig+5] != ':'
+			|| cmd_str[start_dig+4] < '0'  || cmd_str[start_dig+4] > '9'
+			|| cmd_str[start_dig+3] < '0'  || cmd_str[start_dig+3] > '6'
+			|| cmd_str[start_dig+2] != ':'
+			|| cmd_str[start_dig+1] < '0'  || cmd_str[start_dig+1] > '9'
+			|| cmd_str[start_dig+0] < '0'  || cmd_str[start_dig+0] > '6') {
+			uart0_put_string("Invalid command to set wall clock\r\n");
+		} else {
+			sec = ((int)  (cmd_str[start_dig+7]-'0') ) + (10* ((int) (cmd_str[start_dig+6]-'0') ) );
+			min = ((int) (cmd_str[start_dig+4]-'0') ) + (10* ((int) (cmd_str[start_dig+3]-'0') ) );
+			hour = ((int) (cmd_str[start_dig+1]-'0') ) + (10* ((int) (cmd_str[start_dig+0]-'0') ) );
+
+			set_wall_str();
+		}
   }
 	release_memory_block(msg);
 
@@ -59,7 +71,7 @@ void update_wall_time(MSG_BUF* msg) {
       crt_msg_env->mtext[i] = wall_time[i];
     }
     send_message(PID_CRT, crt_msg_env);
-  } 
+  }
 }
 
 //should be called every second by timer
