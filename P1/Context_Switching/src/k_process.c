@@ -232,10 +232,8 @@ int k_get_process_priority(int process_id) {
 	int i;
 	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
-			k_release_processor();
 			return (gp_pcbs[i])->m_priority;
 		}
 	}
-	k_release_processor();
 	return -1;
 }

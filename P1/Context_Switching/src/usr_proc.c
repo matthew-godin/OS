@@ -417,7 +417,7 @@ void proc2Message(void) {
 	release_memory_block(receivedMessage);
 	
 	//----------------------------------------------delayed send tests
-//	uart0_put_string("proc 2: setting priority of 1 to 0\r\n");
+	//uart0_put_string("proc 2: setting priority of 1 to 0\r\n");
 	set_process_priority(1,0); //go back to proc 1
 	receivedMessage = receive_message(sender_id);
 //	uart0_put_string("received first msg");
