@@ -30,7 +30,6 @@ PCB *gp_current_process = NULL; /* always point to the current RUN process */
 extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
 PCB* gp_pcb_message_waiting_queue[16];
-int interrupt = 0;
 
 /* process initialization table */
 PROC_INIT g_proc_table[NUM_KERNEL_PROCS + NUM_TEST_PROCS];

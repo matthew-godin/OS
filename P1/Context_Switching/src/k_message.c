@@ -7,7 +7,8 @@
 
 extern PCB* gp_current_process;
 extern PCB* gp_pcb_message_waiting_queue[];
-extern int interrupt;
+
+int preemption_in_iproc = 0;
 
 MAILBOX mailboxes[16];
 TIMEOUT_QUEUE timeout_queue;
@@ -58,8 +59,11 @@ int i_send_message(int process_id, void* message_envelope) {
 	if (gp_pcb_message_waiting_queue[process_id] != NULL) { //process was waiting for message, wake up
 		unblocked_pcb = gp_pcb_message_waiting_queue[process_id];
 		gp_pcb_message_waiting_queue[process_id] = NULL; // remove from waiting
-        unblocked_pcb->m_state = RDY;
-        push_pcb_queue(unblocked_pcb);
+    unblocked_pcb->m_state = RDY;
+    push_pcb_queue(unblocked_pcb);
+		if(k_get_process_priority(process_id) < gp_current_process->m_priority) {
+			preemption_in_iproc = 1;
+		}
 	}
 	// Right now we release processor everytime but lab manual may suggest non
 	// preempted send should keep running

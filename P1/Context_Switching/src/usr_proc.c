@@ -11,6 +11,7 @@
 #include "usr_proc.h"
 #include "common.h"
 #include "wall_proc.h"
+#include "printf.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -386,11 +387,15 @@ void proc1Message(void) {
 	message = (MSG_BUF*) request_memory_block();
 	message->mtext[0] = '2'; //should arrive second
 	delayed_send(2, message, 60);
+	//uart0_put_string("sent first delayed msg");
 	
 	message2 = (MSG_BUF*) request_memory_block();
 	message2->mtext[0] = '1'; //should arrive first 
 	delayed_send(2, message2, 30);
+	//uart0_put_string("sent second delayed msg");
 
+
+//	uart0_put_string("proc 1: setting priority of 1 to 2\r\n");
 	set_process_priority(1, 2); //downgrade its own priority, go to proc2message
 
 	while (1) {
@@ -408,14 +413,17 @@ void proc2Message(void) {
 	//printf(type);
 	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
  		uart0_put_string(":B) passed basic message sending test\r\n");
-		//TODO: print passesd test 1 or smth
 	}
 	release_memory_block(receivedMessage);
 	
 	//----------------------------------------------delayed send tests
+//	uart0_put_string("proc 2: setting priority of 1 to 0\r\n");
 	set_process_priority(1,0); //go back to proc 1
 	receivedMessage = receive_message(sender_id);
+//	uart0_put_string("received first msg");
 	receivedMessage2 = receive_message(sender_id);
+//	uart0_put_string("received second msg");
+
 	if(receivedMessage->mtext[0] == '1' && receivedMessage2->mtext[0] == '2') {
 		uart0_put_string(":P passed delay message sending test\r\n");
 	}

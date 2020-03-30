@@ -3,11 +3,11 @@
 <title>Static Call Graph - [C:\Users\TEMP.NEXUS.002\Documents\os\P1\Context_Switching\context_switching.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C:\Users\TEMP.NEXUS.002\Documents\os\P1\Context_Switching\context_switching.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sun Mar 29 21:13:27 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Sun Mar 29 22:42:15 2020
 <BR><P>
-<H3>Maximum Stack Usage =         72 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         96 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-TIMER0_IRQHandler &rArr; c_TIMER0_IRQHandler &rArr; increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; process_switch
+UART0_IRQHandler &rArr; c_UART0_IRQHandler &rArr; uart_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 <P>
 <H3>
 Functions with no stack information
@@ -237,14 +237,14 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[12]"></a>UART0_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, uart_irq.o(.emb_text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = UART0_IRQHandler &rArr; c_UART0_IRQHandler &rArr; uart_i_proc &rArr; i_send_message &rArr; push_pcb_queue
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = UART0_IRQHandler &rArr; c_UART0_IRQHandler &rArr; uart_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, timer.o(.emb_text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = TIMER0_IRQHandler &rArr; c_TIMER0_IRQHandler &rArr; increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; process_switch
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = TIMER0_IRQHandler &rArr; c_TIMER0_IRQHandler &rArr; timer_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_TIMER0_IRQHandler
 </UL>
@@ -534,8 +534,8 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pcb_waiting_memory_queue_is_empty
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> k_procs.o(.text)
-<LI> usr_proc.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> usr_proc.o(.text)
+<LI> k_procs.o(.text)
 <LI> wall_proc.o(.text)
 </UL>
 <P><STRONG><a name="[53]"></a>process_init</STRONG> (Thumb, 320 bytes, Stack size 24 bytes, k_process.o(.text))
@@ -576,7 +576,9 @@ Global Symbols
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;scheduler
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_pcb_queue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_delayed_send
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_TIMER0_IRQHandler
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_delayed_send
 <LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_send_message
 <LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_receive_message
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;null_proc
@@ -585,8 +587,8 @@ Global Symbols
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_memory_block
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> k_procs.o(.text)
-<LI> usr_proc.o(.text)
+<BR>[Address Reference Count : 2]<UL><LI> usr_proc.o(.text)
+<LI> k_procs.o(.text)
 </UL>
 <P><STRONG><a name="[5d]"></a>k_release_blocked_processor</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = k_release_blocked_processor &rArr; process_switch
@@ -612,6 +614,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i_send_message
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usr_proc.o(.text)
 </UL>
@@ -725,7 +729,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[76]"></a>timer_i_proc</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, k_procs.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = timer_i_proc &rArr; i_send_message &rArr; push_pcb_queue
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = timer_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;top_tq
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop_tq_msg
@@ -738,7 +742,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7d]"></a>uart_i_proc</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, k_procs.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = uart_i_proc &rArr; i_send_message &rArr; push_pcb_queue
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = uart_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i_send_message
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_request_memory_block_non_blocking
@@ -788,14 +792,15 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_pcb_queue
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> k_procs.o(.text)
-<LI> usr_proc.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> usr_proc.o(.text)
+<LI> k_procs.o(.text)
 <LI> wall_proc.o(.text)
 </UL>
-<P><STRONG><a name="[7c]"></a>i_send_message</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, k_message.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = i_send_message &rArr; push_pcb_queue
+<P><STRONG><a name="[7c]"></a>i_send_message</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, k_message.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_msg
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_get_process_priority
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_pcb_queue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;increment_wall_time
@@ -827,8 +832,8 @@ Global Symbols
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_blocked_processor
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> k_procs.o(.text)
-<LI> usr_proc.o(.text)
+<BR>[Address Reference Count : 2]<UL><LI> usr_proc.o(.text)
+<LI> k_procs.o(.text)
 </UL>
 <P><STRONG><a name="[79]"></a>is_tq_empty</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, k_timeout_queue.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;insert_tq_msg
@@ -863,10 +868,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
 
-<P><STRONG><a name="[4a]"></a>c_UART0_IRQHandler</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, uart_irq.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = c_UART0_IRQHandler &rArr; uart_i_proc &rArr; i_send_message &rArr; push_pcb_queue
+<P><STRONG><a name="[4a]"></a>c_UART0_IRQHandler</STRONG> (Thumb, 138 bytes, Stack size 16 bytes, uart_irq.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = c_UART0_IRQHandler &rArr; uart_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_i_proc
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_IRQHandler
 </UL>
@@ -924,11 +930,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
 
-<P><STRONG><a name="[4b]"></a>c_TIMER0_IRQHandler</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, timer.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = c_TIMER0_IRQHandler &rArr; increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; process_switch
+<P><STRONG><a name="[4b]"></a>c_TIMER0_IRQHandler</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, timer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = c_TIMER0_IRQHandler &rArr; timer_i_proc &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;increment_wall_time
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_i_proc
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
 </UL>
@@ -1020,7 +1027,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[85]"></a>increment_wall_time</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, wall_proc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; process_switch
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = increment_wall_time &rArr; i_send_message &rArr; k_get_process_priority &rArr; k_release_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_wall_str
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i_send_message

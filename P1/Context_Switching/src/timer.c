@@ -10,11 +10,12 @@
 #include "timer.h"
 #include "k_procs.h"
 #include "wall_proc.h"
+#include "k_process.h"
 
 #define BIT(X) (1<<X)
 
 volatile uint32_t g_timer_count = 0; // increment every 1 ms
-extern int interrupt;
+extern int preemption_in_iproc;
 
 /**
  * @brief: initialize timer. Only timer 0 is supported
@@ -107,8 +108,8 @@ __asm void TIMER0_IRQHandler(void)
 	IMPORT k_release_processor;
 	PUSH{r4-r11, lr}
 	BL c_TIMER0_IRQHandler
-	POP{r4-r11, pc}
-//	BL k_release_processor; //TODO: don't restore registers
+ 	POP{r4-r11, pc}
+	//BL k_release_processor; //TODO: don't restore registers
 }
 /**
  * @brief: c TIMER0 IRQ Handler
@@ -123,6 +124,12 @@ void c_TIMER0_IRQHandler(void)
 		increment_wall_time();
 	}
 	timer_i_proc();
-	__enable_irq();
 	
-}
+	if(preemption_in_iproc == 1) {
+		preemption_in_iproc = 0;
+		__enable_irq();
+		k_release_processor();
+	} else {
+		__enable_irq();
+	}
+}	

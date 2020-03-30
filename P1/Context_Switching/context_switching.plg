@@ -222,3 +222,223 @@ linking...
 context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
 Program Size: Code=7024 RO-data=220 RW-data=100 ZI-data=1428  
 "context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7024 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7024 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+src\usr_proc.c(573): error:  #25: quoted string should contain at least one character
+Target not created
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7440 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7440 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7436 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7452 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7452 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7460 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7500 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling wall_proc.c...
+src\wall_proc.c(67): warning:  #223-D: function "i_send_message" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7500 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7500 RO-data=220 RW-data=100 ZI-data=1428  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+compiling wall_proc.c...
+src\wall_proc.c(67): warning:  #223-D: function "i_send_message" declared implicitly
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7508 RO-data=220 RW-data=100 ZI-data=1436  
+"context_switching.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Context Switching SIM'
+compiling usr_proc.c...
+src\usr_proc.c(63): warning:  #550-D: variable "priority" was set but never used
+src\usr_proc.c(199): warning:  #111-D: statement is unreachable
+src\usr_proc.c(258): warning:  #223-D: function "sprintf" declared implicitly
+src\usr_proc.c(259): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(262): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(267): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(270): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+src\usr_proc.c(190): warning:  #550-D: variable "mem_addr1" was set but never used
+src\usr_proc.c(191): warning:  #550-D: variable "mem_addr2" was set but never used
+src\usr_proc.c(297): warning:  #111-D: statement is unreachable
+src\usr_proc.c(335): warning:  #111-D: statement is unreachable
+src\usr_proc.c(358): warning:  #111-D: statement is unreachable
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7516 RO-data=220 RW-data=100 ZI-data=1436  
+"context_switching.axf" - 0 Error(s), 13 Warning(s).
+Build target 'Context Switching SIM'
+linking...
+context_switching.axf: Warning: L6304W: Duplicate input file uart_polling.o ignored.
+Program Size: Code=7516 RO-data=220 RW-data=100 ZI-data=1436  
+"context_switching.axf" - 0 Error(s), 1 Warning(s).

@@ -9,3 +9,5 @@ timer.o: src\timer.h
 timer.o: src\k_procs.h
 timer.o: src\wall_proc.h
 timer.o: src\common.h
+timer.o: src\k_process.h
+timer.o: src\k_rtx.h

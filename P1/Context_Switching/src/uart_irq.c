@@ -10,6 +10,7 @@
 #include "uart_polling.h"
 #ifdef DEBUG_0
 #include "printf.h"
+#include "k_process.h"
 #endif
 
 
@@ -18,8 +19,7 @@ uint8_t *gp_buffer = g_buffer;
 uint8_t g_send_char = 0;
 uint8_t g_char_in;
 uint8_t g_char_out;
-
-extern int interrupt;
+extern int preemption_in_iproc;
 /**
  * @brief: initialize the n_uart
  * NOTES: It only supports UART0. It can be easily extended to support UART1 IRQ.
@@ -167,7 +167,7 @@ __asm void UART0_IRQHandler(void)
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
 	POP{r4-r11, pc}
-//	BL k_release_processor; //TODO: don't restore registers
+	//BL k_release_processor; //TODO: don't restore registers
 }
 /**
  * @brief: c UART0 IRQ Handler
@@ -228,8 +228,14 @@ void c_UART0_IRQHandler(void)
 #ifdef DEBUG_0
 			uart1_put_string("Should not get here!\n\r");
 #endif // DEBUG_0
-		interrupt = 0;
 	}
 	
-	__enable_irq();
+	if(preemption_in_iproc == 1) {
+		preemption_in_iproc = 0;
+		__enable_irq();
+		k_release_processor();
+	} else {
+		__enable_irq();
+	}
+
 }
