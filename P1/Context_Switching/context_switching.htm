@@ -1,9 +1,9 @@
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html><head>
-<title>Static Call Graph - [C:\Users\y527huan\Documents\os\P1\Context_Switching\context_switching.axf]</title></head>
+<title>Static Call Graph - [C:\Users\TEMP.NEXUS.008\Documents\os\os\P1\Context_Switching\context_switching.axf]</title></head>
 <body><HR>
-<H1>Static Call Graph for image C:\Users\y527huan\Documents\os\P1\Context_Switching\context_switching.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Mon Mar 30 13:12:01 2020
+<H1>Static Call Graph for image C:\Users\TEMP.NEXUS.008\Documents\os\os\P1\Context_Switching\context_switching.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Mon Mar 30 15:57:17 2020
 <BR><P>
 <H3>Maximum Stack Usage =         72 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -434,7 +434,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_char
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;proc2
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_wall_time
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;proc2
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;proc1
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;proc2Message
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;proc3Message
@@ -513,8 +514,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;increment_wall_time
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> wall_proc.o(.text)
-<LI> usr_proc.o(.text)
+<BR>[Address Reference Count : 2]<UL><LI> usr_proc.o(.text)
+<LI> wall_proc.o(.text)
 </UL>
 <P><STRONG><a name="[5e]"></a>k_request_memory_block_non_blocking</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, k_memory.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = k_request_memory_block_non_blocking &rArr; pop_mq
@@ -534,9 +535,9 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pcb_waiting_memory_queue_is_empty
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> wall_proc.o(.text)
-<LI> k_procs.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> k_procs.o(.text)
 <LI> usr_proc.o(.text)
+<LI> wall_proc.o(.text)
 </UL>
 <P><STRONG><a name="[53]"></a>process_init</STRONG> (Thumb, 374 bytes, Stack size 24 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = process_init &rArr; push_pcb_queue
@@ -587,9 +588,9 @@ Global Symbols
 <LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_memory_block
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> wall_proc.o(.text)
-<LI> k_procs.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> k_procs.o(.text)
 <LI> usr_proc.o(.text)
+<LI> wall_proc.o(.text)
 </UL>
 <P><STRONG><a name="[5d]"></a>k_release_blocked_processor</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = k_release_blocked_processor &rArr; process_switch
@@ -789,9 +790,9 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_pcb_queue
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> wall_proc.o(.text)
-<LI> k_procs.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> k_procs.o(.text)
 <LI> usr_proc.o(.text)
+<LI> wall_proc.o(.text)
 </UL>
 <P><STRONG><a name="[7d]"></a>i_send_message</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, k_message.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = i_send_message &rArr; push_pcb_queue
@@ -829,9 +830,9 @@ Global Symbols
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_blocked_processor
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> wall_proc.o(.text)
-<LI> k_procs.o(.text)
+<BR>[Address Reference Count : 3]<UL><LI> k_procs.o(.text)
 <LI> usr_proc.o(.text)
+<LI> wall_proc.o(.text)
 </UL>
 <P><STRONG><a name="[7a]"></a>is_tq_empty</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, k_timeout_queue.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;insert_tq_msg
@@ -1008,17 +1009,18 @@ Global Symbols
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
 
-<P><STRONG><a name="[90]"></a>update_wall_time</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, wall_proc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = update_wall_time &rArr; reset_wall_time
+<P><STRONG><a name="[90]"></a>update_wall_time</STRONG> (Thumb, 298 bytes, Stack size 24 bytes, wall_proc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = update_wall_time &rArr; uart_put_string
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_wall_str
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_wall_time
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
 </UL>
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wall_proc
 </UL>
 
 <P><STRONG><a name="[91]"></a>wall_proc</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, wall_proc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = wall_proc &rArr; update_wall_time &rArr; reset_wall_time
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = wall_proc &rArr; update_wall_time &rArr; uart_put_string
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_wall_time
 </UL>
@@ -1028,7 +1030,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_init
 </UL>
 
-<P><STRONG><a name="[86]"></a>increment_wall_time</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, wall_proc.o(.text))
+<P><STRONG><a name="[86]"></a>increment_wall_time</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, wall_proc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = increment_wall_time &rArr; k_request_memory_block &rArr; k_release_blocked_processor &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_wall_str

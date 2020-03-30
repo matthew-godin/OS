@@ -2,6 +2,7 @@
 #include "wall_proc.h"
 #include "common.h"
 #include "rtx.h"
+#include "uart_polling.h"
 
 char wall_time[11];
 int wall_is_running = 0; //wall is initially not running
@@ -41,8 +42,6 @@ void update_wall_time(MSG_BUF* msg) {
   } else if(cmd_str[2] == 'T') { //terminate
     wall_is_running = 0;
   } else if(cmd_str[2] == 'S') { //set to a specific time
-		//just copies the string over, no check yet
-		wall_is_running = 1;
 		//check args
 		if(  cmd_str[start_dig+7] < '0'  || cmd_str[start_dig+7] > '9'
 			|| cmd_str[start_dig+6] < '0' || cmd_str[start_dig+6] > '6'
@@ -54,6 +53,7 @@ void update_wall_time(MSG_BUF* msg) {
 			|| cmd_str[start_dig+0] < '0'  || cmd_str[start_dig+0] > '6') {
 			uart0_put_string("Invalid command to set wall clock\r\n");
 		} else {
+			wall_is_running = 1;
 			sec = ((int)  (cmd_str[start_dig+7]-'0') ) + (10* ((int) (cmd_str[start_dig+6]-'0') ) );
 			min = ((int) (cmd_str[start_dig+4]-'0') ) + (10* ((int) (cmd_str[start_dig+3]-'0') ) );
 			hour = ((int) (cmd_str[start_dig+1]-'0') ) + (10* ((int) (cmd_str[start_dig+0]-'0') ) );
@@ -81,12 +81,12 @@ void increment_wall_time() {
 	if(wall_is_running) {
 
 		sec++;
-		if(sec == 60) {
-			sec = 0;
+		if(sec >= 60) {
+			sec %= 60;
 			min++;
 		}
-		if(min == 60) {
-			min = 0;
+		if(min >= 60) {
+			min %= 60;
 			hour++;
 		}
 
