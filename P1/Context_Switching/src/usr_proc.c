@@ -377,6 +377,7 @@ void proc1Message(void) {
 	message = (MSG_BUF*) request_memory_block();
 	message->mtext[0] = ':';
 	message->mtext[1] = ')';
+	message->mtext[2] = '\0';
 	//*mem_addr1 = message;
 
 	send_message(2, message);
