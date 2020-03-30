@@ -3,7 +3,6 @@
 #include "common.h"
 #include "rtx.h"
 
-char* base_wall_time = "00:00:00";
 char wall_time[9];
 int wall_is_running = 0; //wall is initially not running
 int hour = 0, min = 0, sec = 0;
@@ -22,9 +21,12 @@ void update_wall_time(MSG_BUF* msg) {
   } else if(cmd_str[2] == 'S') { //set to a specific time
 		//just copies the string over, no check yet
 		wall_is_running = 1;
-    for(i= 0; i < 8; i++) {
-      wall_time[i] = cmd_str[i+4];
-    }
+		
+		sec = ((int)  (cmd_str[4+7]-'0') ) + (10* ((int) (cmd_str[4+6]-'0') ) );
+		min = ((int) (cmd_str[4+4]-'0') ) + (10* ((int) (cmd_str[4+3]-'0') ) );
+		hour = ((int) (cmd_str[4+1]-'0') ) + (10* ((int) (cmd_str[4+0]-'0') ) );
+		
+		set_wall_str();
   }
 	release_memory_block(msg);
 
@@ -54,13 +56,8 @@ void increment_wall_time() {
 			min = 0;
 			hour++;
 		}
-		wall_time[0] = hour/10 + '0';
-		wall_time[1] = hour%10 + '0';
-		wall_time[3] = min/10 + '0';
-		wall_time[4] = min%10 + '0';
-		wall_time[6] = sec/10 + '0';
-		wall_time[7] = sec%10 + '0';
-	
+
+		set_wall_str();
     crt_msg_env = (MSG_BUF*) k_request_memory_block();
     crt_msg_env->mtype = CRT_DISPLAY;
 
@@ -72,8 +69,20 @@ void increment_wall_time() {
 }
 
 void reset_wall_time() {
-		int i;
-		for(i = 0; i < 9; i++) {
-				wall_time[i] = base_wall_time[i];
-		}
+		hour = 0;
+		min = 0;
+		sec = 0;
+	  set_wall_str();
+}
+
+void set_wall_str() {
+		wall_time[0] = hour/10 + '0';
+		wall_time[1] = hour%10 + '0';
+	  wall_time[2] = ':';
+		wall_time[3] = min/10 + '0';
+		wall_time[4] = min%10 + '0';
+	  wall_time[5] = ':';
+		wall_time[6] = sec/10 + '0';
+		wall_time[7] = sec%10 + '0';
+	  wall_time[8] = '\0';
 }

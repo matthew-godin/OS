@@ -40,7 +40,7 @@ I (src\k_message.h)(0x5E8136DD)
 I (src\timer.h)(0x5E8136DD)
 I (src\uart.h)(0x5E8136DD)
 I (src\uart_def.h)(0x5E8136DD)
-I (src\wall_proc.h)(0x5E8136DD)
+I (src\wall_proc.h)(0x5E813FC3)
 I (src\k_command_map.h)(0x5E8136DD)
 F (.\src\k_memory.c)(0x5E8136DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "k_memory.o" --omf_browse "k_memory.crf" --depend "k_memory.d")
 I (src\k_memory.h)(0x5E8136DD)
@@ -65,7 +65,7 @@ F (.\src\k_memory_queue.c)(0x5E8136D4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwor
 I (src\k_memory_queue.h)(0x5E8136D4)
 I (src\k_rtx.h)(0x5E8136DD)
 I (src\common.h)(0x5E8136DD)
-F (.\src\k_process_priority_queue.c)(0x5E8136DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "k_process_priority_queue.o" --omf_browse "k_process_priority_queue.crf" --depend "k_process_priority_queue.d")
+F (.\src\k_process_priority_queue.c)(0x5E813FC3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "k_process_priority_queue.o" --omf_browse "k_process_priority_queue.crf" --depend "k_process_priority_queue.d")
 I (src\k_process_priority_queue.h)(0x5E8136DD)
 I (src\k_rtx.h)(0x5E8136DD)
 I (src\common.h)(0x5E8136DD)
@@ -131,7 +131,7 @@ I (c:\Software\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x505A054C)
 I (c:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDB3D1C)
 I (c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h)(0x4F58EE42)
 I (src\uart_polling.h)(0x5E8136D4)
-F (.\src\timer.c)(0x5E8136DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "timer.o" --omf_browse "timer.crf" --depend "timer.d")
+F (.\src\timer.c)(0x5E813C31)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "timer.o" --omf_browse "timer.crf" --depend "timer.d")
 I (c:\Software\Keil\ARM\Inc\NXP\LPC17xx\LPC17xx.h)(0x4FF5A98C)
 I (c:\Software\Keil\ARM\CMSIS\Include\core_cm3.h)(0x5006D242)
 I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB17B44)
@@ -140,16 +140,16 @@ I (c:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDB3D1C)
 I (c:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h)(0x4F58EE42)
 I (src\timer.h)(0x5E8136DD)
 I (src\k_procs.h)(0x5E8136DD)
-I (src\wall_proc.h)(0x5E8136DD)
+I (src\wall_proc.h)(0x5E813FC3)
 I (src\common.h)(0x5E8136DD)
-F (.\src\usr_proc.c)(0x5E8136DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "usr_proc.o" --omf_browse "usr_proc.crf" --depend "usr_proc.d")
+F (.\src\usr_proc.c)(0x5E814198)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "usr_proc.o" --omf_browse "usr_proc.crf" --depend "usr_proc.d")
 I (src\rtx.h)(0x5E8136DD)
 I (src\common.h)(0x5E8136DD)
 I (src\uart_polling.h)(0x5E8136D4)
 I (c:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB17B44)
 I (src\usr_proc.h)(0x5E8136DD)
-I (src\wall_proc.h)(0x5E8136DD)
-F (.\src\wall_proc.c)(0x5E8136DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "wall_proc.o" --omf_browse "wall_proc.crf" --depend "wall_proc.d")
-I (src\wall_proc.h)(0x5E8136DD)
+I (src\wall_proc.h)(0x5E813FC3)
+F (.\src\wall_proc.c)(0x5E8141C8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I c:\Software\Keil\ARM\RV31\INC -I c:\Software\Keil\ARM\CMSIS\Include -I c:\Software\Keil\ARM\Inc\NXP\LPC17xx -DK_MSG_ENV -D_DEBUG_HOTKEYS -o "wall_proc.o" --omf_browse "wall_proc.crf" --depend "wall_proc.d")
+I (src\wall_proc.h)(0x5E813FC3)
 I (src\common.h)(0x5E8136DD)
 I (src\rtx.h)(0x5E8136DD)
