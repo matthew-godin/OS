@@ -10,7 +10,7 @@ void insert_cmd(char cmd, int pid) {
   int i;
 	if(cmd == '!' || cmd == '@' || cmd == '#') {
 		#ifdef DEBUG_0
-		prinf("Can't register the command because it is reserved as a hotkey\r\n");
+		printf("Can't register the command because it is reserved as a hotkey\r\n");
 		#endif
 	}
   for(i = 0; i < 26; i++) {
