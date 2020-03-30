@@ -3,7 +3,7 @@
 #include "common.h"
 #include "rtx.h"
 
-char wall_time[9];
+char wall_time[11];
 int wall_is_running = 0; //wall is initially not running
 int hour = 0, min = 0, sec = 0;
 
@@ -34,7 +34,7 @@ void update_wall_time(MSG_BUF* msg) {
     crt_msg_env = (MSG_BUF*) request_memory_block();
     crt_msg_env->mtype = CRT_DISPLAY;
 
-    for(i = 0; i < 8; i++) {
+    for(i = 0; i < 11; i++) {
       crt_msg_env->mtext[i] = wall_time[i];
     }
     send_message(PID_CRT, crt_msg_env);
@@ -61,7 +61,7 @@ void increment_wall_time() {
     crt_msg_env = (MSG_BUF*) k_request_memory_block();
     crt_msg_env->mtype = CRT_DISPLAY;
 
-    for(i = 0; i < 8; i++) {
+    for(i = 0; i < 11; i++) {
       crt_msg_env->mtext[i] = wall_time[i];
     }
     i_send_message(PID_CRT, crt_msg_env);
@@ -84,5 +84,7 @@ void set_wall_str() {
 	  wall_time[5] = ':';
 		wall_time[6] = sec/10 + '0';
 		wall_time[7] = sec%10 + '0';
-	  wall_time[8] = '\0';
+	  wall_time[8] = '\r';
+		wall_time[9] = '\n';
+		wall_time[10] = '\0';
 }

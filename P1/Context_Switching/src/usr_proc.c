@@ -48,7 +48,7 @@ void set_test_procs() {
 	g_test_procs[2].mpf_start_pc = &proc3Message;
 	g_test_procs[3].mpf_start_pc = &proc4Message;
 	g_test_procs[4].mpf_start_pc = &proc5Message;
-	g_test_procs[5].mpf_start_pc = &proc6;
+	g_test_procs[5].mpf_start_pc = &proc6Message;
 
 	//wall proc
 	g_test_procs[6].m_pid= (U32) 11;
@@ -486,8 +486,6 @@ void proc3Message(void) {
 		
 		release_processor();
 	}
-	
-	
 }
 
 void proc4Message(void) {
@@ -538,11 +536,87 @@ void proc5Message(void) {
 	send_message(PID_CRT, msg_to_display);
 	uart0_put_string(" CRT test works babey\r\n");
 	
+	set_process_priority(6,0);
+	
 	while(1) {
 		release_processor();
 	}
 }
 
+void proc6Message(void) {
+	MSG_BUF* clock_cmd;
+	int i;
+
+	//deliberately set everything to have priority 0 so it loops through every process which just calls release_processor();
+	//this is so we have more "time" to test the wall clock
+	set_process_priority(1,0);
+	set_process_priority(2,0);
+	set_process_priority(3,0);
+	set_process_priority(4,0);
+	set_process_priority(5,0);
+
+	
+	clock_cmd = request_memory_block();
+	clock_cmd->mtype = KCD_CMD;
+	uart0_put_string("Resetting wall clock\r\n");
+	clock_cmd->mtext[0] = '%';
+	clock_cmd->mtext[1] = 'W';
+	clock_cmd->mtext[2] = 'R';
+	clock_cmd->mtext[3] = '\0';
+	send_message(PID_KCD, clock_cmd);
+	
+	for(i = 0; i < 10000; i++) {
+		release_processor();
+	}
+	
+	clock_cmd = request_memory_block();
+	clock_cmd->mtype = KCD_CMD;
+	uart0_put_string("Setting wall clock to 12:12:12\r\n");
+	clock_cmd->mtext[0] = '%';
+	clock_cmd->mtext[1] = 'W';
+	clock_cmd->mtext[2] = 'S';
+	clock_cmd->mtext[3] = ' ';
+	clock_cmd->mtext[4] = '1';
+	clock_cmd->mtext[5] = '2';
+	clock_cmd->mtext[6] = ':';
+	clock_cmd->mtext[7] = '1';
+	clock_cmd->mtext[8] = '2';
+	clock_cmd->mtext[9] = ':';
+	clock_cmd->mtext[10] = '1';
+	clock_cmd->mtext[11] = '2';
+	clock_cmd->mtext[12] = '\0';
+	send_message(PID_KCD, clock_cmd);
+	
+	for(i = 0; i < 6000; i++) {
+		release_processor();
+	}
+	
+	clock_cmd = request_memory_block();
+	clock_cmd->mtype = KCD_CMD;
+	uart0_put_string("Resetting wall clock\r\n");
+	clock_cmd->mtext[0] = '%';
+	clock_cmd->mtext[1] = 'W';
+	clock_cmd->mtext[2] = 'R';
+	clock_cmd->mtext[3] = '\0';
+	send_message(PID_KCD, clock_cmd);
+	
+	for(i = 0; i < 6000; i++) {
+		release_processor();
+	}
+	
+	clock_cmd = request_memory_block();
+	clock_cmd->mtype = KCD_CMD;
+	uart0_put_string("Terminating wall clock\r\n");
+	clock_cmd->mtext[0] = '%';
+	clock_cmd->mtext[1] = 'W';
+	clock_cmd->mtext[2] = 'T';
+	clock_cmd->mtext[3] = '\0';
+	send_message(PID_KCD, clock_cmd);
+	
+	while(1) {
+		release_processor();
+	}
+}
 
 
 void wall_proc() {
