@@ -78,6 +78,7 @@ void uart_i_proc(char c) {
 	 if(crt_msg_env != NULL ){
 		 crt_msg_env->mtype = CRT_DISPLAY_SINGLE_CHAR;
 		 crt_msg_env->mtext[0] = c; //add character to be printed in message body
+		 crt_msg_env->mtext[1] = '\0'; //add character to be printed in message body
 		 i_send_message(PID_CRT, crt_msg_env);	 
 	 }
 
@@ -92,6 +93,7 @@ void uart_i_proc(char c) {
 		 kcd_buffer->mtext[kcd_buffer_index++] = c; //put char on buffer, increment index
 
 		 if(c == '\r') { //last character TODO
+			 kcd_buffer->mtext[kcd_buffer_index++] = '\0';
 			 kcd_msg_env = kcd_buffer; // set kcd_msg_evn to buffer
 			 kcd_buffer = NULL;  //flush the buffer
 			 kcd_buffer_index = 0; //reset index
