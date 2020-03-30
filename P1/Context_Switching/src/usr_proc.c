@@ -407,7 +407,9 @@ void proc2Message(void) {
 	receivedMessage = receive_message(sender_id);
 	//printf(type);
 	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
- 		uart0_put_string(":B) passed basic message sending test\r\n");
+ 		uart0_put_string("Test 1: Passed basic message sending test\r\n");
+	} else {
+		uart0_put_string("Test 1: Failed basic message sending test\r\n");
 	}
 	release_memory_block(receivedMessage);
 	
@@ -420,7 +422,9 @@ void proc2Message(void) {
 //	uart0_put_string("received second msg");
 
 	if(receivedMessage->mtext[0] == '1' && receivedMessage2->mtext[0] == '2') {
-		uart0_put_string(":P passed delay message sending test\r\n");
+		uart0_put_string("Test 2: Passed delay message sending test\r\n");
+	} else {
+		uart0_put_string("Test 2: Failed delay message sending test\r\n");
 	}
 	
 	release_memory_block(receivedMessage);
@@ -471,7 +475,7 @@ void proc3Message(void) {
 				c = receivedMsg->mtext[i++];
 				uart0_put_char(c);
 			} while(c != '\0');
-			uart0_put_string("Received command successfully!\r\n");
+			uart0_put_string("Test 3 a: Received registered command  \r\n");
 			
 		} else if(receivedMsg->mtext[1] == 'D') { //print thef params separated by a space!
 			i = 2;		
@@ -481,10 +485,11 @@ void proc3Message(void) {
 				uart0_put_char(c);
 				uart0_put_char(' ');
 			} while(c != '\0');	
-				uart0_put_string("Received command successfully!!\r\n");
+				uart0_put_string("Test 3 b :Received registered command \r\n");
 
 		} else {
-			 //shouldn't get here lol
+			//shouldn't get here lol
+		  uart0_put_string("Test 3 FAIL\r\n");
 		}
 		
 		release_processor();
@@ -501,7 +506,12 @@ void proc4Message(void) {
 	command_invok->mtext[3] = ':';
 	command_invok->mtext[4] = 'D';
 	command_invok->mtext[5] = '\0';
-	send_message(PID_KCD, command_invok);
+	if (send_message(PID_KCD, command_invok) == RTX_OK) {
+		uart0_put_string("Test 3 a: Send command registration successfully\r\n");
+	} else {
+		uart0_put_string("Test 3 a: FAIL\r\n");
+	}
+	
 	
 	command_invok = request_memory_block();
 	command_invok->mtext[0] = '%';
@@ -510,7 +520,11 @@ void proc4Message(void) {
 	command_invok->mtext[3] = ':';
 	command_invok->mtext[4] = 'C';
 	command_invok->mtext[5] = '\0';
-	send_message(PID_KCD, command_invok);
+	if (send_message(PID_KCD, command_invok) == RTX_OK) {
+		uart0_put_string("Test 3 b: Send command registration successfully\r\n");
+	} else {
+		uart0_put_string("Test 3 b: FAIL\r\n");
+	}
 	
 	set_process_priority(5,0);
 	
@@ -536,8 +550,12 @@ void proc5Message(void) {
 	msg_to_display->mtext[6] = '!';
 	msg_to_display->mtext[7] = '\0';
 
-	send_message(PID_CRT, msg_to_display);
-	uart0_put_string(" CRT test works babey\r\n");
+	if (send_message(PID_CRT, msg_to_display) == RTX_OK) {
+		uart0_put_string("Test 4: Send CRT display successfully\r\n");
+	} else {
+		uart0_put_string("Test 4 FAIL\r\n");
+	}
+	
 	
 	set_process_priority(6,0);
 	
@@ -616,8 +634,13 @@ void proc6Message(void) {
 	clock_cmd->mtext[3] = '\0';
 	send_message(PID_KCD, clock_cmd);
 	
+	uart0_put_string("Test 5: Send wall clock commands successfully\r\n");
+	
+	
 	while(1) {
-		request_memory_block();
+		uart0_put_string("Test 6: Proc 6 requesting memory block\r\n"); //should eventually be blocked on memory
+
+		(request_memory_block() == NULL);
 		release_processor();
 	}
 }
