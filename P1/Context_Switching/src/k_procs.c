@@ -70,8 +70,17 @@ void timer_i_proc() {
 void uart_i_proc(char c) {
 	 MSG_BUF* kcd_msg_env;
 	 MSG_BUF* crt_msg_env;
-	
-	// __disable_irq();
+		
+		//handle hotkey
+	 #ifdef _DEBUG_HOTKEYS
+	 if (c == '!') {
+		 print_ready_queue();
+	 } else if(c == '@') {
+		 print_blocked_memory_queue();
+	 } else if (c == '#') {
+		 print_blocked_message_queue();
+	 }
+	 #endif
 	
    //display character regardless
    crt_msg_env = (MSG_BUF*) k_request_memory_block_non_blocking(); // non-blocking
@@ -123,21 +132,6 @@ void crt_proc() {
 				gp_buffer =(uint8_t*) receive_msg->mtext;
 				pUart->IER |= IER_THRE;
 			
-				if(receive_msg->mtype == CRT_DISPLAY_SINGLE_CHAR) {
-					c = receive_msg->mtext[0];
-					
-							//handle hotkey
-						 #ifdef _DEBUG_HOTKEYS
-						 if (c == '!') {
-							 print_ready_queue();
-						 } else if(c == '@') {
-							 print_blocked_memory_queue();
-						 } else if (c == '#') {
-							 print_blocked_message_queue();
-						 }
-						 #endif
-				}
-
         release_memory_block(receive_msg);
 				release_processor();
     }

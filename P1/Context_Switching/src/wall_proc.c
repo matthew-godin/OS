@@ -43,15 +43,16 @@ void update_wall_time(MSG_BUF* msg) {
     wall_is_running = 0;
   } else if(cmd_str[2] == 'S') { //set to a specific time
 		//check args
+
 		if(  cmd_str[start_dig+7] < '0'  || cmd_str[start_dig+7] > '9'
-			|| cmd_str[start_dig+6] < '0' || cmd_str[start_dig+6] > '6'
+			|| cmd_str[start_dig+6] < '0' || cmd_str[start_dig+6] > '5'
 			|| cmd_str[start_dig+5] != ':'
 			|| cmd_str[start_dig+4] < '0'  || cmd_str[start_dig+4] > '9'
-			|| cmd_str[start_dig+3] < '0'  || cmd_str[start_dig+3] > '6'
+			|| cmd_str[start_dig+3] < '0'  || cmd_str[start_dig+3] > '5'
 			|| cmd_str[start_dig+2] != ':'
 			|| cmd_str[start_dig+1] < '0'  || cmd_str[start_dig+1] > '9'
-			|| cmd_str[start_dig+0] < '0'  || cmd_str[start_dig+0] > '6') {
-			uart0_put_string("Invalid command to set wall clock\r\n");
+			|| cmd_str[start_dig+0] < '0'  || cmd_str[start_dig+0] > '5') {
+			uart0_put_string("Invalid time to set wall clock\r\n");
 		} else {
 			wall_is_running = 1;
 			sec = ((int)  (cmd_str[start_dig+7]-'0') ) + (10* ((int) (cmd_str[start_dig+6]-'0') ) );

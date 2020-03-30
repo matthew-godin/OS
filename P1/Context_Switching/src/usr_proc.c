@@ -11,7 +11,6 @@
 #include "usr_proc.h"
 #include "common.h"
 #include "wall_proc.h"
-#include "printf.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -604,7 +603,7 @@ void proc6Message(void) {
 	clock_cmd->mtext[3] = '\0';
 	send_message(PID_KCD, clock_cmd);
 	
-	for(i = 0; i < 6000; i++) {
+	for(i = 0; i < 5000; i++) {
 		release_processor();
 	}
 	
@@ -618,6 +617,7 @@ void proc6Message(void) {
 	send_message(PID_KCD, clock_cmd);
 	
 	while(1) {
+		request_memory_block();
 		release_processor();
 	}
 }
