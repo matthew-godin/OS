@@ -19,6 +19,7 @@
 #include "k_process_priority_queue.h"
 #include "k_process.h"
 #include "common.h"
+#include "wall_proc.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -27,14 +28,15 @@
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
-extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
-extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
+extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1];
+extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1];
 PCB* gp_pcb_message_waiting_queue[16];
 
 /* process initialization table */
-PROC_INIT g_proc_table[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
+PROC_INIT g_proc_table[NUM_KERNEL_PROCS + NUM_TEST_PROCS+1];
 extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
 extern PROC_INIT g_kernel_procs[NUM_KERNEL_PROCS];
+extern PROC_INIT g_wall_proc[1];
 
 /**
  * @biref: initialize all processes in the system
@@ -49,6 +51,8 @@ void process_init()
   /* fill out the initialization table */
 	set_test_procs();
 	set_kernel_procs();
+	set_wall_proc();
+	
 	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
 		g_proc_table[i].m_pid = g_test_procs[i].m_pid;
 		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
@@ -63,8 +67,15 @@ void process_init()
 		g_proc_table[j].mpf_start_pc = g_kernel_procs[i].mpf_start_pc;
 	}
 
+	//wall proc
+	j = NUM_TEST_PROCS + NUM_KERNEL_PROCS;
+	g_proc_table[j].m_pid = g_wall_proc[0].m_pid;
+	g_proc_table[j].m_priority = g_wall_proc[0].m_priority;
+	g_proc_table[j].m_stack_size = g_wall_proc[0].m_stack_size;
+	g_proc_table[j].mpf_start_pc = g_wall_proc[0].mpf_start_pc;
+	
 	/* initilize exception stack frame (i.e. initial context) for each process */
-	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1; i++ ) {
 		int j;
 		(gp_pcbs[i])->m_pid = (g_proc_table[i]).m_pid;
 		(gp_pcbs[i])->m_priority = (g_proc_table[i]).m_priority;
@@ -81,7 +92,7 @@ void process_init()
 
 	// Initialize ready process queue
 	init_pcb_queue();
-	for(i=0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; ++i) {
+	for(i=0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1; ++i) {
 		push_pcb_queue(gp_pcbs[i]); // add all pcbs to process priority queue
 	}
 
@@ -215,7 +226,7 @@ int k_set_process_priority(int process_id, int priority) {
 	if(process_id != 0 && priority ==4) {
 		return RTX_ERR;
 	}
-	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) { //iterate through pcb array and search for matching PID
 			(gp_pcbs[i])->m_priority = priority;
 			updated_pcb_priority(gp_pcbs[i]->m_pid);
@@ -230,7 +241,7 @@ int k_set_process_priority(int process_id, int priority) {
 
 int k_get_process_priority(int process_id) {
 	int i;
-	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS; i++ ) {
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
 			return (gp_pcbs[i])->m_priority;
 		}

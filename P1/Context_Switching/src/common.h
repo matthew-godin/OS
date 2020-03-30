@@ -57,7 +57,7 @@
 #define PID_CRT 13
 #define PID_KCD 12
 
-#define NUM_TEST_PROCS 7
+#define NUM_TEST_PROCS 6
 #define NUM_KERNEL_PROCS 3
 
 /* ----- Types ----- */

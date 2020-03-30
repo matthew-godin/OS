@@ -78,6 +78,12 @@ void uart_i_proc(char c) {
 	 if(crt_msg_env != NULL ){
 		 crt_msg_env->mtype = CRT_DISPLAY_SINGLE_CHAR;
 		 crt_msg_env->mtext[0] = c; //add character to be printed in message body
+		 if(c == '\r') {
+			 	crt_msg_env->mtext[1] = '\n';
+		 		crt_msg_env->mtext[2] = '\0'; 
+		 } else {
+		 		 crt_msg_env->mtext[1] = '\0'; 
+			}
 		 crt_msg_env->mtext[1] = '\0'; //add character to be printed in message body
 		 i_send_message(PID_CRT, crt_msg_env);	 
 	 }
@@ -117,9 +123,10 @@ void crt_proc() {
 				gp_buffer =(uint8_t*) receive_msg->mtext;
 				pUart->IER |= IER_THRE;
 			
-				//handle hotkey
 				if(receive_msg->mtype == CRT_DISPLAY_SINGLE_CHAR) {
 					c = receive_msg->mtext[0];
+					
+							//handle hotkey
 						 #ifdef _DEBUG_HOTKEYS
 						 if (c == '!') {
 							 print_ready_queue();
@@ -159,6 +166,7 @@ void kcd_proc() {
 					if(receive_msg->mtext[0] =='%') {  //check if valid keyboard command
 						pid = get_pid_from_cmd(cmd);
 						if(pid != RTX_ERR) {
+							
 							// i think it is unnecessary to reset the sender/receiver pid on the message
 							send_message(pid, receive_msg); //send message to process associated with the command
 						} else {

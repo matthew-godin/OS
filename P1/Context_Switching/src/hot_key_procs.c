@@ -3,16 +3,16 @@
 #include "uart_polling.h"
 
 
-extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
-extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS];
+extern PCB* gp_pcb_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1];
+extern PCB* gp_pcb_waiting_memory_queue[NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1];
 extern PCB* gp_pcb_message_waiting_queue[];
 
 void print_ready_queue() {
-  print_queue(gp_pcb_queue, NUM_KERNEL_PROCS + NUM_TEST_PROCS);
+  print_queue(gp_pcb_queue, NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1);
 }
 
 void print_blocked_memory_queue() {
-  print_queue(gp_pcb_waiting_memory_queue, NUM_KERNEL_PROCS + NUM_TEST_PROCS);
+  print_queue(gp_pcb_waiting_memory_queue, NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1);
 }
 
 void print_blocked_message_queue() {

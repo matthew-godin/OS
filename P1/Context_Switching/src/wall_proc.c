@@ -6,6 +6,27 @@
 char wall_time[11];
 int wall_is_running = 0; //wall is initially not running
 int hour = 0, min = 0, sec = 0;
+PROC_INIT g_wall_proc[1];
+
+
+void set_wall_proc() {
+	//wall proc
+	g_wall_proc[0].m_pid= (U32) 11;
+	g_wall_proc[0].m_priority= 0;
+	g_wall_proc[0].m_stack_size=0x100;
+	g_wall_proc[0].mpf_start_pc= &wall_proc;
+}
+
+void wall_proc() {
+  MSG_BUF* receive_msg = NULL;
+  while(1) {
+    receive_msg = receive_message(NULL);
+		//update wall time always calls release_memory_block
+    update_wall_time(receive_msg);
+		
+		release_processor();
+  }
+}
 
 //reset, terminate, or set to specific time, this is called ONLY by the wall_proc
 //note, this assumes a correctly formatted wall proc command
@@ -84,7 +105,7 @@ void set_wall_str() {
 	  wall_time[5] = ':';
 		wall_time[6] = sec/10 + '0';
 		wall_time[7] = sec%10 + '0';
-	  wall_time[8] = '\r';
-		wall_time[9] = '\n';
+	  wall_time[8] = '\n';
+		wall_time[9] = '\r';
 		wall_time[10] = '\0';
 }

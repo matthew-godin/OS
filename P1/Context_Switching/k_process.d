@@ -10,3 +10,4 @@ k_process.o: src\k_process_priority_queue.h
 k_process.o: src\k_rtx.h
 k_process.o: src\common.h
 k_process.o: src\k_process.h
+k_process.o: src\wall_proc.h

@@ -50,11 +50,6 @@ void set_test_procs() {
 	g_test_procs[3].mpf_start_pc = &proc4Message;
 	g_test_procs[4].mpf_start_pc = &proc5Message;
 	g_test_procs[5].mpf_start_pc = &proc6Message;
-
-	//wall proc
-	g_test_procs[6].m_pid= (U32) 11;
-	g_test_procs[6].m_priority= 0;
-	g_test_procs[6].mpf_start_pc= &wall_proc;
 }
 
 /**
@@ -627,16 +622,5 @@ void proc6Message(void) {
 	}
 }
 
-
-void wall_proc() {
-  MSG_BUF* receive_msg = NULL;
-  while(1) {
-    receive_msg = receive_message(NULL);
-		//update wall time always calls release_memory_block
-    update_wall_time(receive_msg);
-		
-		release_processor();
-  }
-}
 
 
