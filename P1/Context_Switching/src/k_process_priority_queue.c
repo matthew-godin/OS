@@ -27,7 +27,7 @@ void push_pcb_queue(PCB* pcb) {
 
 	if (gp_pcb_queue[NUM_TEST_PROCS + NUM_KERNEL_PROCS + 1 -1] != NULL) { // Should never hit here
 		#ifdef DEBUG_0
-		printf("ERROR: tried to push more processes than exist to ready queue\r\n");
+		printf("ERROR: tried to push more processes than exist to ready queue\n\r");
 		#endif
 		return;
 	}
@@ -95,14 +95,14 @@ void push_pcb_waiting_memory_queue(PCB* pcb) {
 
 	if (pcb->m_state != WAITING_MEMORY) {
 		#ifdef DEBUG_0
-		printf("ERROR: tried to push a non waiting pcb to waiting memory queue\r\n");
+		printf("ERROR: tried to push a non waiting pcb to waiting memory queue\n\r");
 		#endif
 		return;
 	}
 
 	if (gp_pcb_waiting_memory_queue[NUM_TEST_PROCS + NUM_KERNEL_PROCS + 1 -1] != NULL) { // Should never hit here
 		#ifdef DEBUG_0
-		printf("ERROR: tried to push more processes than exist to waiting memory queue\r\n");
+		printf("ERROR: tried to push more processes than exist to waiting memory queue\n\");
 		#endif
 		return;
 	}

@@ -34,14 +34,14 @@ int k_send_message(int process_id, void* message_envelope) {
 
   if(process_id < 0 || process_id > 15) {
     #ifdef DEBUG_0
-    printf("Error process id doesn't exist\r\n");
+    printf("Error process id doesn't exist\n\r");
     #endif /* DEBUG_0 */
     return NULL;
   }
 
-  if( (process_id > 6 && process_id < 11) {
+  if(process_id > 6 && process_id < 11) {
     #ifdef DEBUG_0
-    printf("Error process id doesn't exist\r\n");
+    printf("Error process id doesn't exist\n\r");
     #endif /* DEBUG_0 */
     return NULL;
   }
@@ -49,19 +49,19 @@ int k_send_message(int process_id, void* message_envelope) {
 
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid; //set sender pid to current process's pid
 	incoming_message_envelope->m_recv_pid = process_id; //set receiving pid to process id
-	incoming_message_envelope->mp_next = NULL;
+	incoming_message_envelope->mp_next = NULL; //resetting/clearing mp_next
 
 	push_msg(&mailboxes[process_id], incoming_message_envelope); //not sure if we want to modify some more fields
 
 	if (gp_pcb_message_waiting_queue[process_id] != NULL) { //process was waiting for message, wake up
 		unblocked_pcb = gp_pcb_message_waiting_queue[process_id];
 		gp_pcb_message_waiting_queue[process_id] = NULL; // remove from waiting
-        unblocked_pcb->m_state = RDY;
-        push_pcb_queue(unblocked_pcb);
+    unblocked_pcb->m_state = RDY;
+    push_pcb_queue(unblocked_pcb);
+		if(unblocked_pcb->m_priority < gp_current_process->m_priority) {
+				k_release_processor();
+		}
 	}
-	// Right now we release processor everytime but lab manual may suggest non
-	// preempted send should keep running
-	k_release_processor();
 	return RTX_OK;
 }
 
@@ -80,7 +80,7 @@ int i_send_message(int process_id, void* message_envelope) {
 		gp_pcb_message_waiting_queue[process_id] = NULL; // remove from waiting
     unblocked_pcb->m_state = RDY;
     push_pcb_queue(unblocked_pcb);
-		if(k_get_process_priority(process_id) < gp_current_process->m_priority) {
+		if(k_get_process_priority_no_release(process_id) < gp_current_process->m_priority) {
 			preemption_in_iproc = 1;
 		}
 	}
@@ -93,6 +93,10 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 	MSG_BUF* incoming_message_envelope;
 
   if(delay < 0) return RTX_ERR;
+	
+	if(delay ==0) {
+		k_send_message(process_id, message_envelope);
+	}
 
 	incoming_message_envelope = (MSG_BUF*)message_envelope;
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid;
@@ -109,30 +113,34 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 
 
 void* k_receive_message_non_blocking(int* sender_id) {
-	return pop_msg(&mailboxes[PID_TIMER_IPROC]); //pop from timer mailbox
+	MSG_BUF* received_msg = pop_msg(&mailboxes[PID_TIMER_IPROC]); //pop from timer mailbox
+	*sender_id = received_msg->m_send_pid;
+	return received_msg;
 }
 
 void* k_receive_message(int* sender_id) {
+	MSG_BUF* received_msg;
 	int process_id = gp_current_process->m_pid;
 
   if(process_id < 0 || process_id > 15) {
     #ifdef DEBUG_0
-    printf("Error process id doesn't exist\r\n");
+    printf("Error process id doesn't exist\n\r");
     #endif /* DEBUG_0 */
     return NULL;
   }
 
-  if( (process_id > 6 && process_id < 11) {
+  if (process_id > 6 && process_id < 11) {
     #ifdef DEBUG_0
-    printf("Error process id doesn't exist\r\n");
+    printf("Error process id doesn't exist\n\r");
     #endif /* DEBUG_0 */
     return NULL;
   }
 
 	if (is_empty(&mailboxes[process_id])) { //Could and probably should be an if statement
         k_release_blocked_processor(WAITING_MESSAGE);
-	} else {
-        k_release_processor();
-    }
-	return pop_msg(&mailboxes[process_id]);
+	}
+	
+	received_msg = pop_msg(&mailboxes[process_id]);
+	*sender_id = received_msg->m_send_pid;
+	return received_msg;
 }

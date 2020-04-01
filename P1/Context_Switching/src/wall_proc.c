@@ -52,7 +52,7 @@ void update_wall_time(MSG_BUF* msg) {
 			|| cmd_str[start_dig+2] != ':'
 			|| cmd_str[start_dig+1] < '0'  || cmd_str[start_dig+1] > '9'
 			|| cmd_str[start_dig+0] < '0'  || cmd_str[start_dig+0] > '5') {
-			uart0_put_string("Invalid time to set wall clock\r\n");
+			uart0_put_string("Invalid time to set wall clock\n\r");
 		} else {
 			wall_is_running = 1;
 			sec = ((int)  (cmd_str[start_dig+7]-'0') ) + (10* ((int) (cmd_str[start_dig+6]-'0') ) );

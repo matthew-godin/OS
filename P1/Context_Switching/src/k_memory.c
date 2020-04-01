@@ -148,7 +148,7 @@ void* k_request_memory_block_non_blocking(void) {
 int k_release_memory_block(void *p_mem_blk) {
 	PCB* unblocked_pcb ;
 #ifdef DEBUG_0 
-	printf("k_release_memory_block: releasing block @ 0x%x\r\n", p_mem_blk);
+	printf("k_release_memory_block: releasing block @ 0x%x\n\r", p_mem_blk);
 #endif /* ! DEBUG_0 */
 	gp_memory_queue = push_mq(gp_memory_queue, (U32*)p_mem_blk);
 	

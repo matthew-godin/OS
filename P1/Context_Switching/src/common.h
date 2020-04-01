@@ -36,7 +36,7 @@
 #define PID_UART_IPROC   15
 
 /* Memory Block */
-#define NUM_MEMORY_BLOCKS 8
+#define NUM_MEMORY_BLOCKS 16
 #define MEM_BLOCK_SIZE 128
 
 /* Process Priority. The bigger the number is, the lower the priority is*/

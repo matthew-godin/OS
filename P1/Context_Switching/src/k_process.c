@@ -243,8 +243,20 @@ int k_get_process_priority(int process_id) {
 	int i;
 	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1; i++ ) {
 		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
+			k_release_processor();
 			return (gp_pcbs[i])->m_priority;
 		}
 	}
-	return -1;
+	k_release_processor();
+	return RTX_ERR;
+}
+
+int k_get_process_priority_no_release(int process_id) {
+	int i;
+	for ( i = 0; i < NUM_KERNEL_PROCS + NUM_TEST_PROCS + 1; i++ ) {
+		if((gp_pcbs[i])->m_pid == process_id) {  //iterate through pcb array and search for matching PID
+			return (gp_pcbs[i])->m_priority;
+		}
+	}
+	return RTX_ERR;
 }

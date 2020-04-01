@@ -87,13 +87,16 @@ void uart_i_proc(char c) {
 	 if(crt_msg_env != NULL ){
 		 crt_msg_env->mtype = CRT_DISPLAY_SINGLE_CHAR;
 		 crt_msg_env->mtext[0] = c; //add character to be printed in message body
+
 		 if(c == '\r') {
-			 	crt_msg_env->mtext[1] = '\n';
+			 	crt_msg_env->mtext[0] = '\n';
+			 	crt_msg_env->mtext[1] = '\r';
 		 		crt_msg_env->mtext[2] = '\0'; 
 		 } else {
 		 		 crt_msg_env->mtext[1] = '\0'; 
 			}
-		 crt_msg_env->mtext[1] = '\0'; //add character to be printed in message body
+		// 	crt_msg_env->mtext[1] = '\0'; 
+
 		 i_send_message(PID_CRT, crt_msg_env);	 
 	 }
 
@@ -108,6 +111,8 @@ void uart_i_proc(char c) {
 		 kcd_buffer->mtext[kcd_buffer_index++] = c; //put char on buffer, increment index
 
 		 if(c == '\r') { //last character TODO
+			 	kcd_buffer->mtext[kcd_buffer_index-1] = '\n'; //this is to replace the \r with the \n
+			 kcd_buffer->mtext[kcd_buffer_index++] = '\r';
 			 kcd_buffer->mtext[kcd_buffer_index++] = '\0';
 			 kcd_msg_env = kcd_buffer; // set kcd_msg_evn to buffer
 			 kcd_buffer = NULL;  //flush the buffer

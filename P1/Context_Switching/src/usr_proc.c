@@ -49,10 +49,10 @@ void set_test_procs() {
 void proc1Message(void) {
 	MSG_BUF* message, *message2;
 		
-	uart0_put_string("G024_test: START\r\n");
-	uart0_put_string("G024_test: total 6 tests\r\n");
+	uart0_put_string("G024_test: START\n\r");
+	uart0_put_string("G024_test: total 6 tests\n\r");
 	#ifdef DEBUG_0
-	printf("Start of Proc1\r\n");
+	printf("Start of Proc1\n\r");
 	#endif
 	//---------------------------------------send message test
 	set_process_priority(2,2);
@@ -63,7 +63,7 @@ void proc1Message(void) {
 	//*mem_addr1 = message;
 
 	#ifdef DEBUG_0
-	printf("PROC1: Sending a standard message from proc1 to proc2\r\n");
+	printf("PROC1: Sending a standard message from proc1 to proc2\n\r");
 	#endif
 	send_message(2, message);
 	#ifdef DEBUG_0
@@ -72,27 +72,27 @@ void proc1Message(void) {
 	set_process_priority(1, 2);
 	
 	#ifdef DEBUG_0
-	printf("PROC1: Return to Proc1\r\n");
+	printf("PROC1: Return to Proc1\n\r");
 	#endif
 	//just got back from proc 2
 	//----------------------------------------delayed send test
 	message = (MSG_BUF*) request_memory_block();
 	message->mtext[0] = '2'; //should arrive second
 	#ifdef DEBUG_0
-	printf("PROC1: Sending first delayed message with text \'2\' \r\n");
+	printf("PROC1: Sending first delayed message with text \'2\' \n\r");
 	#endif
 	delayed_send(2, message, 60);
 	
 	message2 = (MSG_BUF*) request_memory_block();
 	message2->mtext[0] = '1'; //should arrive first 
 	#ifdef DEBUG_0
-	printf("PROC1: Sending second delayed message with text \'1\' \r\n");
+	printf("PROC1: Sending second delayed message with text \'1\' \n\r");
 	#endif
 	delayed_send(2, message2, 30);
 
 
 	#ifdef DEBUG_0
-	printf("PROC1: Going to Proc2\r\n");
+	printf("PROC1: Going to Proc2\n\r");
 	#endif
 	set_process_priority(1, 2); //downgrade its own priority, go to proc2message
 
@@ -103,56 +103,56 @@ void proc1Message(void) {
 
 void proc2Message(void) {
 	
-	int* sender_id = NULL;
+	int sender_id = 0;
 	MSG_BUF * receivedMessage, *receivedMessage2;
 	
 	//---------------------------------------------send message test
 	#ifdef DEBUG_0
-	printf("Start of Proc2\r\n");
-	printf("PROC2: Receiving message\r\n");
+	printf("Start of Proc2\n\r");
+	printf("PROC2: Receiving message\n\r");
 	#endif
-	receivedMessage = receive_message(sender_id);
+	receivedMessage = receive_message(&sender_id);
 	#ifdef DEBUG_0
-	printf("PROC2: Received message\r\n");
+	printf("PROC2: Received message\n\r");
 	#endif
-	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
-		uart0_put_string("G024_test: TEST 1 OK\r\n");
+	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')' && sender_id == 1) {
+		uart0_put_string("G024_test: TEST 1 OK\n\r");
 		passedTests += 1;
 	} else {
-		uart0_put_string("G024_test: TEST 1 FAIL\r\n");
+		uart0_put_string("G024_test: TEST 1 FAIL\n\r");
 	}
 	release_memory_block(receivedMessage);
 	
 	//----------------------------------------------delayed send tests
 	#ifdef DEBUG_0
-	printf("PROC2: Going to Proc1\r\n");
+	printf("PROC2: Going to Proc1\n\r");
 	#endif
 	set_process_priority(1,1); //go back to proc 1
 	#ifdef DEBUG_0
-	printf("PROC2: Receiving first delayed message \r\n");
+	printf("PROC2: Receiving first delayed message \n\r");
 	#endif
-	receivedMessage = receive_message(sender_id);
+	receivedMessage = receive_message(&sender_id);
 	#ifdef debug_0
-	printf("proc2: Received first delayed message \r\n");
-	printf("proc2: Receiving second delayed message \r\n");
+	printf("proc2: Received first delayed message \n\r");
+	printf("proc2: Receiving second delayed message \n\r");
 	#endif
-	receivedMessage2 = receive_message(sender_id);
+	receivedMessage2 = receive_message(&sender_id);
 	#ifdef debug_0
-	printf("proc2: Received second delayed message \r\n");
+	printf("proc2: Received second delayed message \n\r");
 	#endif
 
 	if(receivedMessage->mtext[0] == '1' && receivedMessage2->mtext[0] == '2') {
-		uart0_put_string("G024_test: TEST 2 OK\r\n");
+		uart0_put_string("G024_test: TEST 2 OK\n\r");
 		passedTests += 1;
 	} else {
-		uart0_put_string("G024_test: TEST 2 FAIL\r\n");
+		uart0_put_string("G024_test: TEST 2 FAIL\n\r");
 	}
 	
 	release_memory_block(receivedMessage);
 	release_memory_block(receivedMessage2);
 	
 	#ifdef debug_0
-	printf("proc2: Going to Proc3\r\n");
+	printf("proc2: Going to Proc3\n\r");
 	#endif
 	set_process_priority(3,1); //make proc 3 higher priority, go there
 	
@@ -164,11 +164,12 @@ void proc2Message(void) {
 
 void proc3Message(void) {
 	MSG_BUF * commandRegMsg, *commandRegMsg2, *receivedMsg;
+	int sender_id = 0;
 	int i;
 	char c;
 	
 	#ifdef DEBUG_0
-	printf("Start of Proc3\r\n");
+	printf("Start of Proc3\n\r");
 	#endif
 
 	set_process_priority(4,2);
@@ -177,7 +178,7 @@ void proc3Message(void) {
 
 	
 	#ifdef DEBUG_0
-	printf("PROC3: Registering command %C\r\n");
+	printf("PROC3: Registering command %C\n\r");
 	#endif
 	commandRegMsg = (MSG_BUF*)request_memory_block();
 	commandRegMsg->mtype = KCD_REG;
@@ -187,7 +188,7 @@ void proc3Message(void) {
 	send_message(PID_KCD, commandRegMsg);
 	
 	#ifdef DEBUG_0
-	printf("PROC3: Registering command %D\r\n");
+	printf("PROC3: Registering command %D\n\r");
 	#endif
 	commandRegMsg2 = (MSG_BUF*)request_memory_block();
 	commandRegMsg2->mtype = KCD_REG;
@@ -198,11 +199,11 @@ void proc3Message(void) {
 
 	while(1) {
 		
-		receivedMsg = receive_message(NULL);
+		receivedMsg = receive_message(&sender_id);
 		
 		if(receivedMsg->mtext[1] == 'C') { //print the params
 			#ifdef DEBUG_0
-			printf("PROC3: Received command %C");
+			printf("PROC3: Received command %C\n\r");
 			#endif
 			i = 2;	
 			c = receivedMsg->mtext[i];
@@ -211,7 +212,7 @@ void proc3Message(void) {
 				c = receivedMsg->mtext[i++];
 				uart0_put_char(c);
 			} while(c != '\0');
-			uart0_put_string("G024_test: TEST 3A OK\r\n");
+		//	uart0_put_string("G024_test: TEST 3A OK\n\r");
 			passedTests += 1;
 
 		} else if(receivedMsg->mtext[1] == 'D') { //print the params separated by a space!
@@ -225,12 +226,11 @@ void proc3Message(void) {
 				uart0_put_char(c);
 				uart0_put_char(' ');
 			} while(c != '\0');	
-				uart0_put_string("G024_test: TEST 3B OK\r\n");
+				//uart0_put_string("G024_test: TEST 3B OK\n\r");
 				passedTests += 1;
-
 		} else {
 			//shouldn't get here lol
-			uart0_put_string("G024_test: TEST 3 FAIL\r\n");
+			//uart0_put_string("G024_test: TEST 3 FAIL\n\r");
 		}
 		
 		release_processor();
@@ -241,7 +241,7 @@ void proc4Message(void) {
 	MSG_BUF* command_invok;
 	
 	#ifdef DEBUG_0
-	printf("Start of Proc4\r\n");
+	printf("Start of Proc4\n\r");
 	#endif
 	command_invok = request_memory_block();
 	command_invok->mtext[0] = '%';
@@ -249,17 +249,17 @@ void proc4Message(void) {
 	command_invok->mtext[2] = '<';
 	command_invok->mtext[3] = ':';
 	command_invok->mtext[4] = 'D';
-	command_invok->mtext[5] = '\r';
-	command_invok->mtext[6] = '\n';
+	command_invok->mtext[5] = '\n';
+	command_invok->mtext[6] = '\r';
 	command_invok->mtext[7] = '\0';
 	#ifdef DEBUG_0
-	printf("PROC4: Sending command %D\r\n");
+	printf("PROC4: Sending command %D\n\r");
 	#endif
 	if (send_message(PID_KCD, command_invok) == RTX_OK) {
-		uart0_put_string("G024_test: TEST 4A OK\r\n");
+		uart0_put_string("G024_test: TEST 4A OK\n\r");
 		passedTests += 1;
 	} else {
-		uart0_put_string("G024_test: TEST 4A FAIL\r\n");
+		uart0_put_string("G024_test: TEST 4A FAIL\n\r");
 	}
 	
 	
@@ -269,17 +269,17 @@ void proc4Message(void) {
 	command_invok->mtext[2] = '>';
 	command_invok->mtext[3] = ':';
 	command_invok->mtext[4] = 'C';
-	command_invok->mtext[5] = '\r';
-	command_invok->mtext[6] = '\n';
+	command_invok->mtext[5] = '\n';
+	command_invok->mtext[6] = '\r';
 	command_invok->mtext[7] = '\0';
 	#ifdef DEBUG_0
-	printf("PROC4: Sending command %C\r\n");
+	printf("PROC4: Sending command %C\n\r");
 	#endif
 	if (send_message(PID_KCD, command_invok) == RTX_OK) {
-		uart0_put_string("G024_test: TEST 4B OK\r\n");
+		uart0_put_string("G024_test: TEST 4B OK\n\r");
 		passedTests += 1;
 	} else {
-		uart0_put_string("G024_test: TEST 4B FAIL\r\n");
+		uart0_put_string("G024_test: TEST 4B FAIL\n\r");
 	}
 	
 	set_process_priority(5,1);
@@ -293,7 +293,7 @@ void proc5Message(void) {
 	MSG_BUF* msg_to_display;
 
 	#ifdef DEBUG_0
-	printf("Start of Proc5\r\n");
+	printf("Start of Proc5\n\r");
 	#endif
 	
 	set_process_priority(3,3);
@@ -314,10 +314,10 @@ void proc5Message(void) {
 	msg_to_display->mtext[9] = '\0';
 */
 	if (send_message(PID_CRT, msg_to_display) == RTX_OK) {
-		uart0_put_string("G024_test: TEST 5 OK\r\n");
+		uart0_put_string("G024_test: TEST 5 OK\n\r");
 		passedTests += 1;
 	} else {
-		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
+		uart0_put_string("G024_test: TEST 5 FAIL\n\r");
 	}
 	
 	set_process_priority(6,1);
@@ -332,7 +332,7 @@ void proc6Message(void) {
 	int i;
 
 	#ifdef DEBUG_0
-	printf("Start of Proc6\r\n");
+	printf("Start of Proc6\n\r");
 	#endif
 
 	//deliberately set everything to have priority 0 so it loops through every process which just calls release_processor();
@@ -347,7 +347,7 @@ void proc6Message(void) {
 	clock_cmd = request_memory_block();
 	clock_cmd->mtype = KCD_CMD;
 	#ifdef DEBUG_0
-	printf("PROC6: Resetting wall clock\r\n");
+	printf("PROC6: Resetting wall clock\n\r");
 	#endif
 	clock_cmd->mtext[0] = '%';
 	clock_cmd->mtext[1] = 'W';
@@ -355,14 +355,14 @@ void proc6Message(void) {
 	clock_cmd->mtext[3] = '\0';
 	send_message(PID_KCD, clock_cmd);
 	
-	for(i = 0; i < 10000; i++) {
+	for(i = 0; i < 1000; i++) {
 		release_processor();
 	}
 	
 	clock_cmd = request_memory_block();
 	clock_cmd->mtype = KCD_CMD;
 	#ifdef DEBUG_0
-	printf("PROC6: Setting wall clock to 12:12:12\r\n");
+	printf("PROC6: Setting wall clock to 12:12:12\n\r");
 	#endif
 	clock_cmd->mtext[0] = '%';
 	clock_cmd->mtext[1] = 'W';
@@ -386,7 +386,7 @@ void proc6Message(void) {
 	clock_cmd = request_memory_block();
 	clock_cmd->mtype = KCD_CMD;
 	#ifdef DEBUG_0
-	printf("PROC6: Resetting wall clock\r\n");
+	printf("PROC6: Resetting wall clock\n\r");
 	#endif
 	clock_cmd->mtext[0] = '%';
 	clock_cmd->mtext[1] = 'W';
@@ -394,14 +394,14 @@ void proc6Message(void) {
 	clock_cmd->mtext[3] = '\0';
 	send_message(PID_KCD, clock_cmd);
 	
-	for(i = 0; i < 5000; i++) {
+	for(i = 0; i < 500; i++) {
 		release_processor();
 	}
 	
 	clock_cmd = request_memory_block();
 	clock_cmd->mtype = KCD_CMD;
 	#ifdef DEBUG_0
-	printf("PROC6: Terminating wall clock\r\n");
+	printf("PROC6: Terminating wall clock\n\r");
 	#endif
 	clock_cmd->mtext[0] = '%';
 	clock_cmd->mtext[1] = 'W';
@@ -412,7 +412,7 @@ void proc6Message(void) {
 	#ifdef DEBUG_0
 	printf("PROC6: Sent wall clock commands (TEST 6)");
 	#endif
-	uart0_put_string("G024_test: TEST 6 OK\r\n");
+	uart0_put_string("G024_test: TEST 6 OK\n\r");
 	passedTests += 1;
 	
 	if(passedTests > totalTests) {
@@ -425,7 +425,7 @@ void proc6Message(void) {
 	uart0_put_char('/');
 	sprintf(str, "%d", totalTests);
 	uart0_put_string(str);
-	uart0_put_string(" tests OK \r\n");
+	uart0_put_string(" tests OK \n\r");
 
 	uart0_put_string("G024_test: ");
 	sprintf(str, "%d", totalTests- passedTests);
@@ -433,16 +433,16 @@ void proc6Message(void) {
 	uart0_put_char('/');
 	sprintf(str, "%d", totalTests);
 	uart0_put_string(str);
-	uart0_put_string(" tests FAIL \r\n");
+	uart0_put_string(" tests FAIL \n\r");
 
-	uart0_put_string("G024_test: END \r\n");
+	uart0_put_string("G024_test: END \n\r");
 
 	while(1) {
 		#ifdef DEBUG_0
 		printf("PROC6: Requesting Memory Block (Should eventually be blocked on memory)");
 		#endif
 
-		(request_memory_block() == NULL);
+	//	(request_memory_block() == NULL);
 		release_processor();
 	}
 }
