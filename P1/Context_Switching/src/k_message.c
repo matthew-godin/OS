@@ -5,6 +5,10 @@
 #include "k_process_priority_queue.h"
 #include "k_timeout_queue.h"
 
+#ifdef DEBUG_0
+#include "printf.h"
+#endif /* DEBUG_0 */
+
 extern PCB* gp_current_process;
 extern PCB* gp_pcb_message_waiting_queue[];
 
@@ -72,9 +76,9 @@ int i_send_message(int process_id, void* message_envelope) {
 
 int k_delayed_send(int process_id, void* message_envelope, int delay) {
 	MSG_BUF* incoming_message_envelope;
-	
+
   if(delay < 0) return RTX_ERR;
-	
+
 	incoming_message_envelope = (MSG_BUF*)message_envelope;
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid;
 	incoming_message_envelope->m_recv_pid = process_id;
@@ -100,6 +104,14 @@ void* k_receive_message(int* sender_id) {
   if(process_id < 0 || process_id > 16) {
     return NULL;
   }
+
+  if( (process_id > 6 && process_id < 11) {
+    #ifdef DEBUG_0
+    printf("Error process id doesn't exist\r\n");
+    #endif /* DEBUG_0 */
+    return NULL;
+  }
+
 	if (is_empty(&mailboxes[process_id])) { //Could and probably should be an if statement
         k_release_blocked_processor(WAITING_MESSAGE);
 	} else {
