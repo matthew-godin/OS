@@ -32,6 +32,18 @@ int k_send_message(int process_id, void* message_envelope) {
 	PCB* unblocked_pcb = NULL;
 	MSG_BUF* incoming_message_envelope = (MSG_BUF*)message_envelope;
 
+  if(process_id < 0 || process_id > 16) {
+    return NULL;
+  }
+
+  if( (process_id > 6 && process_id < 11) {
+    #ifdef DEBUG_0
+    printf("Error process id doesn't exist\r\n");
+    #endif /* DEBUG_0 */
+    return NULL;
+  }
+
+
 	incoming_message_envelope->m_send_pid = gp_current_process->m_pid; //set sender pid to current process's pid
 	incoming_message_envelope->m_recv_pid = process_id; //set receiving pid to process id
 	incoming_message_envelope->mp_next = NULL;
@@ -94,7 +106,6 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 
 
 void* k_receive_message_non_blocking(int* sender_id) {
-//	return pop_msg(&mailboxes[0]); // 0 is the timer mailbox
 	return pop_msg(&mailboxes[PID_TIMER_IPROC]); //pop from timer mailbox
 }
 
