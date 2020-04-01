@@ -13,7 +13,7 @@ PROC_INIT g_wall_proc[1];
 void set_wall_proc() {
 	//wall proc
 	g_wall_proc[0].m_pid= (U32) 11;
-	g_wall_proc[0].m_priority= 0;
+	g_wall_proc[0].m_priority= 1;
 	g_wall_proc[0].m_stack_size=0x100;
 	g_wall_proc[0].mpf_start_pc= &wall_proc;
 }
