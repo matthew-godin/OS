@@ -19,7 +19,7 @@
 /* initialization table item */
 PROC_INIT g_test_procs[NUM_TEST_PROCS];
 int lastRunProc;
-int totalTests = 5;
+int totalTests = 6;
 int passedTests = 0;
 char str[10];
 
@@ -366,6 +366,8 @@ void proc6(void)
 void proc1Message(void) {
 	MSG_BUF* message, *message2;
 		
+	uart0_put_string("G024_test: START\r\n");
+	uart0_put_string("G024_test: total 6 tests\r\n");
 	#ifdef DEBUG_0
 	printf("Start of Proc1\r\n");
 	#endif
@@ -432,6 +434,7 @@ void proc2Message(void) {
 	#endif
 	if (receivedMessage->mtext[0] == ':' && receivedMessage->mtext[1] == ')') {
 		uart0_put_string("G024_test: TEST 1 OK\r\n");
+		passedTests += 1;
 	} else {
 		uart0_put_string("G024_test: TEST 1 FAIL\r\n");
 	}
@@ -457,6 +460,7 @@ void proc2Message(void) {
 
 	if(receivedMessage->mtext[0] == '1' && receivedMessage2->mtext[0] == '2') {
 		uart0_put_string("G024_test: TEST 2 OK\r\n");
+		passedTests += 1;
 	} else {
 		uart0_put_string("G024_test: TEST 2 FAIL\r\n");
 	}
@@ -525,6 +529,7 @@ void proc3Message(void) {
 				uart0_put_char(c);
 			} while(c != '\0');
 			uart0_put_string("G024_test: TEST 3A OK\r\n");
+			passedTests += 1;
 
 		} else if(receivedMsg->mtext[1] == 'D') { //print the params separated by a space!
 			#ifdef DEBUG_0
@@ -538,6 +543,7 @@ void proc3Message(void) {
 				uart0_put_char(' ');
 			} while(c != '\0');	
 				uart0_put_string("G024_test: TEST 3B OK\r\n");
+				passedTests += 1;
 
 		} else {
 			//shouldn't get here lol
@@ -566,6 +572,7 @@ void proc4Message(void) {
 	#endif
 	if (send_message(PID_KCD, command_invok) == RTX_OK) {
 		uart0_put_string("G024_test: TEST 4A OK\r\n");
+		passedTests += 1;
 	} else {
 		uart0_put_string("G024_test: TEST 4A FAIL\r\n");
 	}
@@ -583,6 +590,7 @@ void proc4Message(void) {
 	#endif
 	if (send_message(PID_KCD, command_invok) == RTX_OK) {
 		uart0_put_string("G024_test: TEST 4B OK\r\n");
+		passedTests += 1;
 	} else {
 		uart0_put_string("G024_test: TEST 4B FAIL\r\n");
 	}
@@ -617,6 +625,7 @@ void proc5Message(void) {
 
 	if (send_message(PID_CRT, msg_to_display) == RTX_OK) {
 		uart0_put_string("G024_test: TEST 5 OK\r\n");
+		passedTests += 1;
 	} else {
 		uart0_put_string("G024_test: TEST 5 FAIL\r\n");
 	}
@@ -714,8 +723,26 @@ void proc6Message(void) {
 	printf("PROC6: Sent wall clock commands (TEST 6)");
 	#endif
 	uart0_put_string("G024_test: TEST 6 OK\r\n");
+	passedTests += 1;
 	
-	
+	uart0_put_string("G024_test: ");
+	sprintf(str, "%d", passedTests);
+	uart0_put_string(str);
+	uart0_put_char('/');
+	sprintf(str, "%d", totalTests);
+	uart0_put_string(str);
+	uart0_put_string(" tests OK \r\n");
+
+	uart0_put_string("G024_test: ");
+	sprintf(str, "%d", totalTests- passedTests);
+	uart0_put_string(str);
+	uart0_put_char('/');
+	sprintf(str, "%d", totalTests);
+	uart0_put_string(str);
+	uart0_put_string(" tests FAIL \r\n");
+
+	uart0_put_string("G024_test: END \r\n");
+
 	while(1) {
 		#ifdef DEBUG_0
 		printf("PROC6: Requesting Memory Block (Should eventually be blocked on memory)");
@@ -725,6 +752,3 @@ void proc6Message(void) {
 		release_processor();
 	}
 }
-
-
-
