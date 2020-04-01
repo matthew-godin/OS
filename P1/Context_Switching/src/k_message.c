@@ -32,7 +32,10 @@ int k_send_message(int process_id, void* message_envelope) {
 	PCB* unblocked_pcb = NULL;
 	MSG_BUF* incoming_message_envelope = (MSG_BUF*)message_envelope;
 
-  if(process_id < 0 || process_id > 16) {
+  if(process_id < 0 || process_id > 15) {
+    #ifdef DEBUG_0
+    printf("Error process id doesn't exist\r\n");
+    #endif /* DEBUG_0 */
     return NULL;
   }
 
@@ -112,7 +115,10 @@ void* k_receive_message_non_blocking(int* sender_id) {
 void* k_receive_message(int* sender_id) {
 	int process_id = gp_current_process->m_pid;
 
-  if(process_id < 0 || process_id > 16) {
+  if(process_id < 0 || process_id > 15) {
+    #ifdef DEBUG_0
+    printf("Error process id doesn't exist\r\n");
+    #endif /* DEBUG_0 */
     return NULL;
   }
 
