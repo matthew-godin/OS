@@ -26,7 +26,8 @@ The hotkeys are:\
 "#": Prints all processes blocked on messages
 
 4. How to start your test cases to see the hot key output\
-The test cases will start as soon as you start running and you can see the hotkey outputs in UART0 console after inputting the hotkey as long as _DEBUG_HOTKEYS is defined.
+The test cases will start as soon as you start running and you can see the hotkey outputs in UART0 console after inputing the hotkey as long as _DEBUG_HOTKEYS is defined.
+There is component at the end of the test suite which allows users to see processes blocked on memory and messages by using the hotkeys.
 
 5. Do you have any extra non-required features you implemented? If yes, what are they and how to use them?\
 There are no non-required features implemented.
