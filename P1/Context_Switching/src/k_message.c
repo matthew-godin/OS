@@ -114,7 +114,9 @@ int k_delayed_send(int process_id, void* message_envelope, int delay) {
 
 void* k_receive_message_non_blocking(int* sender_id) {
 	MSG_BUF* received_msg = pop_msg(&mailboxes[PID_TIMER_IPROC]); //pop from timer mailbox
-	*sender_id = received_msg->m_send_pid;
+	if (sender_id != NULL) {
+		*sender_id = received_msg->m_send_pid;
+	}
 	return received_msg;
 }
 
@@ -141,6 +143,8 @@ void* k_receive_message(int* sender_id) {
 	}
 	
 	received_msg = pop_msg(&mailboxes[process_id]);
-	*sender_id = received_msg->m_send_pid;
+	if (sender_id != NULL) {
+		*sender_id = received_msg->m_send_pid;
+	}
 	return received_msg;
 }
